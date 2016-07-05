@@ -8,6 +8,8 @@ if status --is-login
 end
 
 set -gx fish_greeting ''
+set -gx fish_color_param default
+set -gx fish_color_command default
 
 ## Aliases
 if test -x $HOME/.config/fish/aliases.fish
