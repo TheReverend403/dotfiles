@@ -1,0 +1,8 @@
+autoload
+backups
+bundle
+cache
+swaps
+tmp
+undo
+.netrwhist

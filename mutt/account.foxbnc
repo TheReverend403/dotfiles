@@ -1,0 +1,9 @@
+set my_name = "Lee Watson"
+set from = "Lee Watson <rev@foxbnc.co.uk>"
+set sendmail="/usr/bin/msmtp -a foxbnc"
+
+set postponed = "+foxbnc/Drafts"
+set record = "+foxbnc/Sent"
+
+unlists oss-security@lists.openwall.com
+unsubscribe oss-security@lists.openwall.com

@@ -1,0 +1,51 @@
+mailboxes \
+"+\+RevTheFox ----------------------" \
+"+revthefox/Inbox" \
+"+revthefox/Sent" \
+"+revthefox/Drafts" \
+"+revthefox/Junk" \
+"+revthefox/Trash" \
+"+revthefox/Spam" \
+"+revthefox/Archive" \
+"+revthefox/eudyptula" \
+"+revthefox/alerts ----------------------" \
+"+revthefox/alerts.cron" \
+"+revthefox/alerts.letsencrypt" \
+"+revthefox/alerts.other" \
+"+revthefox/alerts.postfix-stats" \
+"+revthefox/alerts.rtorrent" \
+"+revthefox/lists ----------------------" \
+"+revthefox/lists.linux-announce" \
+"+revthefox/lists.gentoo-announce" \
+"+revthefox/lists.debian-announce" \
+"+revthefox/lists.debian-security" \
+"+\+NotoriousDev ----------------------" \
+"+notoriousdev/Inbox" \
+"+notoriousdev/Sent" \
+"+notoriousdev/Drafts" \
+"+notoriousdev/Junk" \
+"+notoriousdev/Trash" \
+"+notoriousdev/Spam" \
+"+notoriousdev/alerts ----------------------" \
+"+notoriousdev/alerts.apt-changelogs" \
+"+notoriousdev/alerts.backups" \
+"+notoriousdev/alerts.certgen" \
+"+notoriousdev/alerts.fail2ban" \
+"+notoriousdev/alerts.letsencrypt" \
+"+notoriousdev/alerts.disks" \
+"+notoriousdev/alerts.root" \
+"+\+FoxDev ----------------------" \
+"+foxdev/Inbox" \
+"+foxdev/Sent" \
+"+foxdev/Drafts" \
+"+foxdev/Junk" \
+"+foxdev/Trash" \
+"+foxdev/Spam" \
+"+\+FoxBNC ----------------------" \
+"+foxbnc/Inbox" \
+"+foxbnc/Sent" \
+"+foxbnc/Drafts" \
+"+foxbnc/Junk" \
+"+foxbnc/Trash" \
+"+foxbnc/Spam" \
+

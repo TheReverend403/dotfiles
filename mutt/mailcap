@@ -1,0 +1,6 @@
+text/html; firejail firefox %s
+text/*; less
+image/*; feh %s
+video/*; mpv %s
+application/pdf; firejail firefox %s
+application/octet-stream; less

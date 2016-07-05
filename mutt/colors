@@ -1,0 +1,78 @@
+# vim: ft=muttrc
+
+# set default
+  color normal      white         default
+
+# main colors
+  color status      brightmagenta         default
+  color indicator   brightmagenta         default
+  color tree        brightblue          default
+  color error       brightred     default
+  color message     brightyellow  default
+
+#
+# message states
+#
+# order matters here since some states override others
+#
+
+# messages to me
+uncolor index "~P"
+  color index brightblack default "~P"
+
+# threads containing new messages
+uncolor index "~(~N)"
+  color index brightblue default "~(~N)"
+
+# new messages themselves
+uncolor index "~N"
+  color index brightyellow default "~N"
+
+# tagged
+uncolor index "~T"
+  color index brightgreen default "~T"
+
+# deleted
+uncolor index "~D"
+  color index brightred default "~D"
+
+# set up the headers
+  color header     brightyellow  default "^from:"
+  color header     brightyellow        default "^to:"
+  color header     brightyellow        default "^cc:"
+  color header     brightblue          default "^date:"
+  color header     brightblue    default "^subject:"
+
+# message bodies
+  color attachment brightblack   default
+  color search     brightred           brightblack
+  color signature  brightcyan          default
+  color tilde      brightblue          default
+
+# gpg
+  color body       brightgreen   default "^gpg: Good signature.*"
+  color body       brightred     default "^gpg: BAD signature.*"
+  color body       brightyellow        default "^gpg: Can't check signature.*"
+
+# urls
+  color body       brightblue    default "(^|<| )mailto:[^ ]+@[^ ]( |>|$)"
+  color body       brightblue    default "(^|<| )(http|https|ftp|file|telnet|news|finger)://[^ ]+( |>|$)"
+
+# smileys, the right way and the backward-ass euro way
+  color body       brightmagenta default "(^| )+(|[<>|])[8;:](|[^ ])[)(/|DOPS]( |$)+"
+  color body       brightmagenta default "(^| )+[)(/|DOPS](|[^ ])[8;:](|[<>|])( |$)+"
+
+# *bold*, _underline_, and /italic/
+  color body       brightcyan    default "(^| )\\*[^*]+\\*( |$)"
+  color body       brightcyan    default "(^| )_[^_]+_( |$)"
+  color body       brightcyan    default "(^| )/[^/]+/( |$)"
+
+# quote blocks
+  color quoted     brightmagenta       default
+  color quoted1    brightcyan          default
+  color quoted2    brightgreen         default
+  color quoted3    brightmagenta       default
+  color quoted4    brightcyan          default
+  color quoted5    brightgreen         default
+  color quoted6    brightmagenta       default
+  color quoted7    brightcyan          default

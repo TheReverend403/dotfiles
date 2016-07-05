@@ -1,0 +1,10 @@
+sec.conf
+logs/
+script/
+script.conf
+*/autoload/
+weechat.log
+urlserver_list.txt
+relay.conf
+urls.log
+otr/

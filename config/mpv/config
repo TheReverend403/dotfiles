@@ -1,0 +1,59 @@
+## Video ##
+vo=opengl
+hwdec=auto
+framedrop=vo
+deinterlace=yes
+stop-screensaver=yes
+audio-display=no
+
+## Audio ##
+ao=alsa
+audio-channels=2
+af=drc
+
+## UI
+term-osd-bar-chars=[=>.]
+
+## Other ##
+autofit=1024x768
+no-border
+no-resume-playback
+no-ordered-chapters
+ytdl-format=bestvideo[height<=?1080]+bestaudio/best
+
+# Do not terminate when playing or seeking beyond the end of the file
+keep-open
+
+# Disable subs on load
+no-sub
+
+# Cache
+cache=20000
+
+##################
+# Aesthetics #
+##################
+
+# Window title
+title="${filename}"
+
+osd-playing-msg='${filename}'
+osd-duration=2000
+osd-font="Arimo"
+osd-font-size=35
+osd-color="#ffffffff"
+osd-border-color="#ff262626"
+osd-border-size=2
+osd-shadow-offset=1
+osd-shadow-color="#33000000"
+osd-scale-by-window=yes
+sub-gauss=.75
+sub-gray=yes
+sub-auto=fuzzy
+no-embeddedfonts
+alang=jpn,jp,eng,en,
+slang=jpn,jp,eng,en,
+
+[extension.webm]
+loop-file=yes
+# vim: syntax=config

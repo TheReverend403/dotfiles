@@ -1,0 +1,70 @@
+set editor = "/usr/bin/vim"
+set envelope_from = yes
+set use_from = yes
+
+set sendmail_wait = 30
+
+hdr_order Date: From: User-Agent: X-Mailer: To: Cc: Reply-To: Subject:
+ignore *
+unignore Date: From: User-Agent: X-Mailer: X-PGP-Key: To: Cc: Reply-To: Subject:
+
+set my_hdr="X-PGP-Key: https://keybase.io/thereverend403/key.asc"
+
+set folder = "~/.mail"
+source "~/.mutt/mailboxes"
+set read_inc=1000
+
+source "~/.mutt/gpg.rc"
+source "~/.mutt/account.revthefox"
+set spoolfile = "+revthefox/Inbox"
+
+set smart_wrap
+set sort=threads
+set mail_check = 10
+set edit_headers = yes
+
+set header_cache = "~/.cache/mutt/headers"
+
+set send_charset="us-ascii:utf-8"
+set mailcap_path = "~/.mutt/mailcap"
+alternative_order text/plain text/html
+auto_view text/html
+
+set menu_scroll = yes
+set sleep_time = 0
+set text_flowed = yes
+set index_format = "%{%b %d} │ %-15.15L │ %s"
+
+unset markers
+set sidebar_visible = yes
+set sidebar_sort = yes
+set sidebar_width = 30
+set sidebar_delim = ' │'
+set sidebar_shortpath = yes
+set sidebar_folderindent = yes
+color sidebar_new yellow default
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+# Ctrl-n, Ctrl-p to select next, previous folder.
+# # Ctrl-o to open selected folder.
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+bind index - collapse-thread
+bind index _ collapse-all
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
+unset user_agent
+set fast_reply = yes
+
+## Abook
+set query_command= "abook --mutt-query '%s'"
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+bind editor        <Tab> complete-query
+
+folder-hook 'revthefox/' 'source ~/.mutt/account.revthefox'
+folder-hook 'notoriousdev/' 'source ~/.mutt/account.ndev'
+folder-hook 'foxdev/' 'source ~/.mutt/account.foxdev'
+folder-hook 'foxbnc/' 'source ~/.mutt/account.foxbnc'
+
+source ~/.mutt/colors
