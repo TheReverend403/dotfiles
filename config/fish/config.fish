@@ -12,8 +12,8 @@ set -gx fish_color_param default
 set -gx fish_color_command default
 
 ## Aliases
-if test -x $HOME/.config/fish/aliases.fish
-    . ~/.config/fish/aliases.fish
+if test -f $HOME/.config/fish/aliases.fish
+    . $HOME/.config/fish/aliases.fish
 end
 
 ## Locale
@@ -25,13 +25,7 @@ set -gx BROWSER '/usr/bin/firejail firefox'
 set -gx EDITOR /usr/bin/vim
 
 ## PATH
-set path_dirs $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/.gem/ruby/2.1.0/bin $HOME/.gem/ruby/2.0.0/bin /usr/lib/ccache/bin $HOME/.local/bin
-for dir in $path_dirs
-    # Stop fish complaining if a directory doesn't exist
-    if test -x $dir
-        set -gx set -gx fish_user_paths $dir $fish_user_paths
-    end
-end
+set -gx fish_user_paths $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/.gem/ruby/2.1.0/bin $HOME/.gem/ruby/2.0.0/bin /usr/lib/ccache/bin $HOME/.local/bin $fish_user_paths
 
 ## XDG
 set -gx XDG_CONFIG_HOME $HOME/.config
