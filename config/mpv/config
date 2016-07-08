@@ -15,7 +15,8 @@ af=drc
 term-osd-bar-chars=[=>.]
 
 ## Other ##
-autofit=1024x768
+geometry=50%:50%
+autofit-larger=50%x80%
 no-border
 no-resume-playback
 no-ordered-chapters
@@ -29,6 +30,7 @@ no-sub
 
 # Cache
 cache=20000
+cache-pause=no
 
 ##################
 # Aesthetics #
