@@ -40,7 +40,7 @@ if status --is-login
     set -gx LESS_TERMCAP_ZO (tput ssupm)
     set -gx LESS_TERMCAP_ZW (tput rsupm)
 
-    if test -z "$DISPLAY" -a $XDG_VTNR -eq 1
+    if test -z "$DISPLAY"
         set -q $SSH_CLIENT; or exec startx > /dev/null ^&1
     end
 end
