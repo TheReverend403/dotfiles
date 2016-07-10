@@ -1,10 +1,17 @@
+set -g user_dirs $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/.gem/ruby/2.1.0/bin $HOME/.gem/ruby/2.0.0/bin /usr/lib/ccache/bin $HOME/.local/bin
+
+
 ## Login session initialisation
 if status --is-login
     ## /etc/profile compatibility
     env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
 
     ## PATH
-    set -gx fish_user_paths $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/.gem/ruby/2.1.0/bin $HOME/.gem/ruby/2.0.0/bin /usr/lib/ccache/bin $HOME/.local/bin
+    for dir in $user_dirs
+        if test -f $dir
+            set -gx fish_user_paths $dir $fish_user_paths
+        end
+    end
 
     ## Prevent Wine from adding menu entries and desktop links.
     set -gx WINEDLLOVERRIDES 'winemenubuilder.exe=d'
