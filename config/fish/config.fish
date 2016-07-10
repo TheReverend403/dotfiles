@@ -1,4 +1,3 @@
-
 ## Login session initialisation
 if status --is-login
     ## /etc/profile compatibility
@@ -17,12 +16,12 @@ if status --is-login
     set -gx NPM_PACKAGES $HOME/.npm-packages
     set -gx NODE_PATH $NPM_PACKAGES/lib/node_modules:$NODE_PATH
 
-    set user_dirs $NPM_PACKAGES/bin $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/.gem/ruby/2.1.0/bin $HOME/.gem/ruby/2.0.0/bin /usr/lib/ccache/bin $HOME/.local/bin
-
     ## PATH
+    set -l user_dirs $NPM_PACKAGES/bin $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/.gem/ruby/2.1.0/bin $HOME/.gem/ruby/2.0.0/bin /usr/lib/ccache/bin $HOME/.local/bin
+
     for dir in $user_dirs
         if test -d $dir
-            set -gx fish_user_paths $dir $fish_user_paths
+            set fish_user_paths $dir $fish_user_paths
         end
     end
 
@@ -41,8 +40,8 @@ if status --is-login
     set -gx LESS_TERMCAP_ZO (tput ssupm)
     set -gx LESS_TERMCAP_ZW (tput rsupm)
 
-    if test -z "$DISPLAY" -a $XDG_VTNR -eq 1 -a -z "$SSH_CLIENT"
-        exec startx > /dev/null ^&1
+    if test -z "$DISPLAY" -a $XDG_VTNR -eq 1
+        set -q $SSH_CLIENT; or exec startx > /dev/null ^&1
     end
 end
 
