@@ -40,8 +40,9 @@ if status --is-login
     set -gx LESS_TERMCAP_ZO (tput ssupm)
     set -gx LESS_TERMCAP_ZW (tput rsupm)
 
+    # Run X if not already running and not in SSH
     if test -z "$DISPLAY"
-        set -q $SSH_CLIENT; or exec startx > /dev/null ^&1
+        set -q $SSH_CLIENT; and exec startx > /dev/null ^&1
     end
 end
 
