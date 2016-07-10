@@ -41,10 +41,8 @@ if status --is-login
     set -gx LESS_TERMCAP_ZO (tput ssupm)
     set -gx LESS_TERMCAP_ZW (tput rsupm)
 
-    if test -z "$DISPLAY" -a $XDG_VTNR -eq 1
-        if test -z "$SSH_CONNECTION"
-            exec startx > /dev/null ^&1
-        end
+    if test -z "$DISPLAY" -a $XDG_VTNR -eq 1 -a -z "$SSH_CLIENT"
+        exec startx > /dev/null ^&1
     end
 end
 
