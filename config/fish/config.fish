@@ -1,6 +1,5 @@
 set -g user_dirs $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/.gem/ruby/2.1.0/bin $HOME/.gem/ruby/2.0.0/bin /usr/lib/ccache/bin $HOME/.local/bin
 
-
 ## Login session initialisation
 if status --is-login
     ## /etc/profile compatibility
@@ -8,7 +7,7 @@ if status --is-login
 
     ## PATH
     for dir in $user_dirs
-        if test -f $dir
+        if test -d $dir
             set -gx fish_user_paths $dir $fish_user_paths
         end
     end
