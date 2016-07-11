@@ -10,12 +10,12 @@ set fish_color_command default
 
 ## Aliases
 if test -f $HOME/.config/fish/aliases.fish
-    . $HOME/.config/fish/aliases.fish
+    source $HOME/.config/fish/aliases.fish
 end
 
 ## Local, untracked config
 if test -f $HOME/.config/fish/local.fish
-    . $HOME/.config/fish/local.fish
+    source $HOME/.config/fish/local.fish
 end
 
 ## Login session initialisation
