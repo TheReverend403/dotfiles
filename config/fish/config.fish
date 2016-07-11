@@ -1,3 +1,13 @@
+## Fish UI
+set fish_greeting ''
+set fish_color_param default
+set fish_color_command default
+
+## Aliases
+if test -f $HOME/.config/fish/aliases.fish
+    . $HOME/.config/fish/aliases.fish
+end
+
 ## Login session initialisation
 if status --is-login
     ## /etc/profile compatibility
@@ -45,14 +55,3 @@ if status --is-login
         set -q $SSH_CLIENT; and exec startx > /dev/null ^&1
     end
 end
-
-set fish_greeting ''
-set fish_color_param default
-set fish_color_command default
-
-## Aliases
-if test -f $HOME/.config/fish/aliases.fish
-    . $HOME/.config/fish/aliases.fish
-end
-
-
