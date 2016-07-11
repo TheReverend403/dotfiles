@@ -1,3 +1,8 @@
+## Print a message with a nice little fish icon
+function fish_msg
+    printf "[%s*%s] %s\n" (set_color green) (set_color normal) $argv
+end
+
 ## Fish UI
 set fish_greeting ''
 set fish_color_param default
@@ -52,6 +57,6 @@ if status --is-login
 
     # Run X if not already running and not in SSH
     if test -z "$DISPLAY"
-        set -q $SSH_CLIENT; and exec startx > /dev/null ^&1
+        set -q $SSH_CLIENT; and fish_msg 'Starting X...'; and exec startx > /dev/null ^&1
     end
 end
