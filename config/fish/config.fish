@@ -13,6 +13,11 @@ if test -f $HOME/.config/fish/aliases.fish
     . $HOME/.config/fish/aliases.fish
 end
 
+## Local, untracked config
+if test -f $HOME/.config/fish/local.fish
+    . $HOME/.config/fish/local.fish
+end
+
 ## Login session initialisation
 if status --is-login
     ## /etc/profile compatibility
