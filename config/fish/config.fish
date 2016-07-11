@@ -57,7 +57,7 @@ if status --is-login
 
     # Run X if not already running and not in SSH
     if test -z "$DISPLAY"
-        if not set -q $SSH_CLIENT
+        if set -q $SSH_CLIENT
             fish_msg 'Starting X...'
             exec startx > /dev/null ^&1
         end
