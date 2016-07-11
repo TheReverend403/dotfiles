@@ -284,6 +284,8 @@ endif
 
     autocmd FileType gitcommit set tw=72
 
+    autocmd BufRead,BufNewFile *.fish setfiletype fish
+
     " Disable auto-inserting of comments
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
