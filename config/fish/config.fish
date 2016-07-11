@@ -1,6 +1,8 @@
 ## Print a pretty-formatted message
 function fish_msg
-    printf "[%s*%s] %s\n" (set_color green) (set_color normal) $argv
+    if count $argv > /dev/null
+        printf "[%s*%s] %s\n" (set_color green) (set_color normal) $argv
+    end
 end
 
 ## Fish UI
