@@ -7,7 +7,7 @@ if status --is-login
     set -gx WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 
     ## Default programs
-    set -gx BROWSER '/usr/bin/firejail firefox'
+    set -gx BROWSER firefox
 
     ## Rust racer
     set -gx RUST_SRC_PATH /usr/src/rust/src
