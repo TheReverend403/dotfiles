@@ -1,4 +1,4 @@
-## Print a message with a nice little fish icon
+## Print a pretty-formatted message
 function fish_msg
     printf "[%s*%s] %s\n" (set_color green) (set_color normal) $argv
 end
