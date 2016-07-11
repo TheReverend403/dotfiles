@@ -1,4 +1,5 @@
-if test -x (which wine)
+set -l winecmd (which wine)
+if test -n $winecmd
     function wine -d 'WINE with OpenGL optimisation environment variables.'
         set -x __GL_THREADED_OPTIMIZATIONS 0
         set -x __GL_SYNC_TO_VBLANK 1
