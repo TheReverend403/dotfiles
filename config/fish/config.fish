@@ -1,6 +1,6 @@
 ## Print a pretty-formatted message
 function fish_msg
-    if count $argv > /dev/null
+    if count $argv >/dev/null
         printf "[%s*%s] %s\n" (set_color green) (set_color normal) $argv
     end
 end
@@ -70,7 +70,7 @@ if status --is-login
     if test -z "$DISPLAY"
         if set -q $SSH_CLIENT
             fish_msg 'Starting X...'
-            exec startx > /dev/null ^&1
+            exec startx >/dev/null ^&1
         end
     end
 end
