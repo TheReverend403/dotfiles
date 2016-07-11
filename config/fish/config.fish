@@ -11,12 +11,12 @@ set fish_color_param default
 set fish_color_command default
 
 ## Aliases
-if test -f $HOME/.config/fish/aliases.fish
+if test -s $HOME/.config/fish/aliases.fish
     source $HOME/.config/fish/aliases.fish
 end
 
 ## Local, untracked config
-if test -f $HOME/.config/fish/local.fish
+if test -s $HOME/.config/fish/local.fish
     source $HOME/.config/fish/local.fish
 end
 
@@ -33,6 +33,10 @@ if status --is-login
 
     ## Rust racer
     set -gx RUST_SRC_PATH /usr/src/rust/src
+
+    ## Python
+    set -gx PIP_DOWNLOAD_CACHE $HOME/.cache/pip
+    set -gx VIRTUAL_ENV_DISABLE_PROMPT true
 
     ## NodeJS
     set -gx NPM_PACKAGES $HOME/.npm-packages

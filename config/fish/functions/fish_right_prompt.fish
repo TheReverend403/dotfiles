@@ -1,13 +1,10 @@
-# Show python virtualenv if available
-set VIRTUAL_ENV_DISABLE_PROMPT true
-
-# fish git prompt
+# Git prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
 set __fish_git_prompt_showupstream 'yes'
 set __fish_git_prompt_color_branch yellow
 
-# Status Chars
+# Git status chars
 set __fish_git_prompt_char_dirtystate '~'
 set __fish_git_prompt_char_stagedstate '→'
 set __fish_git_prompt_char_stashstate '←'
