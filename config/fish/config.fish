@@ -67,8 +67,10 @@ if status --is-login
     set -gx LESS_TERMCAP_ZW (tput rsupm)
 
     # Run X if not already running, not root and not in SSH
-    if test -z "$DISPLAY" -a (id -u $USER) -ne 0; and set -q $SSH_CLIENT
-        fish_msg 'Starting X...'
-        exec startx >/dev/null ^&1
+    if test -z "$DISPLAY" -a (id -u $USER) -ne 0
+        if set -q $SSH_CLIENT
+            fish_msg 'Starting X...'
+            exec startx >/dev/null ^&1
+        end
     end
 end
