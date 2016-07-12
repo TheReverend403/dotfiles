@@ -35,7 +35,6 @@ if status --is-login
     set -gx RUST_SRC_PATH /usr/src/rust/src
 
     ## Python
-    set -gx PIP_DOWNLOAD_CACHE $HOME/.cache/pip
     set -gx VIRTUAL_ENV_DISABLE_PROMPT true
 
     ## NodeJS
