@@ -37,12 +37,15 @@ if status --is-login
     ## Python
     set -gx VIRTUAL_ENV_DISABLE_PROMPT true
 
+    ## PhpStorm
+    set -gx PHPSTORM_JDK $JAVA_HOME
+
     ## NodeJS
     set -gx NPM_PACKAGES $HOME/.npm-packages
     set -gx NODE_PATH $NPM_PACKAGES/lib/node_modules:$NODE_PATH
 
     ## PATH
-    set -l user_dirs $NPM_PACKAGES/bin $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/.gem/ruby/2.1.0/bin $HOME/.gem/ruby/2.0.0/bin /usr/lib/ccache/bin $HOME/.local/bin
+    set -l user_dirs $NPM_PACKAGES/bin $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin /usr/lib/ccache/bin $HOME/.local/bin
 
     for dir in $user_dirs
         if test -d $dir
