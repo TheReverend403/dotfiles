@@ -1,0 +1,10 @@
+[Unit]
+Description=mbsync service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -a
+TimeoutStartSec=5min
+StandardOutput=syslog
+StandardError=syslog
+

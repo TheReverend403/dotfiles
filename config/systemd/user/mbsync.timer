@@ -1,0 +1,10 @@
+[Unit]
+Description=mbsync timer
+
+[Timer]
+OnCalendar=*:*:5
+OnBootSec=300
+Unit=mbsync.service
+
+[Install]
+WantedBy=default.target

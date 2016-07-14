@@ -1,0 +1,9 @@
+[Unit]
+Description=MPD Scribbler
+After=mpd.service
+
+[Service]
+ExecStart=/home/rev/src/mpdas/mpdas
+
+[Install]
+WantedBy=default.target
