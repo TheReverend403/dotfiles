@@ -30,7 +30,6 @@ no-sub
 
 # Cache
 cache=20000
-cache-pause=no
 
 ##################
 # Aesthetics #
