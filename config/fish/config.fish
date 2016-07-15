@@ -32,7 +32,9 @@ if status --is-login
     set -gx BROWSER firefox
 
     ## Rust racer
-    set -gx RUST_SRC_PATH /usr/src/rust/src
+    if which racer >/dev/null ^&1
+        set -gx RUST_SRC_PATH $HOME/src/rust/src
+    end
 
     ## Python
     set -gx VIRTUAL_ENV_DISABLE_PROMPT true
@@ -55,21 +57,9 @@ if status --is-login
 
     ## Less
     set -gx LESS '-RSXMsi'
-    set -gx LESS_TERMCAP_mb (tput bold; tput setaf 2)
-    set -gx LESS_TERMCAP_md (tput bold; tput setaf 13)
-    set -gx LESS_TERMCAP_me (tput sgr0)
-    set -gx LESS_TERMCAP_se (tput rmso; tput sgr0)
-    set -gx LESS_TERMCAP_us (tput smul; tput bold; tput setaf 7)
-    set -gx LESS_TERMCAP_ue (tput rmul; tput sgr0)
-    set -gx LESS_TERMCAP_mr (tput rev)
-    set -gx LESS_TERMCAP_mh (tput dim)
-    set -gx LESS_TERMCAP_ZN (tput ssubm)
-    set -gx LESS_TERMCAP_ZV (tput rsubm)
-    set -gx LESS_TERMCAP_ZO (tput ssupm)
-    set -gx LESS_TERMCAP_ZW (tput rsupm)
 
     # Run X if not already running, not root and not in SSH
-    if test -z "$DISPLAY" -a (id -u $USER) -ne 0
+    if test -z "$DISPLAY" -a (id -u $USER) -ne 0 -a $XDG_VTNR -eq 1
         if set -q $SSH_CLIENT
             fish_msg 'Starting X...'
             exec startx >/dev/null ^&1
