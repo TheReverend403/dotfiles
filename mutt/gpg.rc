@@ -75,7 +75,6 @@ set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --l
 
 set pgp_good_sign="`gettext -d gnupg -s 'Good signature from "' | tr -d '"'`"
 
-set smime_is_default = no
 set pgp_sign_as = 5E0BC8F8
 set pgp_use_gpg_agent = yes
 set pgp_auto_decode = yes
@@ -83,4 +82,5 @@ set crypt_replysignencrypted = yes
 set crypt_replysign = yes
 set crypt_verify_sig = yes
 set pgp_timeout = 60
+unset smime_is_default
 unset pgp_long_ids

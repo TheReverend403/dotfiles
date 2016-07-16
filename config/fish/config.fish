@@ -50,7 +50,7 @@ if status --is-login
     set -gx NODE_PATH $NPM_PACKAGES/lib/node_modules:$NODE_PATH
 
     ## PATH
-    set -l user_dirs $NPM_PACKAGES/bin $HOME/.cargo/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin /usr/lib/ccache/bin $HOME/.local/bin
+    set -l user_dirs $NPM_PACKAGES/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin
 
     for dir in $user_dirs
         if test -d $dir
@@ -62,7 +62,7 @@ if status --is-login
     set -gx LESS '-RSXMsi'
 
     # Run X if not already running, not root and not in SSH
-    if test -z "$DISPLAY" -a (id -u $USER) -ne 0 -a $XDG_VTNR -eq 1
+    if test -z "$DISPLAY" -a (id -u $USER) -ne 0
         if set -q $SSH_CLIENT
             fish_msg 'Starting X...'
             exec startx >/dev/null ^&1
