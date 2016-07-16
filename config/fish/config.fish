@@ -36,6 +36,9 @@ if status --is-login
         set -gx RUST_SRC_PATH $HOME/src/rust/src
     end
 
+    # Disable GTK3 accessibility
+    set -gx NO_AT_BRIDGE 1
+
     ## Python
     set -gx VIRTUAL_ENV_DISABLE_PROMPT true
 
