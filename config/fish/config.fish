@@ -27,9 +27,6 @@ if status --is-login
     ## Default programs
     set -gx BROWSER firefox
 
-    ## Rust racer
-    which racer >/dev/null ^&1; and set -gx RUST_SRC_PATH $HOME/src/rust/src
-
     # Disable GTK3 accessibility
     set -gx NO_AT_BRIDGE 1
 
@@ -50,6 +47,9 @@ if status --is-login
     for dir in $user_dirs
         test -d $dir; and set fish_user_paths $dir $fish_user_paths
     end
+
+    ## Rust racer
+    which racer >/dev/null ^&1; and set -gx RUST_SRC_PATH $HOME/src/rust/src
 
     ## Less
     set -gx LESS '-RSXMsi'
