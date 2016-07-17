@@ -8,3 +8,4 @@ urlserver_list.txt
 relay.conf
 urls.log
 otr/
+venv/
