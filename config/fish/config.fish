@@ -11,14 +11,10 @@ set fish_color_param default
 set fish_color_command default
 
 ## Aliases
-if test -s $HOME/.config/fish/aliases.fish
-    source $HOME/.config/fish/aliases.fish
-end
+test -s $HOME/.config/fish/aliases.fish; and source $HOME/.config/fish/aliases.fish
 
 ## Local, untracked config
-if test -s $HOME/.config/fish/local.fish
-    source $HOME/.config/fish/local.fish
-end
+test -s $HOME/.config/fish/local.fish; and source $HOME/.config/fish/local.fish
 
 ## Login session initialisation
 if status --is-login
@@ -32,9 +28,7 @@ if status --is-login
     set -gx BROWSER firefox
 
     ## Rust racer
-    if which racer >/dev/null ^&1
-        set -gx RUST_SRC_PATH $HOME/src/rust/src
-    end
+    which racer >/dev/null ^&1; and set -gx RUST_SRC_PATH $HOME/src/rust/src
 
     # Disable GTK3 accessibility
     set -gx NO_AT_BRIDGE 1
@@ -52,10 +46,9 @@ if status --is-login
     ## PATH
     set -l user_dirs $NPM_PACKAGES/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin
 
+    ## Only add items to $PATH that actually exist. Prevents fish from complaining.
     for dir in $user_dirs
-        if test -d $dir
-            set fish_user_paths $dir $fish_user_paths
-        end
+        test -d $dir; and set fish_user_paths $dir $fish_user_paths
     end
 
     ## Less
