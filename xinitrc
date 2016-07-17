@@ -24,10 +24,6 @@ fi
 numlockx on
 xsetroot -cursor_name arrow
 
-if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-  gpg-connect-agent /bye >/dev/null 2>&1
-fi
-
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
