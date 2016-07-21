@@ -19,7 +19,7 @@ test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fi
 ## Login session initialisation
 if status --is-login
     ## /etc/profile compatibility
-    env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
+    env -i HOME="$HOME" dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
 
     ## Prevent Wine from adding menu entries and desktop links.
     set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
@@ -65,7 +65,7 @@ if status --is-login
     set -x GREP_OPTIONS '--color=auto'
 
     # Run X if not already running, not root and not in SSH
-    if test -z "$DISPLAY" -a (id -u $USER) -ne 0 -a -z "$SSH_CLIENT"
+    if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT"
         fish_msg 'Starting X...'
         exec startx >/dev/null ^"$HOME/.xinit.log"
     end
