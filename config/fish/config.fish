@@ -11,10 +11,10 @@ set fish_color_param default
 set fish_color_command default
 
 ## Aliases
-test -s $HOME/.config/fish/aliases.fish; and source $HOME/.config/fish/aliases.fish
+test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliases.fish"
 
 ## Local, untracked config
-test -s $HOME/.config/fish/local.fish; and source $HOME/.config/fish/local.fish
+test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
 
 ## Login session initialisation
 if status --is-login
@@ -22,37 +22,43 @@ if status --is-login
     env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
 
     ## Prevent Wine from adding menu entries and desktop links.
-    set -gx WINEDLLOVERRIDES 'winemenubuilder.exe=d'
+    set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 
     ## Default programs
-    set -gx BROWSER firefox
+    set -x BROWSER firefox
 
     # Disable GTK3 accessibility
-    set -gx NO_AT_BRIDGE 1
+    set -x NO_AT_BRIDGE 1
 
     ## Python
-    set -gx VIRTUAL_ENV_DISABLE_PROMPT true
+    set -x VIRTUAL_ENV_DISABLE_PROMPT true
 
-    ## PhpStorm
-    set -gx PHPSTORM_JDK $JAVA_HOME
+    ## Jetbrains
+    ## Use Oracle JDK rather than OpenJDK because shitty font rendering.
+    set -l ORACLE_JDK "/usr/lib/jvm/oracle-jdk-bin-1.8"
+    set -x PHPSTORM_JDK $ORACLE_JDK
+    set -x IDEA_JDK $ORACLE_JDK
+    set -x PYCHARM_JDK $ORACLE_JDK
 
     ## NodeJS
-    set -gx NPM_PACKAGES $HOME/.npm-packages
-    set -gx NODE_PATH $NPM_PACKAGES/lib/node_modules:$NODE_PATH
+    set -x NPM_PACKAGES "$HOME/.npm-packages"
+    set -x NODE_PATH "$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+
+    set -x GOPATH "$HOME/.go-lib"
 
     ## PATH
-    set -l user_dirs $NPM_PACKAGES/bin $HOME/.fzf/bin $HOME/.composer/vendor/bin $HOME/.cargo/bin $HOME/.local/bin
+    set -l user_dirs "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.fzf/bin" "$HOME/.composer/vendor/bin" "$HOME/.cargo/bin" "$HOME/.local/bin"
 
     ## Only add items to $PATH that actually exist. Prevents fish from complaining.
     for dir in $user_dirs
-        test -d $dir; and set fish_user_paths $dir $fish_user_paths
+        test -d "$dir"; and set fish_user_paths "$dir" $fish_user_paths
     end
 
     ## Rust racer
-    which racer >/dev/null ^&1; and set -gx RUST_SRC_PATH $HOME/src/rust/src
+    command -v racer >/dev/null; and set -gx RUST_SRC_PATH "$HOME/src/rust/src"
 
     ## Less
-    set -gx LESS '-RSXMsi'
+    set -x LESS '-RSXMsi'
 
     # Run X if not already running, not root and not in SSH
     if test -z "$DISPLAY" -a (id -u $USER) -ne 0 -a -z "$SSH_CLIENT"
