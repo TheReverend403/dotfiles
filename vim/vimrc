@@ -239,6 +239,9 @@ endif
     nnoremap <silent> <C-Left> :wincmd h<CR>
     nnoremap <silent> <C-Right> :wincmd l<CR>
 
+    " base64 decode visual selection
+    vnoremap <leader>64 c<c-r>=system('base64 --decode', @")<cr><esc>
+
     " Yank(copy) to system clipboard
     noremap <leader>y "+y
 
