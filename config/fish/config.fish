@@ -66,7 +66,9 @@ if status --is-login
 
     # Run X if not already running, not root and not in SSH
     if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT"
-        fish_msg 'Starting X...'
-        exec startx >/dev/null ^"$HOME/.xinit.log"
+        if command -v startx >/dev/null
+            fish_msg 'Starting X...'
+            exec startx >/dev/null ^"$HOME/.xinit.log"
+        end
     end
 end
