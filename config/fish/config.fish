@@ -60,6 +60,9 @@ if status --is-login
     ## Less
     set -x LESS '-RSXMgwsI~'
 
+    ## Grep
+    set -x GREP_OPTIONS '--color=auto'
+
     # Run X if not already running, not root and not in SSH
     if test -z "$DISPLAY" -a (id -u $USER) -ne 0 -a -z "$SSH_CLIENT"
         fish_msg 'Starting X...'
