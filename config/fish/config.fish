@@ -58,7 +58,7 @@ if status --is-login
     command -v racer >/dev/null; and set -gx RUST_SRC_PATH "$HOME/src/rust/src"
 
     ## Less
-    set -x LESS '-RSXMsi'
+    set -x LESS '-RSXMgwsI~'
 
     # Run X if not already running, not root and not in SSH
     if test -z "$DISPLAY" -a (id -u $USER) -ne 0 -a -z "$SSH_CLIENT"
