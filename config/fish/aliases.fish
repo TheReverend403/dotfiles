@@ -1,4 +1,5 @@
 alias rsync 'rsync --progress'
+alias grep 'grep --color=auto'
 alias more 'less'
 alias df 'df -h'
 alias du 'du -c -h'

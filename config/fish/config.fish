@@ -61,9 +61,6 @@ if status --is-login
     set -x LESS '-RSXMgwsI~'
     set -x LESSHISTFILE /dev/null
 
-    ## Grep
-    set -x GREP_OPTIONS '--color=auto'
-
     # Run X if not already running, not root and not in SSH
     if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT"
         if command -v startx >/dev/null
