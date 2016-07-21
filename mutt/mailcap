@@ -1,4 +1,4 @@
-text/html; firejail firefox %s
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
 text/*; less
 image/*; feh %s
 video/*; mpv %s
