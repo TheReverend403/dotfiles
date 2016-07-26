@@ -216,6 +216,12 @@ endif
     set nomodeline    " Disable modeline for security reasons
     set backspace=indent,eol,start
     set sidescroll=1
+    set wildignore+=*.bak,*.swp,*.swo
+    set wildignore+=*.a,*.o,*.so,*.pyc,*.class
+    set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.pdf
+    set wildignore+=*/.git*,*.tar,*.zip
+    set wildmenu
+    set wildmode=longest:full,list:full
  " }}}
 
 " {{{ Folding
