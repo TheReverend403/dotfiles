@@ -47,7 +47,7 @@ if status --is-login
     set -x GOPATH "$HOME/.go-lib"
 
     ## PATH
-    set -l user_dirs "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.fzf/bin" "$HOME/.composer/vendor/bin" "$HOME/.cargo/bin" "$HOME/.local/bin"
+    set -l user_dirs "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.composer/vendor/bin" "$HOME/.cargo/bin" "$HOME/.local/bin"
 
     ## Only add items to $PATH that actually exist. Prevents fish from complaining.
     for dir in $user_dirs

@@ -31,6 +31,19 @@ endif
 
     Plug 'dag/vim-fish'
 
+    Plug 'bling/vim-bufferline'
+
+    Plug 'ctrlpvim/ctrlp.vim' " {{{
+        let g:ctrlp_map = '<c-p>'
+        let g:ctrlp_working_path_mode = 'ra'
+        let g:ctrlp_root_markers = ['Makefile']
+        let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+        let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll)$',
+            \ }
+    " }}}
+
     Plug 'rust-lang/rust.vim' " {{{
         " let g:rustfmt_autosave = 1
     " }}}
@@ -134,16 +147,6 @@ endif
             endfunction
     " }}}
 
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install --all' } " {{{
-        let g:fzf_layout = {
-        \   'down': '~30%',
-        \ }
-        let g:fzf_action = {
-        \   'ctrl-s': 'split',
-        \   'ctrl-v': 'vsplit'
-        \ }
-    " }}}
-
     Plug 'tpope/vim-commentary'
 
     Plug 'haya14busa/incsearch.vim' " {{{
@@ -239,6 +242,12 @@ endif
     nnoremap <silent> <C-Left> :wincmd h<CR>
     nnoremap <silent> <C-Right> :wincmd l<CR>
 
+    " Buffer navigation
+    nnoremap gn :bnext<CR>
+    nnoremap gN :bprevious<CR>
+    nnoremap gd :bdelete<CR>
+    nnoremap gf <C-^>
+
     " base64 decode visual selection
     vnoremap <leader>64 c<c-r>=system('base64 --decode', @")<cr><esc>
 
@@ -253,7 +262,10 @@ endif
     vnoremap y myy`y
     vnoremap Y myY`y
 
-    nnoremap <C-p> :FZF<CR>
+    " We don't need any help!
+    inoremap <F1> <nop>
+    nnoremap <F1> <nop>
+    vnoremap <F1> <nop>
 " }}}
 
 " {{{ Spaces, Tabs and Indenting
