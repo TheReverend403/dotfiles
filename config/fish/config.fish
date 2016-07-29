@@ -20,17 +20,14 @@ test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fi
 if status --is-interactive
     # Allows use of delkey without patching st
     # Seems to work fine over SSH even though SSH shell will be a login shell and thus this never gets ran remotely.
-    # https://github.com/fish-shell/fish-shell/issues/2139#issuecomment-136694102
-    switch $TERM
-        case 'st-*'
-            tput smkx
-            function st_smkx --on-event fish_postexec
-                tput smkx
-            end
+    # https://github.com/fish-shell/fish-shell/issues/2139#issuecomment-137228149
+    tput smkx ^/dev/null
+    function fish_enable_keypad_transmit --on-event fish_postexec
+        tput smkx ^/dev/null
+    end
 
-            function st_rmkx --on-event fish_preexec
-                tput rmkx
-            end
+    function fish_disable_keypad_transmit --on-event fish_preexec
+        tput rmkx ^/dev/null
     end
 end
 
