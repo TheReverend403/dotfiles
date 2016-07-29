@@ -19,6 +19,7 @@ test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fi
 # Interactive shells only.
 if status --is-interactive
     # Allows use of delkey without patching st
+    # Seems to work fine over SSH even though SSH shell will be a login shell and thus this never gets ran remotely.
     # https://github.com/fish-shell/fish-shell/issues/2139#issuecomment-136694102
     switch $TERM
         case 'st-*'
