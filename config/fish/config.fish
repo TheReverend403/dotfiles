@@ -16,19 +16,15 @@ test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliase
 ## Local, untracked config
 test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
 
-# Interactive shells only.
-if status --is-interactive
-    # Allows use of delkey without patching st
-    # Seems to work fine over SSH even though SSH shell will be a login shell and thus this never gets ran remotely.
-    # https://github.com/fish-shell/fish-shell/issues/2139#issuecomment-137228149
+# Allows use of delkey without patching st
+# https://github.com/fish-shell/fish-shell/issues/2139#issuecomment-137228149
+tput smkx ^/dev/null
+function fish_enable_keypad_transmit --on-event fish_postexec
     tput smkx ^/dev/null
-    function fish_enable_keypad_transmit --on-event fish_postexec
-        tput smkx ^/dev/null
-    end
+end
 
-    function fish_disable_keypad_transmit --on-event fish_preexec
-        tput rmkx ^/dev/null
-    end
+function fish_disable_keypad_transmit --on-event fish_preexec
+    tput rmkx ^/dev/null
 end
 
 ## Login session initialisation
