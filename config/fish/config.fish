@@ -16,6 +16,23 @@ test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliase
 ## Local, untracked config
 test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
 
+# Interactive shells only.
+if status --is-interactive
+    # Allows use of delkey without patching st
+    # https://github.com/fish-shell/fish-shell/issues/2139#issuecomment-136694102
+    switch $TERM
+        case 'st-*'
+            tput smkx
+            function st_smkx --on-event fish_postexec
+                tput smkx
+            end
+
+            function st_rmkx --on-event fish_preexec
+                tput rmkx
+            end
+    end
+end
+
 ## Login session initialisation
 if status --is-login
     ## /etc/profile compatibility
