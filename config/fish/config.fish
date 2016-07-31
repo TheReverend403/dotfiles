@@ -76,7 +76,7 @@ if status --is-login
     if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT"
         if command -v startx >/dev/null
             fish_msg 'Starting X...'
-            exec startx >/dev/null ^"$HOME/.xinit.log"
+            exec startx >/dev/null ^&1
         end
     end
 end

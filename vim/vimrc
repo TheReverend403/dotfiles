@@ -9,6 +9,7 @@ if empty(glob('~/' . s:configdir . '/autoload/plug.vim'))
     silent call system('curl -fLo ~/' . s:configdir . '/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
     execute 'source  ~/' . s:configdir . '/autoload/plug.vim'
     autocmd VimEnter * PlugInstall
+    source $MYVIMRC
 endif
 " }}}
 
@@ -36,7 +37,7 @@ endif
     Plug 'ctrlpvim/ctrlp.vim' " {{{
         let g:ctrlp_map = '<c-p>'
         let g:ctrlp_working_path_mode = 'ra'
-        let g:ctrlp_root_markers = ['Makefile']
+        let g:ctrlp_root_markers = ['Makefile', '.git', 'README.md', 'README', 'LICENSE.md', 'LICENSE', 'requirements.txt', 'composer.json']
         let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
         let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -234,8 +235,7 @@ endif
 " }}}
 
 " {{{ Keybinds
-    nnoremap <Space> <nop>
-    let mapleader = "\<Space>"
+    let mapleader = ","
 
     set pastetoggle=<F3>
 
