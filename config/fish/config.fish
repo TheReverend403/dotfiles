@@ -5,6 +5,10 @@ function fish_msg
     end
 end
 
+function available --description 'Returns 0 if a given command is present and executable, 1 otherwise.'
+    command -v $argv >/dev/null ^&1
+end
+
 ## Fish UI
 set fish_greeting ''
 set fish_color_param default
@@ -55,6 +59,7 @@ if status --is-login
     set -x NPM_PACKAGES "$HOME/.npm-packages"
     set -x NODE_PATH "$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
+    # Go
     set -x GOPATH "$HOME/.go-lib"
 
     ## PATH
@@ -66,7 +71,7 @@ if status --is-login
     end
 
     ## Rust racer
-    command -v racer >/dev/null; and set -gx RUST_SRC_PATH "$HOME/src/rust/src"
+    available racer; and set -gx RUST_SRC_PATH "$HOME/src/rust/src"
 
     ## Less
     set -x LESS '-RSXMgwsI~'
@@ -74,7 +79,7 @@ if status --is-login
 
     # Run X if not already running, not root and not in SSH
     if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT"
-        if command -v startx >/dev/null
+        if available startx
             fish_msg 'Starting X...'
             exec startx >/dev/null ^&1
         end
