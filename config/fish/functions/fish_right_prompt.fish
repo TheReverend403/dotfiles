@@ -15,6 +15,6 @@ function fish_right_prompt
     printf '%s' (__fish_git_prompt)
 
     if set -q VIRTUAL_ENV
-        printf ' (venv:%s%s%s)' (set_color $fish_color_cwd) "$VIRTUAL_ENV" (set_color normal)
+        printf ' (venv:%s%s%s)' (set_color $fish_color_cwd) (basename "$VIRTUAL_ENV") (set_color normal)
     end
 end
