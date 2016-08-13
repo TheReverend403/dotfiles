@@ -29,12 +29,12 @@ rofi.padding:                        5
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                false
-rofi.terminal:                       termite
+rofi.terminal:                       xterm
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
 rofi.run-command:                    {cmd}
 rofi.run-list-command:               
-rofi.run-shell-command:              {terminal} -e "{cmd}"
+rofi.run-shell-command:              {terminal} "{cmd}"
 rofi.disable-history:                false
 rofi.levenshtein-sort:               true
 rofi.case-sensitive:                 false
