@@ -46,8 +46,11 @@ Xft.rgba: rgb
 
 xterm*termName: xterm-256color
 xterm*faceName: Terminus:size=9:antialias=false
-xterm*utf8: 1
 xterm*fullscreen: never
+xterm*saveLines: 4096
+xterm*locale: true
+xterm*colorBDMode: true
+xterm*colorBD: #ffffff
 
 rofi.modi:                           window,run,ssh
 rofi.opacity:                        90
