@@ -58,7 +58,7 @@ rofi.font:                           Terminus 9
 rofi.fg:                             #BBBBBB
 rofi.bg:                             #141414
 rofi.color-enabled:                  false
-rofi.color-normal:                   #141414,#`002b36,#eee8d5,#586e75,#eee8d5
+rofi.color-normal:                   #141414,#002b36,#eee8d5,#586e75,#eee8d5
 rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#dc322f,#fdf6e3
 rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
 rofi.color-window:                   #fdf6e3,#002b36
