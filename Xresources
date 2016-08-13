@@ -1,0 +1,52 @@
+Xcursor*.theme: Adwaita
+
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! special
+*.foreground:   #bbbbbb
+*.background:   #0b0b0b
+*.cursorColor:  #bbbbbb
+
+! black
+*.color0:       #1b1918
+*.color8:       #4f4f4f
+
+! red
+*.color1:       #f22c40
+*.color9:       #f85262
+
+! green
+*.color2:       #5ab738
+*.color10:      #7bd15b
+
+! yellow
+*.color3:       #d5911a
+*.color11:      #e9ad44
+
+! blue
+*.color4:       #3971ed
+*.color12:      #5e8af1
+
+! magenta
+*.color5:       #e85b92
+*.color13:      #f181ac
+
+! cyan
+*.color6:       #00ad9c
+*.color14:      #26b3a4
+
+! white
+*.color7:       #cccccc
+*.color15:      #848282
+
+xterm*termName: xterm-256color
+xterm*faceName: Terminus:size=9:antialias=false
+xterm*utf8: 1
+xterm*fullscreen: never
+
+#include ".Xresources.d/rofi"

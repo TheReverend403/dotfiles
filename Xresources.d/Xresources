@@ -1,0 +1,20 @@
+URxvt.scrollBar:                      false
+URxvt.cursorBlink:                    false
+URxvt*secondaryWheel:                 true
+URxvt.font:                           xft:Terminus:size=9:antialias=false
+URxvt.urgentOnBell: true
+
+Xcursor*.theme: Vanilla-DMZ
+
+URxvt.perl-ext-common: default,matcher
+
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+
+URxvt.depth: 32
+
+Xft.dpi: 96
+
+#include ".Xresources.d/colors"
