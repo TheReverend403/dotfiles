@@ -15,7 +15,6 @@ mailboxes \
 "+revthefox/alerts.postfix-stats" \
 "+revthefox/alerts.rtorrent" \
 "+revthefox/lists ----------------------" \
-"+revthefox/lists.cronweekly" \
 "+revthefox/lists.linux-announce" \
 "+revthefox/lists.gentoo-announce" \
 "+revthefox/lists.debian-announce" \

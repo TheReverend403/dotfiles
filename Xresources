@@ -49,8 +49,10 @@ xterm*faceName: Terminus:size=9:antialias=false
 xterm*fullscreen: never
 xterm*saveLines: 4096
 xterm*locale: true
+xterm*boldMode: false
 xterm*colorBDMode: true
 xterm*colorBD: #ffffff
+xterm*metaSendsEscape: true
 
 rofi.modi:                           window,run,ssh
 rofi.opacity:                        90
