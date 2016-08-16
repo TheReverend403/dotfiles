@@ -49,7 +49,7 @@ if status --is-login
     set -x NODE_PATH "$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
     # Go
-    set -x GOPATH "$HOME/.go-lib"
+    set -x GOPATH "$HOME/.go"
 
     ## PATH
     set -l user_dirs "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.composer/vendor/bin" "$HOME/.cargo/bin" "$HOME/.local/bin"
