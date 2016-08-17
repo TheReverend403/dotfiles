@@ -3,7 +3,7 @@ Description=MPD Scribbler
 After=mpd.service
 
 [Service]
-ExecStart=/home/rev/src/mpdas/mpdas
+ExecStart=/usr/bin/mpdas
 
 [Install]
 WantedBy=default.target
