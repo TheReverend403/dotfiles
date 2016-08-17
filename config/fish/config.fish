@@ -66,8 +66,8 @@ if status --is-login
     set -x LESS '-RSXMgwsI~'
     set -x LESSHISTFILE /dev/null
 
-    # Run X if not already running, not root and not in SSH
-    if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT"
+    # Run X if not already running, not root, not in SSH and not in tmux
+    if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT" -a -z "$TMUX"
         if available startx
             fish_msg 'Starting X...'
             exec startx >/dev/null ^&1
