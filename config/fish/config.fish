@@ -29,7 +29,13 @@ if status --is-login
     set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 
     ## Default programs
-    set -x BROWSER firefox
+    if available firefox
+        set -x BROWSER firefox
+    else if available lynx
+        set -x BROWSER lynx
+    else if available w3m
+        set -x BROWSER w3m
+    end
 
     # Disable GTK3 accessibility
     set -x NO_AT_BRIDGE 1
