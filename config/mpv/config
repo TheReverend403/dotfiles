@@ -3,8 +3,7 @@ vo=opengl
 hwdec=auto
 framedrop=vo
 deinterlace=yes
-stop-screensaver=yes
-audio-display=no
+video-sync=display-resample
 
 ## Audio ##
 ao=alsa
@@ -13,6 +12,8 @@ af=drc
 
 ## UI
 term-osd-bar-chars=[=>.]
+audio-display=no
+stop-screensaver=yes
 
 ## Other ##
 geometry=50%:50%
@@ -20,6 +21,7 @@ autofit-larger=50%x80%
 no-border
 no-resume-playback
 no-ordered-chapters
+
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
 
 # Do not terminate when playing or seeking beyond the end of the file
@@ -31,30 +33,49 @@ no-sub
 # Cache
 cache=20000
 
-##################
-# Aesthetics #
-##################
 
 # Window title
 title="${filename}"
 
-osd-playing-msg='${filename}'
-osd-duration=2000
-osd-font="Arimo"
-osd-font-size=35
+[extension.webm]
+loop-file=yes
+
+[web]
+loop-file=yes
+
+# I don't want to wait ages for the window to finally show up before I can move my focus around again
+[protocol.http]
+force-window=immediate
+
+[protocol.https]
+profile=protocol.http
+
+[protocol.ytdl]
+profile=protocol.http
+
+## Aesthetics
+
+# OSD rice (for file info)
+osd-font-size=20
 osd-color="#ffffffff"
-osd-border-color="#ff262626"
+osd-border-color="#ff151515"
 osd-border-size=2
 osd-shadow-offset=1
-osd-shadow-color="#33000000"
-osd-scale-by-window=yes
-sub-gauss=.75
-sub-gray=yes
-sub-auto=fuzzy
-no-embeddedfonts
+osd-shadow-color="#11000000"
+osd-fractions
+
+# Sub rice (eg. for srt)
+sub-text-font="Source Sans Pro Semibold"
+sub-text-font-size=75
+sub-text-margin-y=50
+sub-text-color="#FFFFFFFF"
+sub-text-border-color="#FF151515"
+sub-text-border-size=3.2
+sub-text-shadow-offset=1
+sub-text-shadow-color="#33000000"
+
+# Languages
 alang=jpn,jp,eng,en,
 slang=jpn,jp,eng,en,
 
-[extension.webm]
-loop-file=yes
 # vim: syntax=config
