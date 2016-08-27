@@ -44,18 +44,22 @@ Xft.rgba: rgb
 *.color7:       #cccccc
 *.color15:      #848282
 
-xterm*loginshell: true
-xterm*scrollTtyOutput: false
-xterm*font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso10646-1
-xterm*termName: xterm-256color
-xterm*fullscreen: never
-xterm*saveLines: 4096
-xterm*locale: true
-xterm*bellIsUrgent: true
-xterm*metaSendsEscape: true
-xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-xterm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
-*VT100*translations: #override Alt <Btn1Up>: exec-formatted("firejail chromium '%t'", PRIMARY)
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+URxvt*secondaryScreen: 1
+URxvt*secondaryScroll: 0
+URxvt*font: xft:Terminus:size=9,xft:Symbol Neu,xft:DejaVuSans Mono,xft:IPAGothic,xft:Symbola,xft:WenQuanYi Micro Hei Mono,xft:WenQuanYi Zen Hei Mono
+URxvt*skipBuiltinGlyphs: true
+URxvt*saveLines: 8192
+URxvt*urgentOnBell: true
+URxvt*iso14755: false
+URxvt*iso14755_52: false
+URxvt*scrollBar: false
+URxvt*loginShell: true
 
 rofi.modi:                           window,run,ssh
 rofi.opacity:                        90
