@@ -52,7 +52,7 @@ URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 URxvt*secondaryScreen: 1
 URxvt*secondaryScroll: 0
-URxvt*font: xft:Terminus:size=9,xft:Symbola,xft:Noto Emoji,xft:DejaVuSans Mono,xft:IPAGothic,xft:WenQuanYi Micro Hei Mono,xft:WenQuanYi Zen Hei Mono
+URxvt*font: xft:Terminus:size=9:antialias=false,xft:Symbola,xft:Noto Emoji,xft:DejaVuSans Mono,xft:IPAGothic,xft:WenQuanYi Micro Hei Mono,xft:WenQuanYi Zen Hei Mono
 URxvt*skipBuiltinGlyphs: true
 URxvt*saveLines: 8192
 URxvt*urgentOnBell: true
