@@ -99,7 +99,7 @@ rofi.padding:                        5
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                false
-rofi.terminal:                       xterm
+rofi.terminal:                       urxvt
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
 rofi.run-command:                    {cmd}
