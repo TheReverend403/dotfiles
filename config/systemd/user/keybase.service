@@ -1,0 +1,10 @@
+[Unit]
+Description=Keybase Client Daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/keybase service
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
