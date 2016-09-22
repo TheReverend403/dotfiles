@@ -32,6 +32,24 @@ endif
 
     Plug 'dag/vim-fish'
 
+    Plug 'Shougo/neocomplete.vim' " {{{
+        let g:acp_enableAtStartup = 0
+        let g:neocomplete#enable_smart_case = 1
+        let g:neocomplete#enable_at_startup = 1
+        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+        if !exists('g:neocomplete#sources#omni#input_patterns')
+            let g:neocomplete#sources#omni#input_patterns = {}
+            let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+            let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+            let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+        endif
+    " }}}
+
     Plug 'bling/vim-bufferline'
 
     Plug 'ctrlpvim/ctrlp.vim' " {{{
@@ -53,9 +71,6 @@ endif
         let g:sprunge_cmd = 'curl -s -F "f:1=<-" http://ix.io'
     " }}}
 
-    Plug 'ajh17/VimCompletesMe' " {{{
-        autocmd FileType text,markdown,gitcommit let b:vcm_tab_complete = 'dict'
-    " }}}
 
     Plug 'itchyny/lightline.vim' " {{{
         let g:lightline = {
