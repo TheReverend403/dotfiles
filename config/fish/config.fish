@@ -29,7 +29,9 @@ if status --is-login
     set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 
     ## Default programs
-    if available chromium
+    if available firefox
+        set -x BROWSER firefox
+    else if available chromium
         set -x BROWSER chromium
     else if available lynx
         set -x BROWSER lynx

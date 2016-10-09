@@ -24,35 +24,6 @@ no-ordered-chapters
 
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
 
-# Do not terminate when playing or seeking beyond the end of the file
-keep-open
-
-# Disable subs on load
-no-sub
-
-# Cache
-cache=20000
-
-
-# Window title
-title="${filename}"
-
-[extension.webm]
-loop-file=yes
-
-[web]
-loop-file=yes
-
-# I don't want to wait ages for the window to finally show up before I can move my focus around again
-[protocol.http]
-force-window=immediate
-
-[protocol.https]
-profile=protocol.http
-
-[protocol.ytdl]
-profile=protocol.http
-
 ## Aesthetics
 
 # OSD rice (for file info)
@@ -77,5 +48,33 @@ sub-text-shadow-color="#33000000"
 # Languages
 alang=jpn,jp,eng,en,
 slang=jpn,jp,eng,en,
+
+# Do not terminate when playing or seeking beyond the end of the file
+keep-open
+
+# Disable subs on load
+no-sub
+
+# Cache
+cache=20000
+
+# Window title
+title="${filename}"
+
+[extension.webm]
+loop-file=yes
+
+[web]
+loop-file=yes
+
+# I don't want to wait ages for the window to finally show up before I can move my focus around again
+[protocol.http]
+force-window=immediate
+
+[protocol.https]
+profile=protocol.http
+
+[protocol.ytdl]
+profile=protocol.http
 
 # vim: syntax=config
