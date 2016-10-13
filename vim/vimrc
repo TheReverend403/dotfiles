@@ -22,7 +22,7 @@ endif
 
     Plug 'KKPMW/moonshine-vim'
 
-    Plug 'Matt-Deacalion/vim-systemd-syntax'
+    Plug 'nfnty/vim-systemd-syntax'
 
     Plug 'tpope/vim-fugitive'
 
