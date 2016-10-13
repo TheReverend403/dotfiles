@@ -20,7 +20,7 @@ endif
 
     Plug 'tpope/vim-unimpaired'
 
-    Plug 'nanotech/jellybeans.vim'
+    Plug 'KKPMW/moonshine-vim'
 
     Plug 'tpope/vim-fugitive'
 
@@ -208,9 +208,9 @@ endif
     set fileencoding=utf-8
     scriptencoding utf-8
 
-    if filereadable($HOME . '/' . s:configdir . '/bundle/jellybeans.vim/colors/jellybeans.vim')
+    if filereadable($HOME . '/' . s:configdir . '/bundle/moonshine-vim/colors/moonshine.vim')
         set background=dark
-        colorscheme jellybeans
+        colorscheme moonshine
     endif
 
     set number        " Enable line numbers

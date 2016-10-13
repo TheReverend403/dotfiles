@@ -12,9 +12,9 @@ fi
 
 xrandr --output DVI-0 --mode 1366x768 --pos 1920x312 --output HDMI-0 --mode 1920x1080 --pos 0x0
 
-if [ -x ~/.fehbg ]; then
-    ~/.fehbg
-fi
+#if [ -x ~/.fehbg ]; then
+#    ~/.fehbg
+#fi
 
 if [ -f ~/.Xresources ]; then
     xrdb -merge -I $HOME ~/.Xresources

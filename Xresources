@@ -53,11 +53,11 @@ URxvt*scrollTtyKeypress: true
 URxvt*secondaryScreen: 1
 URxvt*secondaryScroll: 0
 
-URxvt*font: xft:Terminus:pixelsize=12:antialias=false, \
-            xft:WenQuanYi Bitmap Song:pixelsize=12:antialias=false, \
-            xft:Noto Mono:pixelsize=12
+URxvt*font: xft:Terminus:size=10:antialias=false, \
+            xft:WenQuanYi Bitmap Song:size=10:antialias=false, \
+            xft:Noto Mono:size=10:antialias=true
+URxvt.boldFont: xft:Terminus:size=10:weight=bold:antialias=false
 
-URxvt*boldFont: xft:Terminus:style=bold:pixelsize=12:antialias=false
 URxvt*skipBuiltinGlyphs: true
 URxvt*saveLines: 8192
 URxvt*urgentOnBell: true
@@ -71,7 +71,7 @@ rofi.opacity:                        90
 rofi.width:                          30
 rofi.lines:                          10
 rofi.columns:                        1
-rofi.font:                           Terminus 9
+rofi.font:                           Terminus 10
 rofi.fg:                             #BBBBBB
 rofi.bg:                             #141414
 rofi.color-enabled:                  false
