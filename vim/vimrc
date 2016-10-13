@@ -22,6 +22,8 @@ endif
 
     Plug 'KKPMW/moonshine-vim'
 
+    Plug 'Matt-Deacalion/vim-systemd-syntax'
+
     Plug 'tpope/vim-fugitive'
 
     Plug 'airblade/vim-gitgutter'
@@ -61,10 +63,6 @@ endif
             \ 'dir':  '\v[\/]\.(git|hg|svn)$',
             \ 'file': '\v\.(exe|so|dll)$',
             \ }
-    " }}}
-
-    Plug 'rust-lang/rust.vim' " {{{
-        " let g:rustfmt_autosave = 1
     " }}}
 
     Plug 'chilicuil/vim-sprunge' " {{{
@@ -180,26 +178,6 @@ endif
         let g:incsearch#magic = '\v'
     " }}}
 
-    " {{{ Language-specific
-        " {{ PHP
-            Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
-
-            Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' } " {{{
-                let g:php_cs_fixer_level = "psr2"
-                let g:php_cs_fixer_config = "default"
-                let g:php_cs_fixer_php_path = "php"
-                let g:php_cs_fixer_verbose = 0
-            " }}}
-
-            Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-        " }}
-
-        " {{ Rust
-            Plug 'racer-rust/vim-racer', { 'for': 'rust'} " {{{
-                let g:racer_cmd = "racer"
-            " }}}
-        " }}
-    " }}}
     call plug#end()
 " }}}
 
