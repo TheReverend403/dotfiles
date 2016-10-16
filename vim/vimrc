@@ -22,6 +22,8 @@ endif
 
     Plug 'morhetz/gruvbox'
 
+    Plug 'shinchu/lightline-gruvbox.vim'
+
     Plug 'nfnty/vim-systemd-syntax'
 
     Plug 'tpope/vim-fugitive'
@@ -76,7 +78,7 @@ endif
             \   'statusline': 1,
             \   'tabline': 0
             \ },
-            \ 'colorscheme': 'jellybeans',
+            \ 'colorscheme': 'gruvbox',
             \ 'mode_map': {
             \   'n'      : ' N ',
             \   'i'      : ' I ',
