@@ -20,7 +20,7 @@ endif
 
     Plug 'tpope/vim-unimpaired'
 
-    Plug 'KKPMW/moonshine-vim'
+    Plug 'morhetz/gruvbox'
 
     Plug 'nfnty/vim-systemd-syntax'
 
@@ -186,9 +186,10 @@ endif
     set fileencoding=utf-8
     scriptencoding utf-8
 
-    if filereadable($HOME . '/' . s:configdir . '/bundle/moonshine-vim/colors/moonshine.vim')
+    if filereadable($HOME . '/' . s:configdir . '/bundle/gruvbox/colors/gruvbox.vim')
         set background=dark
-        colorscheme moonshine
+        let g:gruvbox_contrast_dark = 'hard'
+        colorscheme gruvbox
     endif
 
     set number        " Enable line numbers
