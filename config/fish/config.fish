@@ -20,6 +20,14 @@ test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliase
 ## Local, untracked config
 test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
 
+if status --is-interactive
+    # https://github.com/morhetz/gruvbox/issues/76
+    set -l GRUVBOX_SCRIPT $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh
+    if test -f $GRUVBOX_SCRIPT
+        sh $GRUVBOX_SCRIPT
+    end
+end
+
 ## Login session initialisation
 if status --is-login
     ## /etc/profile compatibility
