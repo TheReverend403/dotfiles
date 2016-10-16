@@ -45,26 +45,26 @@ Xft.rgba: rgb
 *.color15:      #848282
 
 ! do not scroll with output
-URxvt*scrollTtyOutput: false
+URxvt.scrollTtyOutput: false
 ! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: true
+URxvt.scrollWithBuffer: true
 ! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress: true
-URxvt*secondaryScreen: 1
-URxvt*secondaryScroll: 0
+URxvt.scrollTtyKeypress: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
 
-URxvt*font: xft:Terminus:size=10:antialias=false, \
+URxvt.font: xft:Terminus:size=10:antialias=false, \
             xft:WenQuanYi Bitmap Song:size=10:antialias=false, \
             xft:Noto Mono:size=10:antialias=true
 URxvt.boldFont: xft:Terminus:size=10:weight=bold:antialias=false
 
-URxvt*skipBuiltinGlyphs: true
-URxvt*saveLines: 8192
-URxvt*urgentOnBell: true
-URxvt*iso14755: false
-URxvt*iso14755_52: false
-URxvt*scrollBar: false
-URxvt*loginShell: true
+URxvt.skipBuiltinGlyphs: true
+URxvt.saveLines: 8192
+URxvt.urgentOnBell: true
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.scrollBar: false
+URxvt.loginShell: true
 
 rofi.modi:                           window,run,ssh
 rofi.opacity:                        90
