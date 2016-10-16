@@ -70,7 +70,7 @@ if status --is-login
     ## PATH
     set -l user_dirs "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.composer/vendor/bin" "$HOME/.cargo/bin" "$HOME/.local/bin"
 
-    ## Only add items to $PATH that actually exist. Prevents fish from complaining.
+    ## Only add items to $PATH that actually exist. Prevents fish complaining.
     for dir in $user_dirs
         test -d "$dir"; and set fish_user_paths "$dir" $fish_user_paths
     end
