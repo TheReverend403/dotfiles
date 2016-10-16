@@ -22,8 +22,6 @@ endif
 
     Plug 'morhetz/gruvbox'
 
-    Plug 'shinchu/lightline-gruvbox.vim'
-
     Plug 'nfnty/vim-systemd-syntax'
 
     Plug 'tpope/vim-fugitive'
@@ -191,6 +189,7 @@ endif
     if filereadable($HOME . '/' . s:configdir . '/bundle/gruvbox/colors/gruvbox.vim')
         set background=dark
         let g:gruvbox_contrast_dark = 'hard'
+        let g:gruvbox_sign_column = 'bg0'
         colorscheme gruvbox
     endif
 
