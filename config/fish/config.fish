@@ -47,6 +47,8 @@ if status --is-login
         set -x BROWSER w3m
     end
 
+    set -x EDITOR vim
+
     # Disable GTK3 accessibility
     set -x NO_AT_BRIDGE 1
 
