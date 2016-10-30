@@ -194,6 +194,7 @@ endif
     endif
 
     set number        " Enable line numbers
+    set relativenumber
     set noshowmode    " Provided by lightline
     set laststatus=2  " Always show lightline
     set list

@@ -50,6 +50,9 @@ if status --is-login
     # Disable GTK3 accessibility
     set -x NO_AT_BRIDGE 1
 
+    # Make Qt use the GTK file chooser
+    set -x QT_QPA_PLATFORMTHEME gtk
+
     ## Python
     set -x VIRTUAL_ENV_DISABLE_PROMPT true
 
