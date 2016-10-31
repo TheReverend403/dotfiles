@@ -18,11 +18,7 @@ endif
 
     Plug 'tpope/vim-sensible'
 
-    Plug 'tpope/vim-unimpaired'
-
     Plug 'morhetz/gruvbox'
-
-    Plug 'nfnty/vim-systemd-syntax'
 
     Plug 'tpope/vim-fugitive'
 

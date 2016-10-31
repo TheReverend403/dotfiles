@@ -24,27 +24,6 @@ no-ordered-chapters
 
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
 
-## Aesthetics
-
-# OSD rice (for file info)
-osd-font-size=20
-osd-color="#ffffffff"
-osd-border-color="#ff151515"
-osd-border-size=2
-osd-shadow-offset=1
-osd-shadow-color="#11000000"
-osd-fractions
-
-# Sub rice (eg. for srt)
-sub-text-font="Source Sans Pro Semibold"
-sub-text-font-size=75
-sub-text-margin-y=50
-sub-text-color="#FFFFFFFF"
-sub-text-border-color="#FF151515"
-sub-text-border-size=3.2
-sub-text-shadow-offset=1
-sub-text-shadow-color="#33000000"
-
 # Languages
 alang=jpn,jp,eng,en,
 slang=jpn,jp,eng,en,
