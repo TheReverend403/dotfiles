@@ -4,6 +4,7 @@ hwdec=auto
 framedrop=vo
 deinterlace=yes
 video-sync=display-resample
+blend-subtitles
 
 ## Audio ##
 ao=alsa

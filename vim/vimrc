@@ -249,8 +249,9 @@ endif
     " base64 decode visual selection
     vnoremap <leader>64 c<c-r>=system('base64 --decode', @")<cr><esc>
 
-    " Yank(copy) to system clipboard
+    " Copy/paste to/from system clipboard
     noremap <leader>y "+y
+    noremap <leader>p "+p
 
     " Maintain visual mode after shifting > and <
     vnoremap < <gv
