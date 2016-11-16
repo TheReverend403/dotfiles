@@ -61,6 +61,7 @@ URxvt.keysym.M-u: perl:matcher:select
 URxvt.font: xft:Terminus:size=10:antialias=false, \
             xft:WenQuanYi Bitmap Song:size=10:antialias=false, \
             xft:Noto Mono:size=10:antialias=true
+
 URxvt.boldFont: xft:Terminus:size=10:weight=bold:antialias=false
 
 URxvt.skipBuiltinGlyphs: true

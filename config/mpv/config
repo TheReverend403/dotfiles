@@ -1,45 +1,63 @@
 ## Video ##
 vo=opengl
+profile=opengl-hq
+opengl-pbo=no
+opengl-es=auto
 hwdec=auto
 framedrop=vo
 deinterlace=yes
 video-sync=display-resample
-blend-subtitles
+target-prim=bt.709
+target-trc=gamma2.2 
+
+## Scaling ##
+scale=ewa_lanczossharp:scale-antiring=1
+cscale=ewa_lanczos
+dscale=mitchell
+scaler-resizes-only
 
 ## Audio ##
 ao=alsa
 audio-channels=2
 af=drc
+audio-normalize-downmix=yes
 
-## UI
+## UI ##
 term-osd-bar-chars=[=>.]
 audio-display=no
-stop-screensaver=yes
+stop-screensaver
+cursor-autohide-fs-only
+no-sub
 
 ## Other ##
+cursor-autohide-fs-only
+cursor-autohide=1000
 geometry=50%:50%
 autofit-larger=50%x80%
 no-border
 no-resume-playback
 no-ordered-chapters
 
+ytdl=yes
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
 
-# Languages
+## Languages ##
 alang=jpn,jp,eng,en,
 slang=jpn,jp,eng,en,
 
-# Do not terminate when playing or seeking beyond the end of the file
-keep-open
+cache=auto
 
-# Disable subs on load
-no-sub
-
-# Cache
-cache=20000
-
-# Window title
-title="${filename}"
+##################
+# SUBTITLES
+##################
+sub-auto=fuzzy
+sub-use-margins
+sub-color="#FFFFFF"
+sub-border-color="#262626"
+sub-border-size=1.0
+#sub-text-margin-y=40
+demuxer-mkv-subtitle-preroll
+sub-ass-shaper=simple
 
 [extension.webm]
 loop-file=yes

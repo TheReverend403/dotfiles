@@ -80,8 +80,7 @@ if status --is-login
         test -d "$dir"; and set fish_user_paths "$dir" $fish_user_paths
     end
 
-    ## Rust racer
-    available racer; and set -gx RUST_SRC_PATH "$HOME/src/rust/src"
+    available rustup; and available rustc; and set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 
     ## Less
     set -x LESS '-RSXMgwsI~'
