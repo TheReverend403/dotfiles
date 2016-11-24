@@ -11,7 +11,7 @@ target-prim=bt.709
 target-trc=gamma2.2 
 
 ## Scaling ##
-scale=ewa_lanczossharp:scale-antiring=1
+scale=ewa_lanczossharp
 cscale=ewa_lanczos
 dscale=mitchell
 scaler-resizes-only

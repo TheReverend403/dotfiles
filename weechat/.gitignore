@@ -9,3 +9,4 @@ relay.conf
 urls.log
 otr/
 venv/
+chanop_mode_cache.dat

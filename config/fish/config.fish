@@ -58,13 +58,6 @@ if status --is-login
     ## Python
     set -x VIRTUAL_ENV_DISABLE_PROMPT true
 
-    ## Jetbrains
-    ## Use Oracle JDK rather than OpenJDK because shitty font rendering.
-    set -l ORACLE_JDK "/usr/lib/jvm/oracle-jdk-bin-1.8"
-    set -x PHPSTORM_JDK $ORACLE_JDK
-    set -x IDEA_JDK $ORACLE_JDK
-    set -x PYCHARM_JDK $ORACLE_JDK
-
     ## NodeJS
     set -x NPM_PACKAGES "$HOME/.npm-packages"
     set -x NODE_PATH "$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
