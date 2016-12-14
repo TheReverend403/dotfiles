@@ -44,34 +44,6 @@ Xft.rgba: rgb
 *.color7:       #cccccc
 *.color15:      #848282
 
-! do not scroll with output
-URxvt.scrollTtyOutput: false
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt.scrollWithBuffer: true
-! scroll back to the bottom on keypress
-URxvt.scrollTtyKeypress: true
-URxvt.secondaryScreen: 1
-URxvt.secondaryScroll: 0
-
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-URxvt.keysym.M-u: perl:matcher:select
-
-URxvt.font: xft:Terminus:size=10:antialias=false, \
-            xft:WenQuanYi Bitmap Song:size=10:antialias=false, \
-            xft:Noto Mono:size=10:antialias=true
-
-URxvt.boldFont: xft:Terminus:size=10:weight=bold:antialias=false
-
-URxvt.skipBuiltinGlyphs: true
-URxvt.saveLines: 8192
-URxvt.urgentOnBell: true
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-URxvt.scrollBar: false
-URxvt.loginShell: true
-
 rofi.modi:                           window,run,ssh
 rofi.opacity:                        90
 rofi.width:                          30

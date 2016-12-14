@@ -37,16 +37,20 @@ if status --is-login
     set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 
     ## Default programs
-    if available firefox
-        set -x BROWSER firefox
-    else if available chromium
-        set -x BROWSER chromium
-    else if available lynx
-        set -x BROWSER lynx
-    else if available w3m
-        set -x BROWSER w3m
+    if test -z "$BROWSER"
+        if available firefox
+            set -x BROWSER firefox
+        else if available chromium
+            set -x BROWSER chromium
+        else if available lynx
+            set -x BROWSER lynx
+        else if available w3m
+            set -x BROWSER w3m
+        end
     end
 
+    # flags for Gentoo and Debian's Chromium wrappers
+    set -x CHROMIUM_FLAGS "--disable-background-networking --disable-component-extensions-with-background-pages"
     set -x EDITOR vim
 
     # Disable GTK3 accessibility
