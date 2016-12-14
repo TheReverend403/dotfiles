@@ -13,8 +13,7 @@ font = Terminus 10
 scrollback_lines = 2000
 search_wrap = true
 
-# "system", "on" or "off"
-cursor_shape = ibeam
+cursor_shape = block
 cursor_blink = off
 
 # word characters used for word selection
@@ -23,7 +22,7 @@ word_chars = "'%&()*,;<>@[]{|'"│=
 
 [colors]
 foreground = #BBBBBB
-foreground_bold = #ffffff
+foreground_bold = #CCCCCC
 background = #0B0B0B
 cursor = #a0a0a0
 highlight = #BBBBBB
@@ -60,14 +59,4 @@ color14 = #26B3A4
 color7 = #CCCCCC
 color15 = #848282
  
-[hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
- 
 # vim: ft=dosini
-
