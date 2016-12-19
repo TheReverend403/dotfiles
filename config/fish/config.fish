@@ -83,6 +83,7 @@ if status --is-login
         if test -z "$CONDA_FISH"
             set -gx CONDA_FISH (conda info --root)/etc/fish/conf.d/conda.fish
         end
+        set -gx CONDA_LEFT_PROMPT 1
     end
 
     ## Less
