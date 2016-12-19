@@ -13,8 +13,4 @@ set __fish_git_prompt_char_upstream_behind '↓'
 
 function fish_right_prompt
     printf '%s' (__fish_git_prompt)
-
-    if set -q VIRTUAL_ENV
-        printf ' (venv:%s%s%s)' (set_color $fish_color_cwd) (basename "$VIRTUAL_ENV") (set_color normal)
-    end
 end

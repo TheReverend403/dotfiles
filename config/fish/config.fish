@@ -20,10 +20,8 @@ test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliase
 ## Local, untracked config
 test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
 
-if available conda
-    set conda_fish $HOME/.local/conda/etc/fish/conf.d/conda.fish
-    test -s $conda_fish; and source $conda_fish
-end
+# Source conda.fish here since functions can't be defined in login shell initialisation apparently.
+test -n "$CONDA_FISH"; and test -s $CONDA_FISH; and source $CONDA_FISH
 
 if status --is-interactive
     # https://github.com/morhetz/gruvbox/issues/76
@@ -31,7 +29,6 @@ if status --is-interactive
     if test -f $GRUVBOX_SCRIPT
         sh $GRUVBOX_SCRIPT
     end
-
 end
 
 ## Login session initialisation
@@ -84,6 +81,12 @@ if status --is-login
     end
 
     available rustup; and available rustc; and set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
+
+    if available conda
+        if test -z "$CONDA_FISH"
+            set -gx CONDA_FISH (conda info --root)/etc/fish/conf.d/conda.fish
+        end
+    end
 
     ## Less
     set -x LESS '-RSXMgwsI~'
