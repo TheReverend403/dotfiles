@@ -20,6 +20,11 @@ test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliase
 ## Local, untracked config
 test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
 
+if available conda
+    set conda_fish $HOME/.local/conda/etc/fish/conf.d/conda.fish
+    test -s $conda_fish; and source $conda_fish
+end
+
 if status --is-interactive
     # https://github.com/morhetz/gruvbox/issues/76
     set -l GRUVBOX_SCRIPT $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh
@@ -27,10 +32,6 @@ if status --is-interactive
         sh $GRUVBOX_SCRIPT
     end
 
-    if available conda
-        set conda_fish $HOME/.local/conda/etc/fish/conf.d/conda.fish
-        test -s $conda_fish; and source $conda_fish
-    end
 end
 
 ## Login session initialisation
