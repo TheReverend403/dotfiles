@@ -26,6 +26,11 @@ if status --is-interactive
     if test -f $GRUVBOX_SCRIPT
         sh $GRUVBOX_SCRIPT
     end
+
+    if available conda
+        set conda_fish $HOME/.local/conda/etc/fish/conf.d/conda.fish
+        test -s $conda_fish; and source $conda_fish
+    end
 end
 
 ## Login session initialisation
@@ -70,7 +75,7 @@ if status --is-login
     set -x GOPATH "$HOME/.go"
 
     ## PATH
-    set -l user_dirs "$HOME/.conda/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.composer/vendor/bin" "$HOME/.cargo/bin" "$HOME/.local/bin"
+    set -l user_dirs "$HOME/.local/conda/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.composer/vendor/bin" "$HOME/.cargo/bin" "$HOME/.local/bin"
 
     ## Only add items to $PATH that actually exist. Prevents fish complaining.
     for dir in $user_dirs
