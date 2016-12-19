@@ -20,9 +20,6 @@ test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliase
 ## Local, untracked config
 test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
 
-# Source conda.fish here since functions can't be defined in login shell initialisation apparently.
-test -n "$CONDA_FISH"; and test -s $CONDA_FISH; and source $CONDA_FISH
-
 if status --is-interactive
     # https://github.com/morhetz/gruvbox/issues/76
     set -l GRUVBOX_SCRIPT $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh
@@ -100,3 +97,6 @@ if status --is-login
         end
     end
 end
+
+# Source conda.fish here since functions can't be defined in login shell initialisation apparently.
+test -n "$CONDA_FISH"; and test -s $CONDA_FISH; and source $CONDA_FISH
