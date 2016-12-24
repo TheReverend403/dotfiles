@@ -193,7 +193,9 @@ endif
         set background=dark
         let g:gruvbox_contrast_dark = 'hard'
         let g:gruvbox_sign_column = 'bg0'
-        set termguicolors
+        if has('termguicolors')
+            set termguicolors
+        endif
         colorscheme gruvbox
     endif
 
