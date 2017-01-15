@@ -33,6 +33,11 @@ if status --is-login
     ## /etc/profile compatibility
     env -i HOME="$HOME" dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
 
+#    set -l profile_env /etc/profile.env
+#    if test -s "$profile_env"
+#        source "$profile_env"
+#    end
+
     ## Prevent Wine from adding menu entries and desktop links.
     set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 
@@ -72,9 +77,9 @@ if status --is-login
     ## PATH
     set -l user_dirs "$HOME/.local/conda/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.composer/vendor/bin" "$HOME/.cargo/bin" "$HOME/.local/bin"
 
-    ## Only add items to $PATH that actually exist. Prevents fish complaining.
+    ## Only add items to $PATH that actually exist.
     for dir in $user_dirs
-        test -d "$dir"; and set fish_user_paths "$dir" $fish_user_paths
+        test -d "$dir"; and set -gx fish_user_paths "$dir" $fish_user_paths
     end
 
     available rustup; and available rustc; and set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src

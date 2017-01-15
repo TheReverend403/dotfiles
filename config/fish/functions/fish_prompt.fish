@@ -15,7 +15,7 @@ function fish_prompt
 
     printf '%s@%s ' $USER (hostname -s)
 
-    set_color $fish_color_cwd
+    set_color cyan
     printf '%s' (prompt_pwd)
 
     set_color normal

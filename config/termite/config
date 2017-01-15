@@ -21,42 +21,44 @@ cursor_blink = off
 word_chars = "'%&()*,;<>@[]{|'"│=
 
 [colors]
-foreground = #BBBBBB
-foreground_bold = #CCCCCC
-background = #0B0B0B
-cursor = #a0a0a0
-highlight = #BBBBBB
- 
-# Black
-color0 = #1b1918
-color8 = #4F4F4F
 
-# Red
-color1 = #f22c40
-color9 = #F85262
+# special
+foreground      = #aabbdd
+foreground_bold = #aabbdd
+cursor          = #aabbdd
+background      = #120c16
 
-# Green
-color2 = #5ab738
-color10 = #7BD15B
+# black
+color0  = #111226
+color8  = #935d97
 
-# Yellow
-color3 = #d5911a
-color11 = #E9AD44
+# red
+color1  = #868aa5
+color9  = #472637
 
-# Blue
-color4 = #3971ed
-color12 = #5E8AF1
+# green
+color2  = #393d58
+color10 = #744857
 
-# Magenta
-color5 = #E85B92
-color13 = #F181AC
+# yellow
+color3  = #bca7ba
+color11 = #a7546e
 
-# Cyan
-color6 = #00ad9c
-color14 = #26B3A4
+# blue
+color4  = #726f80
+color12 = #bc6c87
 
-# White
-color7 = #CCCCCC
-color15 = #848282
- 
+# magenta
+color5  = #555571
+color13 = #6296bd
+
+# cyan
+color6  = #5e60aa
+color14 = #9bc0ec
+
+# white
+color7  = #8d9fcf
+color15 = #3a749c
+
+
 # vim: ft=dosini
