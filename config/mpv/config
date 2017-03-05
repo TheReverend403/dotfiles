@@ -1,20 +1,9 @@
 ## Video ##
 vo=opengl
-profile=opengl-hq
-opengl-pbo=no
-opengl-es=auto
 hwdec=auto
 framedrop=vo
 deinterlace=yes
 video-sync=display-resample
-target-prim=bt.709
-target-trc=gamma2.2 
-
-## Scaling ##
-scale=ewa_lanczossharp
-cscale=ewa_lanczos
-dscale=mitchell
-scaler-resizes-only
 
 ## Audio ##
 ao=alsa
@@ -52,12 +41,8 @@ cache=auto
 ##################
 sub-auto=fuzzy
 sub-use-margins
-sub-color="#FFFFFF"
-sub-border-color="#262626"
-sub-border-size=1.0
 #sub-text-margin-y=40
 demuxer-mkv-subtitle-preroll
-sub-ass-shaper=simple
 
 [extension.webm]
 loop-file=yes
