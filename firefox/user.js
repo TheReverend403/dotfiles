@@ -1,7 +1,43 @@
+user_pref('accessibility.force_disabled', 1);
+
+// Disable global menu on Alt
+user_pref('ui.key.menuAccessKey', 0);
+
+// Disable Social Service API
+user_pref('social.directories', "");
+user_pref('social.shareDirectory', "");
+user_pref('social.whitelist', "");
+user_pref('social.remote-install.enabled', false);
+user_pref('social.share.activationPanelEnabled', false);
+user_pref('social.toast-notifications.enabled', false);
+
+user_pref('reader.parse-on-load.enabled', false):
 user_pref('browser.urlbar.clickSelectsAll', true);
 user_pref('middlemouse.contentLoadURL', false);
 user_pref('clipboard.autocopy', false);
 user_pref('browser.sessionstore.resume_from_crash', false);
+user_pref("dom.battery.enabled", false);
+user_pref("beacon.enabled", false);
+user_pref("device.sensors.enabled", false);
+user_pref("browser.send_pings", false);
+user_pref("security.mixed_content.block_active_content", true);
+user_pref("dom.event.clipboardevents.enabled", false);
+user_pref("browser.search.suggest.enabled", false);
+user_pref("browser.search.geoip.url", "");
+user_pref("network.predictor.enabled", false);
+user_pref("network.seer.enabled", false);
+user_pref("browser.search.update", false);
+user_pref("browser.display.use_document_fonts", 1);
+user_pref("browser.sessionhistory.max_entries", 2);
+
+user_pref("browser.safebrowsing.enabled", false);
+user_pref("browser.safebrowsing.malware.enabled", false);
+user_pref("browser.safebrowsing.downloads.remote.enabled", false);
+
+// Referer stuff, based on http://ip-check.info recommendations
+user_pref('network.http.sendRefererHeader', 1);
+user_pref('network.http.referer.XOriginPolicy', 1);
+user_pref('network.http.referer.trimmingPolicy', 0);
 
 // Disable hello
 user_pref('loop.enabled', false);
@@ -45,7 +81,7 @@ user_pref("toolkit.telemetry.unified", false);
 user_pref("experiments.supported", false);
 user_pref("experiments.enabled", false);
 
-// Disable the UITour backend so there is no chance that a remote page
+// Disable the UITour backend so there is no chance that a remote page can load in the background
 user_pref("browser.uitour.enabled", false);
 
 // Resist fingerprinting via window.screen and CSS media queries and other techniques
