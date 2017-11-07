@@ -39,4 +39,4 @@ done
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-exec awesome
+exec awesome >> ~/awesome.log 2>&1

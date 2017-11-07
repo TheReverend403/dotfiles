@@ -44,12 +44,12 @@ Xft.rgba: rgb
 *.color7:       #cccccc
 *.color15:      #848282
 
-rofi.modi:                           window,run,ssh
+rofi.modi:                           run
 rofi.opacity:                        90
 rofi.width:                          30
 rofi.lines:                          10
 rofi.columns:                        1
-rofi.font:                           Terminus 10
+rofi.font:                           xos4 Terminus 10
 rofi.fg:                             #BBBBBB
 rofi.bg:                             #141414
 rofi.color-enabled:                  false
@@ -75,11 +75,11 @@ rofi.padding:                        5
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                false
-rofi.terminal:                       urxvt
+rofi.terminal:                       termite
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
 rofi.run-command:                    {cmd}
-rofi.run-shell-command:              {terminal} "{cmd}"
+rofi.run-shell-command:              {terminal} -e "{cmd}"
 rofi.disable-history:                false
 rofi.levenshtein-sort:               true
 rofi.case-sensitive:                 false
@@ -88,7 +88,7 @@ rofi.lazy-filter-limit:              5000
 rofi.eh:                             1
 rofi.auto-select:                    false
 rofi.parse-hosts:                    false
-rofi.combi-modi:                     window,run
+rofi.combi-modi:                     run
 rofi.fuzzy:                          false
 rofi.m:                              -1
 rofi.line-margin:                    2
@@ -97,7 +97,7 @@ rofi.hide-scrollbar:                 true
 rofi.pid:                            /run/user/1000/rofi.pid
 rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
 rofi.kb-secondary-paste:             Control+v,Insert
-rofi.kb-clear-line:                  Control+u
+rofi.kb-clear-line:                  Control+x
 rofi.kb-move-front:                  Control+a
 rofi.kb-move-end:                    Control+e
 rofi.kb-move-word-back:              Alt+b
