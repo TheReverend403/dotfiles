@@ -8,7 +8,6 @@ video-sync=display-resample
 ## Audio ##
 ao=alsa
 audio-channels=2
-af=drc
 audio-normalize-downmix=yes
 
 ## UI ##
