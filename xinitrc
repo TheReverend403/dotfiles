@@ -17,7 +17,7 @@ if [ -x ~/.fehbg ]; then
 fi
 
 if [ -f ~/.Xresources ]; then
-    xrdb -merge -I $HOME ~/.Xresources
+    xrdb -load -I $HOME ~/.Xresources
 fi
 
 numlockx on

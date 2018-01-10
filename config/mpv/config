@@ -6,7 +6,7 @@ deinterlace=yes
 video-sync=display-resample
 
 ## Audio ##
-ao=alsa
+ao=pulse
 audio-channels=2
 audio-normalize-downmix=yes
 

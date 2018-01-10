@@ -1,11 +1,32 @@
 Xcursor*.theme: Adwaita
 
 Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
+
+! urxvt
+URxvt*thickness: 5
+URxvt*scrollBar_floating: false
+URxvt*scrollColor: #4f4f4f
+URxvt*scrollstyle: plain
+URxvt*transpscrollbar:true
+URxvt*scrollBar_right:true
+URxvt*font: xft:xos4 Terminus:size=10
+URxvt*skipBuiltinGlyphs: true
+XTerm*locale: true
+URxvt.cutchars: '"!' &()*,;<=>?@[]^{|} #$%+-./:
+URxvt.letterSpace: 0
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+URxvt.insecure: false
+URxvt.perl-ext: default,url-select
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_next
 
 ! special
 *.foreground:   #bbbbbb
@@ -75,7 +96,7 @@ rofi.padding:                        5
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                false
-rofi.terminal:                       termite
+rofi.terminal:                       urxvt
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
 rofi.run-command:                    {cmd}

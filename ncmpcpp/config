@@ -49,3 +49,4 @@ active_window_border = "magenta"
 progressbar_elapsed_color = magenta
 statusbar_color = magenta
 state_line_color = magenta
+show_duplicate_tags = no
