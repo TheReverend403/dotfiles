@@ -2,11 +2,6 @@
 user_pref('layers.acceleration.force-enabled', true);
 user_pref('layers.offmainthreadcomposition.enabled', true);
 
-// Referer stuff, based on http://ip-check.info recommendations
-//user_pref('network.http.sendRefererHeader', 1);
-//user_pref('network.http.referer.XOriginPolicy', 1);
-//user_pref('network.http.referer.trimmingPolicy', 0);
-
 // Disable global menu on Alt
 user_pref('ui.key.menuAccessKey', 0);
 
@@ -17,7 +12,6 @@ user_pref('browser.safebrowsing.downloads.remote.enabled', false);
 
 // Disable hello
 user_pref('loop.enabled', false);
-user_pref('loop.logDomains', false);
 
 // Disable pocket
 user_pref('browser.pocket.enabled', false);
