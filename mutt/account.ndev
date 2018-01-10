@@ -1,9 +1,0 @@
-set my_name = "Lee Watson"
-set from = "Lee Watson <rev@notoriousdev.com>"
-set sendmail="/usr/bin/msmtp -a notoriousdev"
-
-set postponed = "+ndev/Drafts"
-set record = "+notoriousdev/Sent"
-
-unlists oss-security@lists.openwall.com
-unsubscribe oss-security@lists.openwall.com
