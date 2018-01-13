@@ -14,6 +14,9 @@ URxvt*scrollColor: #4f4f4f
 URxvt*scrollstyle: plain
 URxvt*transpscrollbar:true
 URxvt*scrollBar_right:true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
 URxvt*font: xft:xos4 Terminus:size=10
 URxvt*skipBuiltinGlyphs: true
 XTerm*locale: true
