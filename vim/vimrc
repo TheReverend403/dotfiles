@@ -1,0 +1,27 @@
+colorscheme slate
+set nocompatible
+set hidden
+set nobackup
+set number
+
+set incsearch
+set nohlsearch
+
+set ttyfast
+set lazyredraw
+
+set autoindent
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set backspace=indent,eol,start
+
+set laststatus=2
+set showmode
+set showcmd
+
+set shell=/bin/sh
+
+filetype plugin indent on
+syntax on
