@@ -29,7 +29,7 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 fi
 
-## Refresh gpg-agent tty in case user switches into an X session
+## {{ Refresh gpg-agent tty in case user switches into an X session
 # Wait for gpg-agent to actually start
 while ! pidof gpg-agent >/dev/null 2>&1
 do
@@ -38,5 +38,9 @@ done
 
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
+## }}
+
+autocutsel -fork -selection PRIMARY
+autocutsel -fork -selection CLIPBOARD
 
 exec awesome
