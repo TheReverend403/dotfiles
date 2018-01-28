@@ -1,6 +1,7 @@
 [Unit]
 Description=MPD Scribbler
 After=mpd.service
+Requires=mpd.service
 
 [Service]
 ExecStart=/usr/bin/mpdas
