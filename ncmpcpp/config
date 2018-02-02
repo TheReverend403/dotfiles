@@ -1,20 +1,20 @@
-ncmpcpp_directory = "~/.ncmpcpp"
 mpd_host = localhost
 mpd_port = 6600
 mpd_connection_timeout = 5
 mpd_music_dir = "~/music"
 mpd_crossfade_time = 0
+
+ncmpcpp_directory = "~/.ncmpcpp"
 playlist_disable_highlight_delay = 3
 message_delay_time = 1
 seek_time = 4
 volume_change_step = 3
-progressbar_boldness = no
 user_interface = classic
 media_library_primary_tag = "album_artist"
 allow_for_physical_item_deletion = no
 startup_screen = "media_library"
 ask_before_clearing_playlists = no
-display_volume_level = yes
+display_volume_level = no
 display_bitrate = no
 display_remaining_time = no
 playlist_show_remaining_time = no
@@ -30,23 +30,26 @@ search_engine_default_search_mode = 1
 external_editor = "/usr/bin/vim"
 use_console_editor = yes
 header_visibility = no
+show_duplicate_tags = no
 
-song_status_format = "$6%a $0- $6%t $0- $6%b$0"
-now_playing_prefix = "$b$5»$7»$1» "
-
-song_list_format = "$3{%a} $1│ $1{%t}"
-now_playing_suffix = "$1$/b -"
-progressbar_look = "━━─"
 main_window_color = "white"
 color1 = "magenta"
 color2 = "magenta"
-main_window_highlight_color = "magenta"
 progressbar_color = "magenta"
 alternative_ui_separator_color = "magenta"
-active_column_color = "magenta"
 window_border_color = "magenta"
 active_window_border = "magenta"
 progressbar_elapsed_color = magenta
 statusbar_color = magenta
 state_line_color = magenta
-show_duplicate_tags = no
+
+song_status_format = "$6%a $0- $6%t $0- $6%b$0"
+song_list_format = "$3{%a} $1│ $1{%t}"
+progressbar_look = "━━─"
+
+current_item_inactive_column_prefix = "$(white)$r" 
+current_item_inactive_column_suffix = "$/r$(end)"
+current_item_prefix = "$(magenta)$r"
+current_item_suffix = "$/r$(end)"
+now_playing_prefix = "$b$5»$7»$1» "
+now_playing_suffix = "$1$/b -"
