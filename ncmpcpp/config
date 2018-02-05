@@ -45,11 +45,10 @@ state_line_color = magenta
 
 song_status_format = "$6%a $0- $6%t $0- $6%b$0"
 song_list_format = "$3{%a} $1│ $1{%t}"
-progressbar_look = "━━─"
 
-current_item_inactive_column_prefix = "$(white)$r" 
-current_item_inactive_column_suffix = "$/r$(end)"
-current_item_prefix = "$(magenta)$r"
-current_item_suffix = "$/r$(end)"
+current_item_inactive_column_prefix = "$(white)" 
+current_item_inactive_column_suffix = "$(end)"
+current_item_prefix = "$(magenta)"
+current_item_suffix = "$(end)"
 now_playing_prefix = "$b$5»$7»$1» "
 now_playing_suffix = "$1$/b -"
