@@ -6,6 +6,7 @@ set number
 
 set incsearch
 set nohlsearch
+set smartcase
 
 set ttyfast
 set lazyredraw
@@ -27,7 +28,8 @@ filetype plugin indent on
 syntax on
 
 set statusline =
-set statusline +=[%n] " buffer number
+set statusline +=\ %{toupper(mode())}
+set statusline +=\ [%n] " buffer number
 set statusline +=\ %y " file type
 set statusline +=\ %F " Full path to file
 set statusline +=\ %1*%m%0* " modified flag
@@ -36,3 +38,8 @@ set statusline +=%r " read only flag
 set statusline +=%w " preview window flag
 set statusline +=%=%-14.(%l,%c%V%) " Line, column-virtual column"
 set statusline +=%=lines:\ %-5L " Lines in the buffer
+
+" Copy to system clipboard.
+set clipboard=unnamedplus
+
+set pastetoggle=<F3>
