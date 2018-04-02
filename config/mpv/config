@@ -28,11 +28,6 @@ no-ordered-chapters
 
 ytdl=yes
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
-
-## Languages ##
-alang=jpn,jp,eng,en,
-slang=jpn,jp,eng,en,
-
 cache=auto
 
 ##################
