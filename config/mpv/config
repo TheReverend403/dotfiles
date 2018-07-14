@@ -11,6 +11,7 @@ audio-channels=2
 audio-normalize-downmix=yes
 
 ## UI ##
+script-opts=osc-layout=box
 term-osd-bar-chars=[=>.]
 audio-display=no
 stop-screensaver
@@ -33,6 +34,7 @@ cache=auto
 ##################
 # SUBTITLES
 ##################
+slang=en,eng
 sub-auto=fuzzy
 sub-use-margins
 #sub-text-margin-y=40
