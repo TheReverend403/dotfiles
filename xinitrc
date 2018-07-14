@@ -23,6 +23,7 @@ fi
 numlockx on
 xsetroot -cursor_name arrow
 setxkbmap -option compose:ralt
+unclutter --timeout 5 --exclude-root --fork
 
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
