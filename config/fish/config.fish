@@ -21,7 +21,7 @@ test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliase
 test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
 
 ## Login session initialisation
-if status --is-login
+if status is-login
     ## /etc/profile compatibility
     env -i HOME="$HOME" /bin/sh -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
 
@@ -62,7 +62,7 @@ if status --is-login
     set -x GOPATH "$HOME/.go"
 
     ## PATH
-    set -l user_dirs "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.composer/vendor/bin" "$HOME/.cargo/bin" "$HOME/.local/bin"
+    set -l user_dirs "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "$HOME/.local/bin"
 
     ## Only add items to $PATH that actually exist. Prevents fish complaining.
     for dir in $user_dirs

@@ -1,2 +1,8 @@
 fishd.*
 local.fish
+fishfile
+completions.d/
+
+functions/fisher.fish
+functions/bass.fish
+functions/__bass.py
