@@ -1,0 +1,1 @@
+/home/rev/.config/fisherman/nvm/functions/npm.fish
