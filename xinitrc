@@ -12,18 +12,15 @@ fi
 
 xrandr --output DVI-0 --mode 1366x768 --pos 1920x365 --output HDMI-0 --mode 1920x1080 --pos 0x0
 
-if [ -x ~/.fehbg ]; then
-    ~/.fehbg
-fi
-
 if [ -f ~/.Xresources ]; then
     xrdb -load -I $HOME ~/.Xresources
 fi
 
 numlockx on
-xsetroot -cursor_name arrow
-setxkbmap -option compose:ralt
+xsetroot -cursor_name left_ptr
+setxkbmap -option compose:ralt,caps:escape
 unclutter --timeout 5 --exclude-root --fork
+xset +fp ~/.local/share/fonts/
 
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then

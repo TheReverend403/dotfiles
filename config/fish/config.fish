@@ -14,12 +14,6 @@ set fish_greeting ''
 set fish_color_param default
 set fish_color_command default
 
-## Aliases
-test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliases.fish"
-
-## Local, untracked config
-test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
-
 ## Login session initialisation
 if status is-login
     ## /etc/profile compatibility
@@ -79,6 +73,11 @@ if status is-login
     set -x LESS '-RSXMgwsI~'
     set -x LESSHISTFILE /dev/null
 
+    ## Local, untracked config
+    test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
+    ## Aliases
+    test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliases.fish"
+
     # Run X if not already running, not root, not in SSH and not in tmux
     if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT" -a -z "$TMUX"
         if available startx
@@ -87,3 +86,6 @@ if status is-login
         end
     end
 end
+
+## Aliases
+test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliases.fish"

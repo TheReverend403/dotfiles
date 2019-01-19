@@ -1,9 +1,13 @@
 ## Video ##
-vo=opengl
+profile=opengl-hq
 hwdec=auto
-framedrop=vo
-deinterlace=yes
+#framedrop=vo
 video-sync=display-resample
+#scale=ewa_lanczossharp
+cscale=ewa_lanczossharp
+interpolation=yes
+tscale=oversample
+deinterlace=yes
 
 ## Audio ##
 ao=pulse
@@ -25,11 +29,10 @@ geometry=50%:50%
 autofit-larger=50%x80%
 no-border
 no-resume-playback
-no-ordered-chapters
 
 ytdl=yes
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
-cache=auto
+cache=200000
 
 ##################
 # SUBTITLES
@@ -39,6 +42,7 @@ sub-auto=fuzzy
 sub-use-margins
 #sub-text-margin-y=40
 demuxer-mkv-subtitle-preroll
+blend-subtitles=yes
 
 [extension.webm]
 loop-file=yes
