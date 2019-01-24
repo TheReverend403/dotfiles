@@ -4,7 +4,7 @@ After=network.target sound.target
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/mpd --verbose
+ExecStart=/usr/bin/mpd
 PIDFile=%h/.config/mpd/pid
 
 #LimitRTPRIO=50
