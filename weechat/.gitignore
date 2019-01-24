@@ -4,9 +4,9 @@ script/
 script.conf
 */autoload/
 weechat.log
+urls.log
 urlserver_list.txt
 relay.conf
-urls.log
 otr/
 venv/
 chanop_mode_cache.dat
