@@ -52,15 +52,11 @@ if status is-login
     set -x NPM_PACKAGES "$HOME/.npm-packages"
     set -x NODE_PATH "$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
-    if test -s ~/.nvm/nvm.sh
-        bass source ~/.nvm/nvm.sh
-    end
-
     # Go
     set -x GOPATH "$HOME/.go"
 
     ## PATH
-    set -l user_dirs "$NVM_BIN" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "$HOME/.local/bin"
+    set -l user_dirs "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "$HOME/.local/bin"
 
     ## Only add items to $PATH that actually exist. Prevents fish complaining.
     for dir in $user_dirs

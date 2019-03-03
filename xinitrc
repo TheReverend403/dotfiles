@@ -3,9 +3,9 @@
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
     for f in /etc/X11/xinit/xinitrc.d/*; do
         # Fuck dbus
-        if echo "$f" | grep -vq dbus; then
+#        if echo "$f" | grep -vq dbus; then
             [ -x "$f" ] && . "$f"
-        fi
+ #       fi
     done
     unset f
 fi
@@ -41,4 +41,5 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 #autocutsel -fork -selection PRIMARY
 #autocutsel -fork -selection CLIPBOARD
 
+thunar --daemon &
 exec awesome
