@@ -1,24 +1,48 @@
-colorscheme slate
+set shell=/bin/sh
+
+" {{{ Plugins
+call plug#begin()
+
+Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-sensible'
+
+call plug#end()
+
+command! PU PlugUpdate | PlugUpgrade
+" }}}
+
+" {{{ Appearance
+if has('termguicolors')
+    set termguicolors
+endif
+
+set background=dark
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
+
+filetype plugin indent on
+syntax on
+" }}}
+
 set nocompatible
 set hidden
 set nobackup
 set number
 
-set incsearch
+set undofile
+set undodir=~/.vim/undo
+
 set nohlsearch
 set smartcase
 
 set ttyfast
 set lazyredraw
 
-set autoindent
 set expandtab
 set softtabstop=4
 set shiftwidth=4
 set shiftround
-set backspace=indent,eol,start
 
-set laststatus=2
 set showmode
 set showcmd
 
@@ -29,11 +53,10 @@ set wrapscan
 set report=0
 set synmaxcol=200
 
-set shell=/bin/sh
+set clipboard=unnamedplus
+set pastetoggle=<F3>
 
-filetype plugin indent on
-syntax on
-
+" {{{ Statusline
 set statusline =
 set statusline +=\ %{toupper(mode())}
 set statusline +=\ [%n] " buffer number
@@ -45,8 +68,5 @@ set statusline +=%r " read only flag
 set statusline +=%w " preview window flag
 set statusline +=%=%-14.(%l,%c%V%) " Line, column-virtual column"
 set statusline +=%=lines:\ %-5L " Lines in the buffer
+" }}}
 
-" Copy to system clipboard.
-set clipboard=unnamedplus
-
-set pastetoggle=<F3>
