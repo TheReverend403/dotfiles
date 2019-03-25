@@ -1,9 +1,7 @@
 ## Video ##
 profile=opengl-hq
 hwdec=auto
-#framedrop=vo
 video-sync=display-resample
-#scale=ewa_lanczossharp
 cscale=ewa_lanczossharp
 interpolation=yes
 tscale=oversample
@@ -15,9 +13,6 @@ audio-channels=2
 audio-normalize-downmix=yes
 
 ## UI ##
-script-opts=osc-layout=box
-term-osd-bar-chars=[=>.]
-audio-display=no
 stop-screensaver
 cursor-autohide-fs-only
 no-sub
@@ -32,7 +27,7 @@ no-resume-playback
 
 ytdl=yes
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
-cache=200000
+cache=1000000
 
 ##################
 # SUBTITLES
@@ -40,7 +35,6 @@ cache=200000
 slang=en,eng
 sub-auto=fuzzy
 sub-use-margins
-#sub-text-margin-y=40
 demuxer-mkv-subtitle-preroll
 blend-subtitles=yes
 

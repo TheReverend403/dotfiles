@@ -4,7 +4,7 @@ IgnoreOnIsolate=true
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/gpg-agent --daemon --ignore-cache-for-signing
+ExecStart=/usr/bin/gpg-agent --daemon
 Restart=on-abort
 
 [Install]

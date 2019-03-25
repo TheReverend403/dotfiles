@@ -22,6 +22,13 @@ set laststatus=2
 set showmode
 set showcmd
 
+set splitbelow
+set splitright
+
+set wrapscan
+set report=0
+set synmaxcol=200
+
 set shell=/bin/sh
 
 filetype plugin indent on
