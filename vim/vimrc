@@ -22,6 +22,7 @@ colorscheme gruvbox
 
 filetype plugin indent on
 syntax on
+set cursorline
 " }}}
 
 set nocompatible
