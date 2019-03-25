@@ -3,7 +3,7 @@ set shell=/bin/sh
 " {{{ Plugins
 call plug#begin()
 
-Plug 'morhetz/gruvbox'
+Plug 'ajh17/spacegray.vim'
 Plug 'tpope/vim-sensible'
 
 call plug#end()
@@ -17,18 +17,28 @@ if has('termguicolors')
 endif
 
 set background=dark
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+colorscheme spacegray
 
 filetype plugin indent on
 syntax on
+
 set cursorline
+
+set number
+set showmode
+set showcmd
+
+set splitbelow
+set splitright
+
+set wrapscan
+set report=0
+set synmaxcol=200
 " }}}
 
-set nocompatible
 set hidden
 set nobackup
-set number
+set noswapfile
 
 set undofile
 set undodir=~/.vim/undo
@@ -43,16 +53,6 @@ set expandtab
 set softtabstop=4
 set shiftwidth=4
 set shiftround
-
-set showmode
-set showcmd
-
-set splitbelow
-set splitright
-
-set wrapscan
-set report=0
-set synmaxcol=200
 
 set clipboard=unnamedplus
 set pastetoggle=<F3>
