@@ -1,1 +1,0 @@
-/home/rev/.config/fisherman/bass/functions/bass.fish
