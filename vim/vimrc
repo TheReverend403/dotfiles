@@ -76,4 +76,4 @@ nnoremap <C-Down> <C-w>j
 nnoremap <C-Up> <C-w>k
 nnoremap <C-Right> <C-w>l
 
-command! -range=% ix execute <line1> . "," . <line2> . "w !curl -s -F 'f:1=<-' ix.io | tr -d '\\n'"
+command! -range=% I execute <line1> . "," . <line2> . "w !curl -s -F 'f:1=<-' ix.io | tr -d '\\n'"
