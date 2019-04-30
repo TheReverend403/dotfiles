@@ -27,7 +27,7 @@ no-resume-playback
 
 ytdl=yes
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
-cache=1000000
+cache=512000
 
 ##################
 # SUBTITLES
