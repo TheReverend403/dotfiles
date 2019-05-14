@@ -1,1 +1,0 @@
-/home/rev/.config/fisherman/nvm/completions/nvm.fish

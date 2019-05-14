@@ -6,19 +6,23 @@ window:
 
 tabspaces: 8
 
+scrolling:
+  faux_multiplier: 3
+
 font:
   normal:
     family: 'Terminus (TTF)'
   size: 11.0
-  use_thin_strokes: true
-
+  use_thin_strokes: false
+  
 colors:
   primary:
-    background: '0x0B0B0B'
-    foreground: '0xBBBBBB'
+    background: '0x0b0b0b'
+    foreground: '0xbbbbbb'
+    bright_foreground: '0xeeeeee'
 
   cursor:
-    cursor: '0xBBBBBB'
+    cursor: '0xbbbbbb'
 
   normal:
     black:   '0x1b1918'
@@ -40,13 +44,10 @@ colors:
     cyan:    '0x26b3a4'
     white:   '0x848282'
 
-  indexed_colors: []
-
 mouse:
   url:
     launcher:
       program: xdg-open
-    modifiers: None
 
 key_bindings:
   - { key: V,        mods: Control|Shift, action: Paste            }
