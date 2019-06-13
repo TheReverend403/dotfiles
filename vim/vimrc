@@ -40,6 +40,7 @@ set cursorline
 set number
 set noshowmode
 set showcmd
+set nomodeline
 
 set splitbelow
 set splitright
