@@ -81,3 +81,11 @@ user_pref('browser.pagethumbnails.capturing_disabled', true);
 
 // JSONView replacement
 user_pref('devtools.jsonview.enabled', true);
+
+user_pref('dom.webcomponents.enabled', true);
+user_pref('dom.webcomponents.shadowdom.enabled', true);
+
+// SOS (Save Our SSDs)
+user_pref('browser.cache.disk.enable', false);
+user_pref('browser.cache.memory.enable', true);
+user_pref('browser.cache.memory.capacity', -1);
