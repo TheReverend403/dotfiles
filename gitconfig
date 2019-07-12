@@ -1,0 +1,30 @@
+[user]
+	email = rev@revthefox.co.uk
+	name = Lee Watson
+	signingkey = 5E0BC8F8
+[push]
+	default = tracking
+[color]
+	ui = auto
+[core]
+	abbrev = 12
+	whitespace = trailing-space,space-before-tab
+	autocrlf = input
+	pager = less -F -X
+	quotepath = false
+[format]
+	numbered = auto
+	subjectPrefix = PATCH
+[commit]
+	gpgsign = true
+	verbose = true
+[diff]
+	compactionHeuristic = true
+	renames = copies
+	mnemonicprefix = true
+[advice]
+	statusHints = false
+[branch]
+	autosetupmerge = true
+[rerere]
+	enabled = true
