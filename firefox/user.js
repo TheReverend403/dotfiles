@@ -38,7 +38,7 @@ user_pref('dom.battery.enabled', false);
 user_pref('reader.parse-on-load.enabled', false);
 
 // Clicking the URL bar selects all text
-user_pref('browser.urlbar.clickSelectsAll', true);
+user_pref('browser.urlbar.clickSelectsAll', false);
 
 // Disable clipboard annoyances
 user_pref('middlemouse.contentLoadURL', false);
