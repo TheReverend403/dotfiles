@@ -4,7 +4,8 @@ mpd_connection_timeout = 5
 mpd_music_dir = "~/music"
 mpd_crossfade_time = 0
 
-ncmpcpp_directory = "~/.ncmpcpp"
+ncmpcpp_directory = "~/.config/ncmpcpp"
+lyrics_directory = "~/.config/ncmpcpp/lyrics"
 playlist_disable_highlight_delay = 3
 message_delay_time = 1
 seek_time = 4
