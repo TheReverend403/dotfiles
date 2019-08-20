@@ -49,7 +49,7 @@ if status is-login
     set -x VIRTUAL_ENV_DISABLE_PROMPT true
 
     ## NodeJS
-    set -x NPM_PACKAGES "$HOME/.npm-packages"
+    set -x NPM_PACKAGES "$HOME/.local"
     set -x NODE_PATH "$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
     # Go
