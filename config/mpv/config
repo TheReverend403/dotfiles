@@ -1,10 +1,7 @@
 ## Video ##
-profile=opengl-hq
+profile=gpu-hq
 hwdec=auto
 video-sync=display-resample
-cscale=ewa_lanczossharp
-interpolation=yes
-tscale=oversample
 deinterlace=yes
 
 ## Audio ##
@@ -20,14 +17,13 @@ no-sub
 ## Other ##
 cursor-autohide-fs-only
 cursor-autohide=1000
-geometry=50%:50%
+geometry=75%:75%
 autofit-larger=50%x80%
 no-border
 no-resume-playback
 
 ytdl=yes
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
-cache=512000
 
 ##################
 # SUBTITLES
