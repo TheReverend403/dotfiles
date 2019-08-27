@@ -1,5 +1,5 @@
 ## Video ##
-profile=gpu-hq
+profile=opengl-hq
 hwdec=auto
 video-sync=display-resample
 deinterlace=yes
