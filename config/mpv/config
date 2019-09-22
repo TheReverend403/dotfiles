@@ -1,8 +1,7 @@
 ## Video ##
-profile=opengl-hq
+profile=gpu-hq
 hwdec=auto
 video-sync=display-resample
-deinterlace=yes
 
 ## Audio ##
 ao=pulse

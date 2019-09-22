@@ -1,2 +1,4 @@
+completions
 fishd.*
 local.fish
+fish_variables
