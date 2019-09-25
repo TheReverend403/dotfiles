@@ -1,14 +1,3 @@
-## Print a pretty-formatted message
-function fish_msg
-    if count $argv >/dev/null
-        printf "[%s*%s] %s\n" (set_color green) (set_color normal) $argv
-    end
-end
-
-function available --description 'Returns 0 if a given command is present and executable, 1 otherwise.'
-    command -v $argv >/dev/null ^&1
-end
-
 ## Fish UI
 set fish_greeting ''
 set fish_color_param default
@@ -24,6 +13,10 @@ set fish_color_escape white
 set fish_pager_color_prefix brgreen
 set fish_pager_color_progress brgreen
 set fish_pager_color_description white --italics
+
+function available --description 'Returns 0 if a given command is present and executable, 1 otherwise.'
+    command -v $argv >/dev/null ^&1
+end
 
 ## Aliases
 test -s "$__fish_config_dir/aliases.fish"; and source "$__fish_config_dir/aliases.fish"
@@ -70,7 +63,7 @@ if status is-login
     set -x NODE_PATH "$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
     # Go
-    set -x GOPATH "$HOME/.go"
+    set -x GOPATH "$HOME/.local/lib/go"
 
     ## PATH
     set -l user_dirs "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "$HOME/.local/bin"
@@ -80,24 +73,14 @@ if status is-login
         test -d "$dir"; and set fish_user_paths "$dir" $fish_user_paths
     end
 
-    available rustup; and available rustc; and set -gx RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
-
     ## Less
     set -x LESS '-RSXMgwsI~'
     set -x LESSHISTFILE /dev/null
 
-    ## Local, untracked config
-    test -s "$HOME/.config/fish/local.fish"; and source "$HOME/.config/fish/local.fish"
-    ## Aliases
-    test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliases.fish"
-
     # Run X if not already running, not root, not in SSH and not in tmux
     if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT" -a -z "$TMUX"
         if available startx
-            fish_msg 'Starting X...'
             exec startx >/dev/null ^&1
         end
     end
 end
-
-## Aliases
