@@ -11,7 +11,9 @@ function fish_prompt
     end
 
     set_color $name_color; set_color -i
-    printf '%s@%s ' $USER (hostname -s)
+    printf $USER
+    set_color normal; set_color -i
+    printf '@%s ' (hostname -s)
     set_color normal
 
     set_color $fish_color_cwd
