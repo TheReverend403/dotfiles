@@ -1,18 +1,15 @@
 function fish_prompt
-    set last_status $status
-
     if test -n "$SSH_CLIENT"
-        set_color magenta
+        set_color -i green
         printf 'ssh:'
-        set_color normal
     end
 
     if test -n "$SUDO_USER"
-        set_color red
+        set_color -i red
         printf 'sudo:'
-        set_color normal
     end
 
+    set_color normal
     printf '%s@%s ' $USER (hostname -s)
 
     set_color $fish_color_cwd

@@ -12,7 +12,24 @@ end
 ## Fish UI
 set fish_greeting ''
 set fish_color_param default
-set fish_color_command default
+set fish_color_command default 
+set fish_color_cwd magenta
+set fish_color_operator default --bold
+set fish_color_end white
+set fish_color_comment brblack --italics
+set fish_color_quote bryellow
+set fish_color_error red
+set fish_color_search_match --background=brblack
+set fish_color_escape white
+set fish_pager_color_prefix brgreen
+set fish_pager_color_progress brgreen
+set fish_pager_color_description white --italics
+
+## Aliases
+test -s "$__fish_config_dir/aliases.fish"; and source "$__fish_config_dir/aliases.fish"
+
+## Local, untracked config
+test -s "$__fish_config_dir/local.fish"; and source "$__fish_config_dir/local.fish"
 
 ## Login session initialisation
 if status is-login
@@ -84,4 +101,3 @@ if status is-login
 end
 
 ## Aliases
-test -s "$HOME/.config/fish/aliases.fish"; and source "$HOME/.config/fish/aliases.fish"
