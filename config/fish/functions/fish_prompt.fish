@@ -5,12 +5,13 @@ function fish_prompt
     end
 
     if test (id -u) -eq 0
-        set_color -i red
-        printf 'root:'
+        set_color -i brred
     end
 
+    printf $USER
     set_color normal; set_color -i
-    printf '%s@%s ' $USER (hostname -s)
+
+    printf '@%s ' (hostname -s)
     set_color normal
 
     set_color $fish_color_cwd
