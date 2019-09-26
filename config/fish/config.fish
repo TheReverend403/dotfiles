@@ -45,9 +45,10 @@ if status is-login
         end
     end
 
+    set -x EDITOR vim
+
     # flags for Gentoo and Debian's Chromium wrappers
     set -x CHROMIUM_FLAGS "--disable-background-networking --disable-component-extensions-with-background-pages"
-    set -x EDITOR vim
 
     # Disable GTK3 accessibility
     set -x NO_AT_BRIDGE 1

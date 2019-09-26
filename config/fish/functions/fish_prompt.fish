@@ -1,6 +1,6 @@
 function fish_prompt
     if test -n "$SSH_CLIENT"
-        set_color -i green
+        set_color green
         printf 'ssh:'
     end
 
@@ -10,11 +10,11 @@ function fish_prompt
         set name_color normal
     end
 
-    set_color $name_color; set_color -i
+    set_color $name_color
     printf $USER
-    set_color normal; set_color -i
-    printf '@%s ' (hostname -s)
+
     set_color normal
+    printf '@%s ' (hostname -s)
 
     set_color $fish_color_cwd
     printf "%s" (prompt_pwd)
