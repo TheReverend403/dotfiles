@@ -1,12 +1,18 @@
 ## Video ##
 profile=gpu-hq
 hwdec=auto
+vo=gpu
+scale=ewa_lanczossharp
+cscale=ewa_lanczossharp
 video-sync=display-resample
+interpolation
+tscale=oversample
 
 ## Audio ##
 ao=pulse
 audio-channels=2
 audio-normalize-downmix=yes
+af=acompressor
 
 ## UI ##
 stop-screensaver
@@ -20,6 +26,9 @@ geometry=75%:75%
 autofit-larger=50%x80%
 no-border
 no-resume-playback
+cache=50000
+demuxer-thread=yes
+demuxer-readahead-secs=200
 
 ytdl=yes
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
