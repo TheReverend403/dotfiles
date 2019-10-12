@@ -28,3 +28,5 @@
 	autosetupmerge = true
 [rerere]
 	enabled = true
+[merge]
+	tool = vimdiff

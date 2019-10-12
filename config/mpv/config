@@ -26,7 +26,7 @@ geometry=75%:75%
 autofit-larger=50%x80%
 no-border
 no-resume-playback
-cache=50000
+cache=25000
 demuxer-thread=yes
 demuxer-readahead-secs=200
 
