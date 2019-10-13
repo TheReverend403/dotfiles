@@ -3,8 +3,8 @@ set fish_greeting ''
 set fish_color_param default
 set fish_color_command default 
 set fish_color_cwd magenta
-set fish_color_operator default --bold
-set fish_color_end default --bold
+set fish_color_operator green --bold
+set fish_color_end $fish_color_operator
 set fish_color_comment brblack --italics
 set fish_color_quote bryellow
 set fish_color_error red
@@ -31,24 +31,6 @@ if status is-login
 
     ## Prevent Wine from adding menu entries and desktop links.
     set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
-
-    ## Default programs
-    if test -z "$BROWSER"
-        if available firefox
-            set -x BROWSER firefox
-        else if available chromium
-            set -x BROWSER chromium
-        else if available lynx
-            set -x BROWSER lynx
-        else if available w3m
-            set -x BROWSER w3m
-        end
-    end
-
-    set -x EDITOR vim
-
-    # flags for Gentoo and Debian's Chromium wrappers
-    set -x CHROMIUM_FLAGS "--disable-background-networking --disable-component-extensions-with-background-pages"
 
     # Disable GTK3 accessibility
     set -x NO_AT_BRIDGE 1

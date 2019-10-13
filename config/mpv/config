@@ -16,17 +16,14 @@ af=acompressor
 
 ## UI ##
 stop-screensaver
-cursor-autohide-fs-only
 no-sub
-
-## Other ##
 cursor-autohide-fs-only
-cursor-autohide=1000
 geometry=75%:75%
 autofit-larger=50%x80%
+
+## Other ##
 no-border
 no-resume-playback
-cache=25000
 demuxer-thread=yes
 demuxer-readahead-secs=200
 
