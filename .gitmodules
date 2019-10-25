@@ -1,3 +1,6 @@
 [submodule "config/awesome"]
 	path = config/awesome
 	url = https://github.com/TheReverend403/awesome-config
+[submodule "config/mpv/scripts/mpv-webm"]
+	path = config/mpv/scripts/mpv-webm
+	url = https://github.com/ekisu/mpv-webm
