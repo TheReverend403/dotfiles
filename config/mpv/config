@@ -17,7 +17,6 @@ af=acompressor
 ## UI ##
 stop-screensaver
 no-sub
-no-osd-bar
 cursor-autohide-fs-only
 geometry=75%:75%
 autofit-larger=50%x80%
