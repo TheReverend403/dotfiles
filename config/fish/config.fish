@@ -36,7 +36,7 @@ if status is-login
     set -x NO_AT_BRIDGE 1
 
     # Make Qt use the GTK file chooser
-    set -x QT_QPA_PLATFORMTHEME gtk
+    set -x QT_QPA_PLATFORMTHEME qt5ct
 
     ## Python
     set -x VIRTUAL_ENV_DISABLE_PROMPT true
@@ -49,7 +49,7 @@ if status is-login
     set -x GOPATH "$HOME/.local/lib/go"
 
     ## PATH
-    set -l user_dirs "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "$HOME/.local/bin"
+    set -l user_dirs "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "$HOME/.local/bin" "/usr/local/bin" "/usr/local/sbin"
 
     ## Only add items to $PATH that actually exist. Prevents fish complaining.
     for dir in $user_dirs
