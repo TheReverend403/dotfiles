@@ -1,0 +1,27 @@
+configuration {
+    theme: "leliana";
+    modi: "run";
+    width: 30;
+    lines: 10;
+    columns: 1;
+    font: "Roboto Medium 12";
+    location: 0;
+    yoffset: -100;
+    xoffset: 0;
+    fixed-num-lines: false;
+    terminal: "lxterminal";
+    ssh-client: "ssh";
+    ssh-command: "{terminal} -e "{ssh-client} {host}"";
+    run-command: "{cmd}";
+    run-shell-command: "{terminal} -e "{cmd}"";
+    disable-history: true;
+    case-sensitive: false;
+    sidebar-mode: false;
+    eh: 1;
+    auto-select: false;
+    parse-hosts: false;
+    combi-modi: "run";
+    m: "-1";
+    hide-scrollbar: true;
+    pid: "/run/user/1000/rofi.pid";
+}
