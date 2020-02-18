@@ -59,7 +59,22 @@ if status is-login
     ## Less
     set -x LESS '-RSXMgwsI~'
     set -x LESSHISTFILE /dev/null
+    set -x LESS_TERMCAP_mb (tput bold; tput setaf 5)
+    set -x LESS_TERMCAP_md (tput bold; tput setaf 5)
+    set -x LESS_TERMCAP_me (tput sgr0)
+    set -x LESS_TERMCAP_so (tput bold; tput setaf 5; tput setab 0)
+    set -x LESS_TERMCAP_se (tput rmso; tput sgr0)
+    set -x LESS_TERMCAP_ue (tput rmul; tput sgr0)
+    set -x LESS_TERMCAP_us (tput smul; tput bold; tput setaf 7)
+end
 
+## Aliases
+test -s "$__fish_config_dir/aliases.fish"; and source "$__fish_config_dir/aliases.fish"
+
+## Local, untracked config
+test -s "$__fish_config_dir/local.fish"; and source "$__fish_config_dir/local.fish"
+
+if status is-login
     # Run X if not already running, not root, not in SSH and not in tmux
     if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT" -a -z "$TMUX"
         if available startx
