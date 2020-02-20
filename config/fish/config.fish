@@ -18,12 +18,6 @@ function available --description 'Returns 0 if a given command is present and ex
     command -v $argv >/dev/null ^&1
 end
 
-## Aliases
-test -s "$__fish_config_dir/aliases.fish"; and source "$__fish_config_dir/aliases.fish"
-
-## Local, untracked config
-test -s "$__fish_config_dir/local.fish"; and source "$__fish_config_dir/local.fish"
-
 ## Login session initialisation
 if status is-login
     ## /etc/profile compatibility
