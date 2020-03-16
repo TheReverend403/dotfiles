@@ -15,8 +15,10 @@ xsetroot -cursor_name left_ptr
 setxkbmap -option compose:ralt,caps:super
 unclutter --timeout 5 --exclude-root --fork
 xset +fp ~/.local/share/fonts/
+
 # Make left side buttons for mouse act as middle click. Thanks steelseries for the weak af wheel.
-xinput --set-button-map 8 1 2 3 4 5 6 7 2 2 10 11 12 13 14 15 16
+MOUSE_ID=$(xinput | grep -m 1 "SteelSeries Sensei" | sed 's/^.*id=\([0-9]*\)[ \t].*$/\1/')
+xinput --set-button-map $MOUSE_ID 1 2 3 4 5 6 7 2 2 10 11 12 13 14 15 16
 
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
