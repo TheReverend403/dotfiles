@@ -85,11 +85,6 @@ user_pref('devtools.jsonview.enabled', true);
 user_pref('dom.webcomponents.enabled', true);
 user_pref('dom.webcomponents.shadowdom.enabled', true);
 
-// SOS (Save Our SSDs)
-user_pref('browser.cache.disk.enable', false);
-user_pref('browser.cache.memory.enable', true);
-user_pref('browser.cache.memory.capacity', -1);
-
 // Don't ever start with Windows.
 user_pref('toolkit.winRegisterApplicationRestart', false);
 
