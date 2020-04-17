@@ -90,3 +90,9 @@ user_pref('toolkit.winRegisterApplicationRestart', false);
 
 // Keep userChrome support.
 user_pref('toolkit.legacyUserProfileCustomizations.stylesheets', true);
+
+// Disable the ugly af zoomed address bar in Firefox 75
+user_pref('browser.urlbar.openViewOnFocus', false);
+user_pref('browser.urlbar.update1', false);
+user_pref('browser.urlbar.update1.interventions', false);
+user_pref('browser.urlbar.update1.searchTips', false);
