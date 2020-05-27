@@ -7,3 +7,6 @@ user_pref('clipboard.autocopy', false);
 
 // Don't ever start with Windows.
 user_pref('toolkit.winRegisterApplicationRestart', false);
+
+// ???
+user_pref('browser.formfill.enable', false);
