@@ -43,7 +43,7 @@ if status is-login
     set -x GOPATH "$HOME/.local/lib/go"
 
     ## PATH
-    set -U fish_user_paths "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "$HOME/.local/bin" "/usr/local/sbin" "/usr/local/bin"
+    set -U fish_user_paths "$HOME/.local/bin" "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "/usr/local/sbin" "/usr/local/bin"
 
     ## Less
     set -x LESS '-RSXMgwsI~'
