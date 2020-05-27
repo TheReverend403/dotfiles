@@ -43,12 +43,7 @@ if status is-login
     set -x GOPATH "$HOME/.local/lib/go"
 
     ## PATH
-    set -l user_dirs "/usr/local/bin" "/usr/local/sbin" "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "$HOME/.local/bin"
-
-    ## Only add items to $PATH that actually exist. Prevents fish complaining.
-    for dir in $user_dirs
-        test -d "$dir"; and set fish_user_paths "$dir" $fish_user_paths
-    end
+    set -U fish_user_paths "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "$HOME/.local/bin" "/usr/local/sbin" "/usr/local/bin"
 
     ## Less
     set -x LESS '-RSXMgwsI~'
@@ -72,7 +67,7 @@ if status is-login
     # Run X if not already running, not root, not in SSH and not in tmux
     if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT" -a -z "$TMUX" -a (tty) = "/dev/tty1"
         if available startx
-            exec startx > /dev/null 2>&1
+            exec startx -- -keeptty
         end
     end
 end
