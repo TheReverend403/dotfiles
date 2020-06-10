@@ -1,0 +1,59 @@
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+    "alwaysShowTabs": false,
+    "showTabsInTitlebar": true,
+    "disabledProfileSources": [
+        "Windows.Terminal.Azure"
+    ],
+    "profiles": {
+        "defaults": {
+            "fontFace": "Source Code Pro Medium",
+            "fontSize": 12,
+            "antialiasingMode": "cleartype",
+            "cursorShape": "filledBox",
+            "colorScheme": "Lelianux"
+        },
+        "list": [
+            {
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl",
+                "commandline": "wsl.exe ~ -d Ubuntu-20.04"
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "name": "Lelianux",
+            "cursorColor": "#bbbbbb",
+            "selectionBackground": "#bbbbbb",
+            "background": "#0b0b0b",
+            "foreground": "#CCCCCC",
+            "black": "#1b1918",
+            "blue": "#3971ed",
+            "cyan": "#00ad9c",
+            "green": "#5ab738",
+            "purple": "#e85b92",
+            "red": "#f22c40",
+            "white": "#CCCCCC",
+            "yellow": "#d5911a",
+            "brightBlack": "#4f4f4f",
+            "brightBlue": "#5e8af1",
+            "brightCyan": "#26b3a4",
+            "brightGreen": "#7bd15b",
+            "brightPurple": "#f181ac",
+            "brightRed": "#f85262",
+            "brightWhite": "#848282",
+            "brightYellow": "#e9ad44"
+        }
+    ],
+    "keybindings": []
+}
