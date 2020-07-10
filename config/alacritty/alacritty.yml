@@ -3,9 +3,10 @@ env:
 
 window:
   decorations: none
+  dynamic_padding: true
   padding:
-    x: 5
-    y: 5
+    x: 2
+    y: 2
 
 mouse:
   url:
