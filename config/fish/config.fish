@@ -1,5 +1,5 @@
 ## Fish UI
-set fish_greeting ''
+set fish_greeting
 set fish_color_param default
 set fish_color_command default 
 set fish_color_cwd magenta
@@ -28,8 +28,8 @@ if status is-login
 
     # Disable GTK3 accessibility
     set -x NO_AT_BRIDGE 1
-
-    # Make Qt use the GTK file chooser
+    
+    # Make QT apps use the GTK file chooser.
     set -x QT_QPA_PLATFORMTHEME qt5ct
 
     ## Python
@@ -67,7 +67,7 @@ if status is-login
     # Run X if not already running, not root, not in SSH and not in tmux
     if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT" -a -z "$TMUX" -a (tty) = "/dev/tty1"
         if available startx
-            exec startx -- -keeptty
+            exec startx
         end
     end
 end
