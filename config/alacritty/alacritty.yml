@@ -8,11 +8,6 @@ window:
     x: 2
     y: 2
 
-mouse:
-  url:
-    launcher:
-      program: xdg-open
-
 font:
   size: 12.0
 
