@@ -19,37 +19,39 @@ font:
     style: Bold
 
   italic:
-    style: Italic
+    style: Medium Italic
 
   bold_italic:
     style: Bold Italic
   
 colors:
   cursor:
-    cursor: '0xbbbbbb'
+    cursor: '0xeeeeee'
 
+  # Default colors
   primary:
-    background: '0x0b0b0b'
-    foreground: '0xbbbbbb'
-    bright_foreground: '0xffffff'
+    background: '0x0d0d0d'
+    foreground: '0xeeeeee'
 
+  # Normal colors
   normal:
-    black: '0x1b1918'
-    red: '0xf22c40'
-    green: '0x5ab738'
-    yellow: '0xd5911a'
-    blue: '0x3971ed'
-    magenta: '0xe85b92'
-    cyan: '0x00ad9c'
-    white: '0xcccccc'
+    black:   '0x1b1d1e'
+    red:     '0xf92672'
+    green:   '0x82b414'
+    yellow:  '0xfd971f'
+    blue:    '0x0063af'
+    magenta: '0x8c54fe'
+    cyan:    '0x465457'
+    white:   '0xb5b5b5'
 
+  # Bright colors
   bright:
-    black: '0x4f4f4f'
-    red: '0xf85262'
-    green: '0x7bd15b'
-    yellow: '0xe9ad44'
-    blue: '0x5e8af1'
-    magenta: '0xf181ac'
-    cyan: '0x26b3a4'
-    white: '0x848282'
+    black:   '0x505354'
+    red:     '0xff5995'
+    green:   '0xb6e354'
+    yellow:  '0xfeed6c'
+    blue:    '0x238cdc'
+    magenta: '0x9e6ffe'
+    cyan:    '0x899ca1'
+    white:   '0xf8f8f2'
 

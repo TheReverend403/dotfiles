@@ -10,38 +10,38 @@ Xft.dpi: 92
 *.font: Roboto Medium:size=12
 
 ! special
-*.foreground:   #cccccc
-*.background:   #0b0b0b
-*.cursorColor:  #bbbbbb
+*.foreground:   #eeeeee
+*.background:   #0d0d0d
+*.cursorColor:  #eeeeee
 
 ! black
-*.color0:       #1b1918
-*.color8:       #4f4f4f
+*.color0:       #1b1d1e
+*.color8:       #505354
 
 ! red
-*.color1:       #f22c40
-*.color9:       #f85262
+*.color1:       #f92672
+*.color9:       #ff5995
 
 ! green
-*.color2:       #5ab738
-*.color10:      #7bd15b
+*.color2:       #82b414
+*.color10:      #b6e354
 
 ! yellow
-*.color3:       #d5911a
-*.color11:      #e9ad44
+*.color3:       #fd971f
+*.color11:      #feed6c
 
 ! blue
-*.color4:       #3971ed
-*.color12:      #5e8af1
+*.color4:       #0063af
+*.color12:      #238cdc
 
 ! magenta
-*.color5:       #e85b92
-*.color13:      #f181ac
+*.color5:       #8c54fe
+*.color13:      #9e6ffe
 
 ! cyan
-*.color6:       #00ad9c
-*.color14:      #26b3a4
+*.color6:       #465457
+*.color14:      #899ca1
 
 ! white
-*.color7:       #cccccc
-*.color15:      #848282
+*.color7:       #b5b5b5
+*.color15:      #f8f8f2
