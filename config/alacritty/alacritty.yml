@@ -14,15 +14,6 @@ font:
   normal:
     family: Roboto Mono
 
-  bold:
-    style: Bold
-
-  italic:
-    style: Medium Italic
-
-  bold_italic:
-    style: Bold Italic
-  
 colors:
   cursor:
     cursor: '0xeeeeee'

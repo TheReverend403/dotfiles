@@ -1,15 +1,15 @@
 configuration {
-    theme: "leliana";
+    theme: "lelianux";
     modi: "run";
     width: 30;
     lines: 10;
     columns: 1;
-    font: "Roboto Medium 12";
+    font: "Roboto 12";
     location: 0;
     yoffset: -100;
     xoffset: 0;
     fixed-num-lines: false;
-    terminal: "lxterminal";
+    terminal: "alacritty";
     ssh-client: "ssh";
     ssh-command: "{terminal} -e "{ssh-client} {host}"";
     run-command: "{cmd}";
