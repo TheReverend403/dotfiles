@@ -8,7 +8,7 @@
     ],
     "profiles": {
         "defaults": {
-            "fontFace": "Source Code Pro Medium",
+            "fontFace": "Roboto Mono",
             "fontSize": 12,
             "antialiasingMode": "cleartype",
             "cursorShape": "filledBox",
