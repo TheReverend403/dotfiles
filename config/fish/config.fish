@@ -30,7 +30,7 @@ if status is-login
     set -x NO_AT_BRIDGE 1
     
     # Make QT apps use the GTK file chooser.
-    set -x QT_QPA_PLATFORMTHEME qt5ct
+    set -x QT_QPA_PLATFORMTHEME gtk2
 
     ## Python
     set -x VIRTUAL_ENV_DISABLE_PROMPT true
