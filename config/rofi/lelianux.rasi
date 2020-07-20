@@ -1,0 +1,37 @@
+* {
+    magenta: #8c54fe;
+    background: #0d0d0d;
+    foreground: #eeeeee;
+    selected-foreground: @magenta;
+    border-color: @magenta;
+    spacing: 0;
+    padding: 0px;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+window {
+    border: 2px solid;
+    padding: 5px 10px 5px 5px;
+}
+
+element selected.normal {
+    text-color: @selected-foreground;
+}
+
+element selected.urgent {
+    text-color: @selected-foreground;
+}
+
+element selected.active {
+    text-color: @selected-foreground;
+}
+
+inputbar {
+    children: [prompt,textbox-prompt-colon,entry];
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: "> ";
+}
