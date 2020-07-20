@@ -9,7 +9,8 @@ window:
 font:
   size: 12
   normal:
-    family: Roboto Mono
+    family: Source Code Pro
+    style: Medium
 
 colors:
   cursor:
