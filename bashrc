@@ -5,4 +5,4 @@ if [[ $- != *i* ]]; then
     return
 fi
 
-[[ ! -z "$fish_path" ]] && [[ -x $fish_path ]] && SHELL=$fish_path exec $fish_path
+[[ -x $fish_path ]] && SHELL=$fish_path exec $fish_path
