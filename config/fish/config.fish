@@ -3,15 +3,15 @@ set fish_greeting
 set fish_color_param default
 set fish_color_command default 
 set fish_color_cwd magenta
-set fish_color_operator green --bold
+set fish_color_operator brblack
 set fish_color_end $fish_color_operator
 set fish_color_comment brblack --italics
-set fish_color_quote bryellow
+set fish_color_quote brgreen
 set fish_color_error red
 set fish_color_search_match --background=brblack
 set fish_color_escape white
-set fish_pager_color_prefix brgreen
-set fish_pager_color_progress brgreen
+set fish_pager_color_prefix magenta
+set fish_pager_color_progress magenta
 set fish_pager_color_description white --italics
 
 function available --description 'Returns 0 if a given command is present and executable, 1 otherwise.'
@@ -24,15 +24,8 @@ set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 # Disable GTK3 accessibility
 set -x NO_AT_BRIDGE 1
 
-# Make QT apps use the GTK file chooser.
-set -x QT_QPA_PLATFORMTHEME gtk2
-
 ## Python
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
-
-## NodeJS
-set -x NPM_PACKAGES "$HOME/.local"
-set -x NODE_PATH "$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 # Go
 set -x GOPATH "$HOME/.local/lib/go"
