@@ -36,5 +36,6 @@ export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 ## }}
 
-#thunar --daemon &
+/usr/libexec/polkit-gnome-authentication-agent-1 & >/dev/null 2>&1
+
 exec awesome

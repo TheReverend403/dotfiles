@@ -24,6 +24,8 @@ set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 # Disable GTK3 accessibility
 set -x NO_AT_BRIDGE 1
 
+set -x QT_QPA_PLATFORMTHEME gtk2
+
 ## Python
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
 
@@ -32,17 +34,6 @@ set -x GOPATH "$HOME/.local/lib/go"
 
 ## PATH
 set -U fish_user_paths "$HOME/.local/bin" "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "/usr/local/sbin" "/usr/local/bin"
-
-## Less
-set -x LESS '-RSXMgwsI~'
-set -x LESSHISTFILE /dev/null
-set -x LESS_TERMCAP_mb (tput bold; tput setaf 5)
-set -x LESS_TERMCAP_md (tput bold; tput setaf 5)
-set -x LESS_TERMCAP_me (tput sgr0)
-set -x LESS_TERMCAP_so (tput bold; tput setaf 5; tput setab 0)
-set -x LESS_TERMCAP_se (tput rmso; tput sgr0)
-set -x LESS_TERMCAP_ue (tput rmul; tput sgr0)
-set -x LESS_TERMCAP_us (tput smul; tput bold; tput setaf 7)
 
 ## Aliases
 test -s "$__fish_config_dir/aliases.fish"; and source "$__fish_config_dir/aliases.fish"
@@ -53,6 +44,6 @@ test -s "$__fish_config_dir/local.fish"; and source "$__fish_config_dir/local.fi
 # Run X if not already running, not root, not in SSH and not in tmux
 if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT" -a -z "$TMUX" -a (tty) = "/dev/tty1"
     if available startx
-        exec startx
+        exec startx >/dev/null 2>&1
     end
 end

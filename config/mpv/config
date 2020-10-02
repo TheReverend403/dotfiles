@@ -12,6 +12,7 @@ tscale=oversample
 ao=pulse
 audio-channels=2
 audio-normalize-downmix=yes
+ad-lavc-downmix=no # https://github.com/mpv-player/mpv/issues/6300
 af=acompressor
 
 ## UI ##

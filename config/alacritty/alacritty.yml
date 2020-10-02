@@ -12,6 +12,9 @@ font:
     family: Source Code Pro
     style: Medium
 
+  italic:
+    style: Medium Italic
+
 colors:
   cursor:
     cursor: '0xeeeeee'
