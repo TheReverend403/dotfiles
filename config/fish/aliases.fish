@@ -9,4 +9,5 @@ alias ls 'ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=au
 
 if available nvim
     alias vim nvim
+    alias vimdiff 'nvim -d'
 end
