@@ -1,6 +1,6 @@
 ## Video ##
 profile=gpu-hq
-hwdec=auto
+hwdec=nvdec
 vo=gpu
 scale=ewa_lanczossharp
 cscale=ewa_lanczossharp
