@@ -3,8 +3,8 @@ set shell=/bin/sh
 " {{{ Plugins
 call plug#begin()
 
-Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-sensible'
+Plug 'nanotech/jellybeans.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 
