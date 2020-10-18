@@ -14,6 +14,18 @@ set fish_pager_color_prefix magenta
 set fish_pager_color_progress magenta
 set fish_pager_color_description white --italics
 
+function __log
+    set_color brwhite --bold
+    printf "["
+    set_color green --bold
+    printf "*"
+    set_color brwhite --bold
+    printf "] $argv"
+    set_color normal
+    printf "\n"
+end
+
+
 function available --description 'Returns 0 if a given command is present and executable, 1 otherwise.'
     command -v $argv > /dev/null 2>&1
 end
@@ -43,11 +55,11 @@ test -s "$__fish_config_dir/local.fish"; and source "$__fish_config_dir/local.fi
 
 # Run X if not already running, not root, not in SSH and not in tmux
 if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT" -a -z "$TMUX" -a (tty) = "/dev/tty1"
+    set -l xlauncher startx
     if available sx
-        exec sx
+        set xlauncher sx
     end
 
-    if available startx
-        exec startx >/dev/null 2>&1
-    end
+    __log "Starting X11 with $xlauncher..."
+    exec $xlauncher >/dev/null 2>&1
 end
