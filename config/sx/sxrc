@@ -22,7 +22,7 @@ xinput --set-button-map $MOUSE_ID 1 2 3 4 5 6 7 2 2 10 11 12 13 14 15 16
 
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 fi
 
 ## {{ Refresh gpg-agent tty in case user switches into an X session
