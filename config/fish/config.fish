@@ -42,7 +42,18 @@ set -x QT_QPA_PLATFORMTHEME gtk2
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
 
 # Go
-set -x GOPATH "$HOME/.local/lib/go"
+set -x GOPATH "$XDG_DATA_HOME/go"
+
+# XDG partial support.
+set -x ASPELL_CONF "per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
+set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
+set -x CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
+set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
+set -x NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
+set -x PSQLRC "$XDG_CONFIG_HOME/pg/psqlrc"
+set -x PSQL_HISTORY "$XDG_CACHE_HOME/pg/psql_history"
+set -x PGPASSFILE "$XDG_CONFIG_HOME/pg/pgpass"
+set -x PGSERVICEFILE "$XDG_CONFIG_HOME/pg/pg_service.conf"
 
 ## PATH
 set -U fish_user_paths "$HOME/.local/bin" "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "/usr/local/sbin" "/usr/local/bin"
