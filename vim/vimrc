@@ -4,6 +4,7 @@ set shell=/bin/sh
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'
 Plug 'nanotech/jellybeans.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
