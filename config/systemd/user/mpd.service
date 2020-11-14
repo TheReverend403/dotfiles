@@ -3,12 +3,8 @@ Description=Music Player Daemon
 After=network.target sound.target
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/mpd
-PIDFile=%h/.config/mpd/pid
-
-#LimitRTPRIO=50
-#LimitRTTIME=-1
+Type=notify
+ExecStart=/usr/bin/mpd --no-daemon
 
 [Install]
 WantedBy=default.target
