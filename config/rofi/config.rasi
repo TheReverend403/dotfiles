@@ -4,7 +4,7 @@ configuration {
     width: 30;
     lines: 10;
     columns: 1;
-    font: "Roboto Medium 12";
+    font: "Roboto Medium 13";
     location: 0;
     yoffset: -100;
     xoffset: 0;
