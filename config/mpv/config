@@ -8,6 +8,10 @@ video-sync=display-resample
 interpolation
 tscale=oversample
 
+scale-antiring=0.7 # luma upscale deringing
+dscale-antiring=0.7 # luma downscale deringing
+cscale-antiring=0.7 # chroma upscale deringing
+
 ## Audio ##
 ao=pulse
 audio-channels=2
