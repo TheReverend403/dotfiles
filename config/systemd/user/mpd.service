@@ -5,6 +5,7 @@ After=network.target sound.target
 [Service]
 Type=notify
 ExecStart=/usr/bin/mpd --no-daemon
+Nice=-10
 
 [Install]
 WantedBy=default.target
