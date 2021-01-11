@@ -7,6 +7,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'joshdick/onedark.vim'
 
 call plug#end()
