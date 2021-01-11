@@ -5,9 +5,9 @@ call plug#begin()
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
-Plug 'nanotech/jellybeans.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -27,11 +27,11 @@ if (empty($TMUX))
 endif
 
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'onedark',
       \ }
 
 set background=dark
-colorscheme jellybeans
+colorscheme onedark
 
 filetype plugin indent on
 syntax on
