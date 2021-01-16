@@ -29,15 +29,12 @@ call plug#end()
 " }}}
 
 " {{{ Appearance
-" Use 24-bit (true-color) mode when outside tmux.
-if (empty($TMUX))
-    if (has("nvim"))
-        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    endif
+if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 
-    if (has("termguicolors"))
-        set termguicolors
-    endif
+if (has("termguicolors"))
+    set termguicolors
 endif
 
 let g:lightline = {
