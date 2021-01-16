@@ -1,7 +1,22 @@
-set shell=/bin/sh
+set nocompatible
+
+if &shell =~# 'fish$'
+    set shell=/bin/bash
+endif
 
 " {{{ Plugins
-call plug#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+" Automatically install missing plugins on startup
+if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  autocmd VimEnter * PlugInstall | q
+endif
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
@@ -11,8 +26,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'joshdick/onedark.vim'
 
 call plug#end()
-
-command! PU PlugUpdate | PlugUpgrade
 " }}}
 
 " {{{ Appearance
@@ -52,12 +65,17 @@ set report=0
 set synmaxcol=200
 " }}}
 
-set hidden
-set nobackup
-set noswapfile
-
+" Put all temporary files under the same directory.
+" https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
+set backup
+set backupdir=$HOME/.vim/files/backup/
+set backupext=-vimbackup
+set backupskip=
+set directory=$HOME/.vim/files/swap/
+set updatecount=100
 set undofile
-set undodir=~/.vim/undo
+set undodir=$HOME/.vim/files/undo/
+set viminfo='100,n$HOME/.vim/files/info/viminfo
 
 set nohlsearch
 set smartcase
