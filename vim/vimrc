@@ -29,11 +29,11 @@ call plug#end()
 " }}}
 
 " {{{ Appearance
-if (has("nvim"))
+if (has('nvim'))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
-if (has("termguicolors"))
+if (has('termguicolors'))
     set termguicolors
 endif
 
@@ -46,8 +46,12 @@ colorscheme onedark
 
 filetype plugin indent on
 syntax on
+" }}}
 
 set cursorline
+set wrapscan
+set report=0
+set synmaxcol=200
 
 set number
 set noshowmode
@@ -60,9 +64,9 @@ set splitright
 set wrapscan
 set report=0
 set synmaxcol=200
-" }}}
 
-set nohlsearch
+set incsearch
+set hlsearch
 set smartcase
 
 set ttyfast
