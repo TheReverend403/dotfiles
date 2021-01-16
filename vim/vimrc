@@ -65,18 +65,6 @@ set report=0
 set synmaxcol=200
 " }}}
 
-" Put all temporary files under the same directory.
-" https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
-set backup
-set backupdir=$HOME/.vim/files/backup/
-set backupext=-vimbackup
-set backupskip=
-set directory=$HOME/.vim/files/swap/
-set updatecount=100
-set undofile
-set undodir=$HOME/.vim/files/undo/
-set viminfo='100,n$HOME/.vim/files/info/viminfo
-
 set nohlsearch
 set smartcase
 
@@ -90,8 +78,28 @@ set shiftround
 set clipboard=unnamedplus
 set pastetoggle=<F3>
 
-let mapleader = ","
+" {{{ Put all temporary files under the same directory.
+" https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
+if !isdirectory($HOME.'/.vim/files') && exists('*mkdir')
+    call mkdir($HOME.'/.vim/files')
+    call mkdir($HOME.'/.vim/files/backup')
+    call mkdir($HOME.'/.vim/files/swap')
+    call mkdir($HOME.'/.vim/files/undo')
+    call mkdir($HOME.'/.vim/files/info')
+endif
 
+set backup
+set backupdir=$HOME/.vim/files/backup/
+set backupext=-vimbackup
+set backupskip=
+set directory=$HOME/.vim/files/swap/
+set updatecount=100
+set undofile
+set undodir=$HOME/.vim/files/undo/
+set viminfo='100,n$HOME/.vim/files/info/viminfo
+" }}}
+
+let mapleader = ","
 nnoremap <C-Left> <C-w>h
 nnoremap <C-Down> <C-w>j
 nnoremap <C-Up> <C-w>k
