@@ -5,4 +5,4 @@ if [[ $- != *i* ]]; then
     return
 fi
 
-[[ -x $fish_path ]] && SHELL=$fish_path exec $fish_path
+[[ -z "$BASH_EXECUTION_STRING" ]] && [[ -x $fish_path ]] && SHELL=$fish_path exec $fish_path
