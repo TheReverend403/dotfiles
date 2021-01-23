@@ -10,3 +10,6 @@ user_pref('toolkit.winRegisterApplicationRestart', false);
 
 // ???
 user_pref('browser.formfill.enable', false);
+
+// Use system native emoji
+user_pref('font.name-list.emoji', 'emoji');
