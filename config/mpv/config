@@ -1,6 +1,6 @@
 ## Video ##
 profile=gpu-hq
-hwdec=nvdec
+hwdec=auto
 vo=gpu
 scale=ewa_lanczossharp
 cscale=ewa_lanczossharp
@@ -34,6 +34,8 @@ demuxer-readahead-secs=200
 
 ytdl=yes
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
+
+osd-font=Roboto
 
 ##################
 # SUBTITLES
