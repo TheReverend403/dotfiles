@@ -7,7 +7,7 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 Xft.dpi: 92
-*.font: Roboto Medium:size=12
+*.font: Roboto:size=13
 
 ! special
 *.foreground:   #eeeeee

@@ -13,7 +13,7 @@ if [ -f ~/.Xresources ]; then
 fi
 
 setxkbmap -option compose:ralt,caps:super
-unclutter --timeout 5 --exclude-root --fork
+unclutter --timeout 5 --jitter 10 --exclude-root --fork
 xset +fp ~/.local/share/fonts/
 
 # Make left side buttons for mouse act as middle click. Thanks steelseries for the weak af wheel.
