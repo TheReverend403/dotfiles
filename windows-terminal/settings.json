@@ -8,8 +8,8 @@
     ],
     "profiles": {
         "defaults": {
-            "fontFace": "Source Code Pro",
-            "fontSize": 12,
+            "fontFace": "JetBrains Mono",
+            "fontSize": 13,
             "antialiasingMode": "cleartype",
             "cursorShape": "filledBox",
             "colorScheme": "Lelianux"

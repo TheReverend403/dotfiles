@@ -7,7 +7,7 @@ window:
 font:
   size: 13
   normal:
-    family: Source Code Pro
+    family: JetBrains Mono
 
 colors:
   cursor:
