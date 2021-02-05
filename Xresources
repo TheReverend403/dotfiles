@@ -1,13 +1,12 @@
 Xcursor.theme: Yaru-Pink
 
+*.font: Roboto:size=13
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-Xft.dpi: 92
-*.font: Roboto:size=13
 
 ! special
 *.foreground:   #eeeeee
