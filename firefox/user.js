@@ -13,3 +13,6 @@ user_pref('browser.formfill.enable', false);
 
 // Use system native emoji
 user_pref('font.name-list.emoji', 'emoji');
+
+// Disable this annoying thing which I never actually use but constantly trigger.
+user_pref('browser.tabs.allowTabDetach', false);
