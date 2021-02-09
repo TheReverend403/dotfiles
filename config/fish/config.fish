@@ -36,7 +36,7 @@ set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 # Disable GTK3 accessibility
 set -x NO_AT_BRIDGE 1
 
-set -x QT_QPA_PLATFORMTHEME gtk2
+set -x QT_QPA_PLATFORMTHEME gtk3
 
 ## Python
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
