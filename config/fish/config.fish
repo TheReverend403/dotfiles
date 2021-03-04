@@ -37,6 +37,7 @@ set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 set -x NO_AT_BRIDGE 1
 
 set -x QT_QPA_PLATFORMTHEME gtk3
+set -x TDESKTOP_USE_GTK_FILE_DIALOG 1
 
 ## Python
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
@@ -52,7 +53,7 @@ set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
 set -x NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 
 ## PATH
-set -U fish_user_paths "$HOME/.local/bin" "$HOME/.poetry/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "/usr/local/sbin" "/usr/local/bin"
+set -U fish_user_paths "$HOME/.local/bin" "$HOME/.poetry/bin" "$HOME/.local/share/cargo/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "/usr/local/sbin" "/usr/local/bin"
 
 ## Aliases
 test -s "$__fish_config_dir/aliases.fish"; and source "$__fish_config_dir/aliases.fish"

@@ -35,7 +35,7 @@ demuxer-readahead-secs=200
 ytdl=yes
 ytdl-format="bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best"
 
-osd-font=Roboto
+osd-font=sans-serif
 
 ##################
 # SUBTITLES
