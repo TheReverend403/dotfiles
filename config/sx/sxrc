@@ -40,4 +40,10 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 
 /usr/libexec/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
 
+# Disable GTK3 accessibility
+export NO_AT_BRIDGE=1
+
+export QT_QPA_PLATFORMTHEME=gtk3
+export TDESKTOP_USE_GTK_FILE_DIALOG=1
+
 exec awesome

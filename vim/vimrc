@@ -1,7 +1,7 @@
 set nocompatible
 
 if &shell =~# 'fish$'
-    set shell=/bin/bash
+   set shell=/bin/bash
 endif
 
 " {{{ Plugins

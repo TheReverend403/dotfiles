@@ -33,17 +33,14 @@ end
 ## Prevent Wine from adding menu entries and desktop links.
 set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 
-# Disable GTK3 accessibility
-set -x NO_AT_BRIDGE 1
-
-set -x QT_QPA_PLATFORMTHEME gtk3
-set -x TDESKTOP_USE_GTK_FILE_DIALOG 1
-
 ## Python
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
 
 # Go
 set -x GOPATH "$XDG_DATA_HOME/go"
+
+# Rust
+set -x RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 
 # XDG partial support.
 set -x ASPELL_CONF "per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
