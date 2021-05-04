@@ -12,8 +12,6 @@
 "" Save URL in clipboard.
 func! share#vpaste(line1, line2) abort
     let url = s:paste_curl('http://vpaste.net/?ft='.&filetype, 'text=<-', a:line1, a:line2)
-    let @+ = url
-    let @@ = url
     echom "Pasted as " .. url
 endfunc
 
@@ -22,8 +20,6 @@ endfunc
 "" Save URL in clipboard.
 func! share#dpaste(line1, line2) abort
     let url = s:paste_curl('http://dpaste.com/api/v2/', 'content=<-', a:line1, a:line2)
-    let @+ = url
-    let @@ = url
     echom "Pasted as " .. url
 endfunc
 
@@ -32,8 +28,6 @@ endfunc
 "" Save URL in clipboard.
 func! share#ix(line1, line2) abort
     let url = s:paste_curl('http://ix.io/', 'f:1=<-', a:line1, a:line2)
-    let @+ = url
-    let @@ = url
     echom "Pasted as " .. url
 endfunc
 
@@ -42,8 +36,6 @@ endfunc
 "" Save URL in clipboard.
 func! share#clbin(line1, line2) abort
     let url = s:paste_curl('https://clbin.com/', 'clbin=<-', a:line1, a:line2)
-    let @+ = url
-    let @@ = url
     echom "Pasted as " .. url
 endfunc
 
