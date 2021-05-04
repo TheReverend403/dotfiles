@@ -1,4 +1,5 @@
 files/
 plugged/
-autoload/
+autoload/*
+!autoload/share.vim
 .netrwhist
