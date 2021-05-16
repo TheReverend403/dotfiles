@@ -16,3 +16,6 @@ user_pref('font.name-list.emoji', 'emoji');
 
 // Disable this annoying thing which I never actually use but constantly trigger.
 user_pref('browser.tabs.allowTabDetach', false);
+
+// Stop cache bloat.
+user_pref('browser.cache.disk.smart_size.enabled', false);
