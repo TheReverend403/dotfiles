@@ -46,7 +46,7 @@ sub-use-margins
 demuxer-mkv-subtitle-preroll
 blend-subtitles=yes
 sub-ass-hinting=native
-sub-font=Roboto
+sub-font=sans-serif
 
 [extension.webm]
 loop-file=yes
