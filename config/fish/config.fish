@@ -59,6 +59,7 @@ set -x JUPYTER_CONFIG_DIR "$IPYTHONDIR"
 set -x _JAVA_OPTIONS -Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 set -x GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -x WGETRC "$XDG_CONFIG_HOME/wget/wgetrc"
+set -x INPUTRC "$XDG_CONFIG_HOME/readline/inputrc"
 
 # Weechat 3.2 implements XDG properly.
 if available weechat; and test (weechat -v) -lt "3.2"
