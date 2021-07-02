@@ -9,3 +9,4 @@ relay.conf
 otr/
 venv/
 chanop_mode_cache.dat
+passfile
