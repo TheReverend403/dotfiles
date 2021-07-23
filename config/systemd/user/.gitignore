@@ -1,2 +1,4 @@
 *.target.wants
-pulseaudio.*
+*.service.wants
+pulseaudio*
+*.socket
