@@ -21,6 +21,7 @@ user_pref('browser.tabs.allowTabDetach', false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // https://github.com/black7375/Firefox-UI-Fix/blob/photon-style/user.js
+user_pref("browser.proton.enabled", true);
 user_pref("svg.context-properties.content.enabled", true);
 user_pref("layout.css.backdrop-filter.enabled", true);
 user_pref("browser.compactmode.show", true);
