@@ -2,3 +2,5 @@
 *.service.wants
 pulseaudio*
 *.socket
+pipewire-session-manager.service
+
