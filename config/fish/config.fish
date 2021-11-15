@@ -14,26 +14,8 @@ set fish_pager_color_prefix magenta
 set fish_pager_color_progress magenta
 set fish_pager_color_description white --italics
 
-function __log
-    set_color brwhite --bold
-    printf "["
-    set_color green --bold
-    printf "*"
-    set_color brwhite --bold
-    printf "] $argv"
-    set_color normal
-    printf "\n"
-end
-
-
-function available --description 'Returns 0 if a given command is present and executable, 1 otherwise.'
-    command -v $argv > /dev/null 2>&1
-end
-
-
 ## Env vars
 test -s "$__fish_config_dir/env.fish"; and source "$__fish_config_dir/env.fish"
-
 
 ## Aliases
 test -s "$__fish_config_dir/aliases.fish"; and source "$__fish_config_dir/aliases.fish"
@@ -48,6 +30,6 @@ if test -z "$DISPLAY" -a (id -u "$USER") -ne 0 -a -z "$SSH_CLIENT" -a -z "$TMUX"
         set xlauncher sx
     end
 
-    __log "Starting X11 with $xlauncher..."
+    flog "Starting X11 with $xlauncher..."
     exec $xlauncher >/dev/null 2>&1
 end
