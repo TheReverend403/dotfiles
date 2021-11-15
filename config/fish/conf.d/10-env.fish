@@ -34,4 +34,3 @@ set -x WEECHAT_HOME "$XDG_CONFIG_HOME/weechat"
 
 ## PATH
 set -U fish_user_paths "$HOME/.local/bin" "$XDG_DATA_HOME/poetry/bin" "$CARGO_HOME/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "/usr/local/sbin" "/usr/local/bin"
-
