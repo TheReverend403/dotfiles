@@ -7,7 +7,7 @@ alias mkdir 'mkdir -p -v'
 alias ping 'ping -c 5'
 alias ls 'ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 
-if command -q nvim
+if command -sq nvim
     alias vim nvim
     alias vimdiff 'nvim -d'
 end
