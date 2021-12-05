@@ -1,29 +1,30 @@
 set nocompatible
 
 if &shell =~# 'fish$'
-  set shell=/bin/bash
+    set shell=/bin/bash
 endif
 
 " {{{ Plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
 
 " Automatically install missing plugins on startup
 if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
-  autocmd VimEnter * PlugInstall | q
+    autocmd VimEnter * PlugInstall | q
 endif
 
+Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'joshdick/onedark.vim'
+Plug 'haya14busa/incsearch.vim'
 
 call plug#end()
 " }}}
@@ -38,8 +39,8 @@ if (has('termguicolors'))
 endif
 
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ }
+            \ 'colorscheme': 'onedark',
+            \ }
 
 set background=dark
 colorscheme onedark
@@ -65,8 +66,8 @@ set wrapscan
 set report=0
 set synmaxcol=200
 
-set incsearch
-set smartcase
+" set incsearch
+" set smartcase
 
 set ttyfast
 
@@ -78,6 +79,8 @@ set shiftround
 set clipboard=unnamedplus
 set pastetoggle=<F3>
 
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
 " {{{ Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 if !isdirectory($HOME.'/.vim/files') && exists('*mkdir')
@@ -106,3 +109,13 @@ nnoremap <C-Up> <C-w>k
 nnoremap <C-Right> <C-w>l
 
 command! -range=% IX call share#ix(<line1>, <line2>)
+
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map n <Plug>(incsearch-nohl-n)
+map N <Plug>(incsearch-nohl-N)
+map * <Plug>(incsearch-nohl-*)
+map # <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
