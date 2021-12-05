@@ -1,4 +1,4 @@
-set fish_greeting
+set -g fish_greeting
 set fish_color_param default
 set fish_color_command default 
 set fish_color_cwd magenta

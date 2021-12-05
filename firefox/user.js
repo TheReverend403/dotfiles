@@ -17,6 +17,8 @@ user_pref('font.name-list.emoji', 'emoji');
 // Disable this annoying thing which I never actually use but constantly trigger.
 user_pref('browser.tabs.allowTabDetach', false);
 
+user_pref('extensions.pocket.enabled', false);
+
 // Theming
 // https://github.com/black7375/Firefox-UI-Fix/blob/photon-style/user.js
 

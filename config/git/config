@@ -1,34 +1,23 @@
 [user]
-	email = me@lwatson.dev
-	name = Lee Watson
-	signingkey = 0x2CBDF43B04157324
-[push]
-	default = tracking
-[color]
-	ui = auto
+    email = me@lwatson.dev
+    name = Lee Watson
+    signingkey = 0x2CBDF43B04157324
 [core]
-	abbrev = 12
-	whitespace = trailing-space,space-before-tab
-	autocrlf = input
-	pager = less -F -X
-	quotepath = false
-[format]
-	numbered = auto
-	subjectPrefix = PATCH
+    autocrlf = input
+    pager = less -F -X
 [commit]
-	gpgsign = true
-	verbose = true
+    gpgsign = true
+    verbose = true
 [diff]
-	compactionHeuristic = true
-	renames = copies
-	mnemonicprefix = true
+    renames = copies
+    mnemonicprefix = true
 [advice]
-	statusHints = false
-[branch]
-	autosetupmerge = true
-[rerere]
-	enabled = true
+    statusHints = false
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [init]
-	defaultBranch = main
+    defaultBranch = main
+[pull]
+    rebase = merges
+[fetch]
+    prune = true
