@@ -2,9 +2,6 @@
     email = me@lwatson.dev
     name = Lee Watson
     signingkey = 0x2CBDF43B04157324
-[core]
-    autocrlf = input
-    pager = less -F -X
 [commit]
     gpgsign = true
     verbose = true
