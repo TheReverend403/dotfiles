@@ -66,8 +66,8 @@ set wrapscan
 set report=0
 set synmaxcol=200
 
-" set incsearch
-" set smartcase
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
 
 set ttyfast
 
@@ -79,8 +79,7 @@ set shiftround
 set clipboard=unnamedplus
 set pastetoggle=<F3>
 
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
+
 " {{{ Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 if !isdirectory($HOME.'/.vim/files') && exists('*mkdir')
