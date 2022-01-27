@@ -4,7 +4,7 @@ Description=Audio effects for PipeWire applications
 [Service]
 ExecStart=%h/.local/bin/easyeffects --gapplication-service
 ExecStop=%h/.local/bin/easyeffects --quit
-Nice=-10
+Nice=-15
 Restart=always
 RestartSec=5
 
