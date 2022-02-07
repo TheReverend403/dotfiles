@@ -56,7 +56,7 @@ local options = {
 	-- mp3 (libmp3lame)
 	-- and gif
 	output_format = "webm-vp8",
-	twopass = false,
+	twopass = true,
 	-- If set, applies the video filters currently used on the playback to the encode.
 	apply_current_filters = true,
 	-- If set, writes the video's filename to the "Title" field on the metadata.
@@ -76,7 +76,12 @@ local options = {
 	-- The font size used in the menu. Isn't used for the notifications (started encode, finished encode etc)
 	font_size = 28,
 	margin = 10,
-	message_duration = 5
+	message_duration = 5,
+	-- gif dither mode, 0-5 for bayer w/ bayer_scale 0-5, 6 for paletteuse default (sierra2_4a)
+	gif_dither = 2,
+	-- Force square pixels on output video
+	-- Some players like recent Firefox versions display videos with non-square pixels with wrong aspect ratio
+	force_square_pixels = false,
 }
 
 mpopts.read_options(options)
@@ -111,6 +116,18 @@ function base64_decode(data)
         return string.char(c)
     end))
 end
+local emit_event
+emit_event = function(event_name, ...)
+  return mp.commandv("script-message", "webm-" .. tostring(event_name), ...)
+end
+local test_set_options
+test_set_options = function(new_options_json)
+  local new_options = utils.parse_json(new_options_json)
+  for k, v in pairs(new_options) do
+    options[k] = v
+  end
+end
+mp.register_script_message("mpv-webm-set-options", test_set_options)
 local bold
 bold = function(text)
   return "{\\b1}" .. tostring(text) .. "{\\b0}"
@@ -804,6 +821,9 @@ do
         codecs[#codecs + 1] = "--oac=" .. tostring(self.audioCodec)
       end
       return codecs
+    end,
+    postCommandModifier = function(self, command, region, startTime, endTime)
+      return command
     end
   }
   _base_0.__index = _base_0
@@ -919,7 +939,11 @@ do
     end,
     getFlags = function(self)
       return {
-        "--ovcopts-add=threads=" .. tostring(options.libvpx_threads)
+        "--ovcopts-add=threads=" .. tostring(options.libvpx_threads),
+        "--ovcopts-add=auto-alt-ref=1",
+        "--ovcopts-add=lag-in-frames=25",
+        "--ovcopts-add=quality=good",
+        "--ovcopts-add=cpu-used=0"
       }
     end
   }
@@ -978,7 +1002,7 @@ do
   _class_0 = setmetatable({
     __init = function(self)
       self.displayName = "WebM (VP9)"
-      self.supportsTwopass = true
+      self.supportsTwopass = false
       self.videoCodec = "libvpx-vp9"
       self.audioCodec = "libopus"
       self.outputExtension = "webm"
@@ -1148,7 +1172,67 @@ local GIF
 do
   local _class_0
   local _parent_0 = Format
-  local _base_0 = { }
+  local _base_0 = {
+    postCommandModifier = function(self, command, region, startTime, endTime)
+      local new_command = { }
+      local start_ts = seconds_to_time_string(startTime, false, true)
+      local end_ts = seconds_to_time_string(endTime, false, true)
+      start_ts = start_ts:gsub(":", "\\\\:")
+      end_ts = end_ts:gsub(":", "\\\\:")
+      local cfilter = "[vid1]trim=start=" .. tostring(start_ts) .. ":end=" .. tostring(end_ts) .. "[vidtmp];"
+      if mp.get_property("deinterlace") == "yes" then
+        cfilter = cfilter .. "[vidtmp]yadif=mode=1[vidtmp];"
+      end
+      for _, v in ipairs(command) do
+        local _continue_0 = false
+        repeat
+          if v:match("^%-%-vf%-add=lavfi%-scale") or v:match("^%-%-vf%-add=lavfi%-crop") or v:match("^%-%-vf%-add=fps") or v:match("^%-%-vf%-add=lavfi%-eq") then
+            local n = v:gsub("^%-%-vf%-add=", ""):gsub("^lavfi%-", "")
+            cfilter = cfilter .. "[vidtmp]" .. tostring(n) .. "[vidtmp];"
+          else
+            if v:match("^%-%-video%-rotate=90") then
+              cfilter = cfilter .. "[vidtmp]transpose=1[vidtmp];"
+            else
+              if v:match("^%-%-video%-rotate=270") then
+                cfilter = cfilter .. "[vidtmp]transpose=2[vidtmp];"
+              else
+                if v:match("^%-%-video%-rotate=180") then
+                  cfilter = cfilter .. "[vidtmp]transpose=1[vidtmp];[vidtmp]transpose=1[vidtmp];"
+                else
+                  if v:match("^%-%-deinterlace=") then
+                    _continue_0 = true
+                    break
+                  else
+                    append(new_command, {
+                      v
+                    })
+                    _continue_0 = true
+                    break
+                  end
+                end
+              end
+            end
+          end
+          _continue_0 = true
+        until true
+        if not _continue_0 then
+          break
+        end
+      end
+      cfilter = cfilter .. "[vidtmp]split[topal][vidf];"
+      cfilter = cfilter .. "[topal]palettegen[pal];"
+      cfilter = cfilter .. "[vidf]fifo[vidf];"
+      if options.gif_dither == 6 then
+        cfilter = cfilter .. "[vidf][pal]paletteuse[vo]"
+      else
+        cfilter = cfilter .. "[vidf][pal]paletteuse=dither=bayer:bayer_scale=" .. tostring(options.gif_dither) .. ":diff_mode=rectangle[vo]"
+      end
+      append(new_command, {
+        "--lavfi-complex=" .. tostring(cfilter)
+      })
+      return new_command
+    end
+  }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
@@ -1472,12 +1556,18 @@ append_audio_tracks = function(out, tracks)
 end
 local get_scale_filters
 get_scale_filters = function()
-  if options.scale_height > 0 then
-    return {
-      "lavfi-scale=-2:" .. tostring(options.scale_height)
-    }
+  local filters = { }
+  if options.force_square_pixels then
+    append(filters, {
+      "lavfi-scale=iw*sar:ih"
+    })
   end
-  return { }
+  if options.scale_height > 0 then
+    append(filters, {
+      "lavfi-scale=-2:" .. tostring(options.scale_height)
+    })
+  end
+  return filters
 end
 local get_fps_filters
 get_fps_filters = function()
@@ -1487,6 +1577,21 @@ get_fps_filters = function()
     }
   end
   return { }
+end
+local get_contrast_brightness_and_saturation_filters
+get_contrast_brightness_and_saturation_filters = function()
+  local mpv_brightness = mp.get_property("brightness")
+  local mpv_contrast = mp.get_property("contrast")
+  local mpv_saturation = mp.get_property("saturation")
+  if mpv_brightness == 0 and mpv_contrast == 0 and mpv_saturation == 0 then
+    return { }
+  end
+  local eq_saturation = (mpv_saturation + 100) / 100.0
+  local eq_contrast = (mpv_contrast + 100) / 100.0
+  local eq_brightness = (mpv_brightness / 50.0 + eq_contrast - 1) / 2.0
+  return {
+    "lavfi-eq=contrast=" .. tostring(eq_contrast) .. ":saturation=" .. tostring(eq_saturation) .. ":brightness=" .. tostring(eq_brightness)
+  }
 end
 local append_property
 append_property = function(out, property_name, option_name)
@@ -1586,6 +1691,7 @@ get_video_filters = function(format, region)
   end
   append(filters, get_scale_filters())
   append(filters, get_fps_filters())
+  append(filters, get_contrast_brightness_and_saturation_filters())
   append(filters, format:getPostFilters())
   return filters
 end
@@ -1765,6 +1871,7 @@ encode = function(region, startTime, endTime)
   append(command, {
     "--o=" .. tostring(out_path)
   })
+  emit_event("encode-started")
   if options.twopass and format.supportsTwopass and not is_stream then
     local first_pass_cmdline
     do
@@ -1788,6 +1895,7 @@ encode = function(region, startTime, endTime)
     })
     if not res then
       message("First pass failed! Check the logs for details.")
+      emit_event("encode-finished", "fail")
       return 
     end
     append(command, {
@@ -1798,6 +1906,7 @@ encode = function(region, startTime, endTime)
       vp8_patch_logfile(get_pass_logfile_path(out_path), endTime - startTime)
     end
   end
+  command = format:postCommandModifier(command, region, startTime, endTime)
   msg.info("Encoding to", out_path)
   msg.verbose("Command line:", table.concat(command, " "))
   if options.run_detached then
@@ -1819,8 +1928,10 @@ encode = function(region, startTime, endTime)
     end
     if res then
       message("Encoded successfully! Saved to\\N" .. tostring(bold(out_path)))
+      emit_event("encode-finished", "success")
     else
       message("Encode failed! Check the logs for details.")
+      emit_event("encode-finished", "fail")
     end
     os.remove(get_pass_logfile_path(out_path))
     if is_temporary then
@@ -2121,15 +2232,23 @@ do
         ass:append(" ▶")
       end
       return ass:append("\\N")
+    end,
+    optVisible = function(self)
+      if self.visibleCheckFn == nil then
+        return true
+      else
+        return self.visibleCheckFn()
+      end
     end
   }
   _base_0.__index = _base_0
   _class_0 = setmetatable({
-    __init = function(self, optType, displayText, value, opts)
+    __init = function(self, optType, displayText, value, opts, visibleCheckFn)
       self.optType = optType
       self.displayText = displayText
       self.opts = opts
       self.value = 1
+      self.visibleCheckFn = visibleCheckFn
       return self:setValue(value)
     end,
     __base = _base_0,
@@ -2162,11 +2281,21 @@ do
       return self:draw()
     end,
     prevOpt = function(self)
-      self.currentOption = math.max(1, self.currentOption - 1)
+      for i = self.currentOption - 1, 1, -1 do
+        if self.options[i][2]:optVisible() then
+          self.currentOption = i
+          break
+        end
+      end
       return self:draw()
     end,
     nextOpt = function(self)
-      self.currentOption = math.min(#self.options, self.currentOption + 1)
+      for i = self.currentOption + 1, #self.options do
+        if self.options[i][2]:optVisible() then
+          self.currentOption = i
+          break
+        end
+      end
       return self:draw()
     end,
     confirmOpts = function(self)
@@ -2190,7 +2319,9 @@ do
       ass:append(tostring(bold('Options:')) .. "\\N\\N")
       for i, optPair in ipairs(self.options) do
         local opt = optPair[2]
-        opt:draw(ass, self.currentOption == i)
+        if opt:optVisible() then
+          opt:draw(ass, self.currentOption == i)
+        end
       end
       ass:append("\\N▲ / ▼: navigate\\N")
       ass:append(tostring(bold('ENTER:')) .. " confirm options\\N")
@@ -2309,6 +2440,38 @@ do
           return _accum_0
         end)()
       }
+      local gifDitherOpts = {
+        possibleValues = {
+          {
+            0,
+            "bayer_scale 0"
+          },
+          {
+            1,
+            "bayer_scale 1"
+          },
+          {
+            2,
+            "bayer_scale 2"
+          },
+          {
+            3,
+            "bayer_scale 3"
+          },
+          {
+            4,
+            "bayer_scale 4"
+          },
+          {
+            5,
+            "bayer_scale 5"
+          },
+          {
+            6,
+            "sierra2_4a"
+          }
+        }
+      }
       self.options = {
         {
           "output_format",
@@ -2345,6 +2508,16 @@ do
         {
           "fps",
           Option("list", "FPS", options.fps, fpsOpts)
+        },
+        {
+          "gif_dither",
+          Option("list", "GIF Dither Type", options.gif_dither, gifDitherOpts, function()
+            return self.options[1][2]:getValue() == "gif"
+          end)
+        },
+        {
+          "force_square_pixels",
+          Option("bool", "Force Square Pixels", options.force_square_pixels)
         }
       }
       self.keybinds = {
@@ -2566,6 +2739,10 @@ do
       ass:append(tostring(bold('ESC:')) .. " close\\N")
       return mp.set_osd_ass(window_w, window_h, ass.text)
     end,
+    show = function(self)
+      _class_0.__parent.show(self)
+      return emit_event("show-main-page")
+    end,
     onUpdateCropRegion = function(self, updated, newRegion)
       if updated then
         self.region = newRegion
@@ -2725,10 +2902,12 @@ mp.add_key_binding(options.keybind, "display-webm-encoder", (function()
 end)(), {
   repeatable = false
 })
-return mp.register_event("file-loaded", (function()
+mp.register_event("file-loaded", (function()
   local _base_0 = mainPage
   local _fn_0 = _base_0.setupStartAndEndTimes
   return function(...)
     return _fn_0(_base_0, ...)
   end
 end)())
+msg.verbose("Loaded mpv-webm script!")
+return emit_event("script-loaded")
