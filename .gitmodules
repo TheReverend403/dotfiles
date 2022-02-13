@@ -1,3 +1,6 @@
 [submodule "config/awesome"]
 	path = config/awesome
 	url = https://github.com/TheReverend403/awesome-config
+[submodule "config/weechat"]
+	path = config/weechat
+	url = https://github.com/TheReverend403/weechat-config
