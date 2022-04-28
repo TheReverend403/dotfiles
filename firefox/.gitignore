@@ -1,5 +1,3 @@
-*.css
-!userChrome.css
 !vimium.css
 **/*.backup
 **/*.txt
