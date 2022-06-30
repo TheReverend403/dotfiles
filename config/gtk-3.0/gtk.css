@@ -4,3 +4,14 @@ decoration {
   margin: 0;
   border-radius: 0;
 }
+
+decoration:backdrop
+{
+    box-shadow: none;
+}
+
+.titlebar,
+.titlebar .background
+{
+    border-radius: 0;
+}
