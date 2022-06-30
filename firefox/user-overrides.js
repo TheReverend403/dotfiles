@@ -27,3 +27,4 @@ user_pref('extensions.pocket.enabled', false);
 // Custom theming options
 user_pref("userChrome.theme.proton_color.dark_blue_accent", true);
 
+user_pref("media.ffmpeg.vaapi.enabled", true);
