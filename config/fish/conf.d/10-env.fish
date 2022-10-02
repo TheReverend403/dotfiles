@@ -33,4 +33,4 @@ set -x PARALLEL_HOME "$XDG_CONFIG_HOME/parallel"
 set -x NPM_PACKAGES "$XDG_DATA_HOME/npm"
 
 ## PATH
-set -U fish_user_paths "$HOME/.local/bin" "$XDG_DATA_HOME/poetry/bin" "$CARGO_HOME/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "/usr/local/sbin" "/usr/local/bin"
+fish_add_path -p "$HOME/.local/bin" "$XDG_DATA_HOME/poetry/bin" "$CARGO_HOME/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$XDG_CONFIG_HOME/composer/vendor/bin" "/usr/local/sbin" "/usr/local/bin"
