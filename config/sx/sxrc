@@ -28,5 +28,6 @@ export NO_AT_BRIDGE=1
 
 export QT_QPA_PLATFORMTHEME=gtk3
 export XCURSOR_PATH="${XCURSOR_PATH}:${XDG_DATA_HOME}/icons"
+export GTK_THEME=$(awk -F "=" '/gtk-theme-name/ {print $2}' "${XDG_CONFIG_HOME}/gtk-3.0/settings.ini")
 
 exec awesome
