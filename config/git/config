@@ -18,3 +18,5 @@
     rebase = merges
 [fetch]
     prune = true
+[credential]
+	helper = /usr/bin/git-credential-libsecret

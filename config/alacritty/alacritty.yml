@@ -5,7 +5,7 @@ window:
   dynamic_padding: true
 
 font:
-  size: 13
+  size: 11
   normal:
     family: monospace
 

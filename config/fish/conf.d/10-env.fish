@@ -1,6 +1,7 @@
 ## Prevent Wine from adding menu entries and desktop links.
 set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 
+
 ## Python
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
 
@@ -29,6 +30,8 @@ set -x MYSQL_HISTFILE "$XDG_DATA_HOME/mysql_history"
 set -x LESSHISTFILE -
 set -x PARALLEL_HOME "$XDG_CONFIG_HOME/parallel"
 set -x NPM_PACKAGES "$XDG_DATA_HOME/npm"
+set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
+set -x RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 
 ## PATH
 set -U fish_user_paths "$HOME/.local/bin" "$XDG_DATA_HOME/poetry/bin" "$CARGO_HOME/bin" "$GOPATH/bin" "$NPM_PACKAGES/bin" "$HOME/.config/composer/vendor/bin" "/usr/local/sbin" "/usr/local/bin"
