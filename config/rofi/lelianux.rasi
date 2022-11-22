@@ -13,17 +13,23 @@
 window {
     border: 2px solid;
     padding: 5px 10px 5px 5px;
+    width: 30%;
 }
 
-element selected.normal {
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element.selected.normal {
     text-color: @selected-foreground;
 }
 
-element selected.urgent {
+element.selected.urgent {
     text-color: @selected-foreground;
 }
 
-element selected.active {
+element.selected.active {
     text-color: @selected-foreground;
 }
 

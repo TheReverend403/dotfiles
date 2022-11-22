@@ -1,14 +1,10 @@
 configuration {
-    theme: "lelianux";
-    modi: "run";
-    width: 30;
-    lines: 10;
-    columns: 1;
     font: "Roboto 13";
     location: 0;
     yoffset: -100;
     xoffset: 0;
     fixed-num-lines: false;
+    show-icons: false;
     terminal: "alacritty";
     ssh-client: "ssh";
     ssh-command: "{terminal} -e "{ssh-client} {host}"";
@@ -20,8 +16,15 @@ configuration {
     eh: 1;
     auto-select: false;
     parse-hosts: false;
-    combi-modi: "run";
     m: "-1";
-    hide-scrollbar: true;
     pid: "/run/user/1000/rofi.pid";
+    timeout {
+        action: "kb-cancel";
+        delay: 0;
+    }
+    filebrowser {
+        directories-first: true;
+        sorting-method: "name";
+    }
 }
+@theme "lelianux"

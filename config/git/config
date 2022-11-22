@@ -20,3 +20,5 @@
     prune = true
 [credential]
 	helper = /usr/bin/git-credential-libsecret
+[push]
+	autoSetupRemote = true
