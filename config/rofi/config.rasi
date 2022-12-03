@@ -1,8 +1,6 @@
 configuration {
     font: "Roboto 13";
     location: 0;
-    yoffset: -100;
-    xoffset: 0;
     fixed-num-lines: false;
     show-icons: false;
     terminal: "alacritty";

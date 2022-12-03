@@ -2,5 +2,6 @@
 *.service.wants
 pulseaudio*
 *.socket
+!mpd.socket
 pipewire-session-manager.service
 
