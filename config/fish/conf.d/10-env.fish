@@ -13,6 +13,17 @@ set -x LESSHISTFILE -
 set -x PARALLEL_HOME "$XDG_CONFIG_HOME/parallel"
 set -x GNUPGHOME "$XDG_CONFIG_HOME/gnupg"
 
+# Set BROWSER to the first available command.
+if test -z $BROWSER
+    set -l browsers firefox-bin firefox chromium-bin chromium
+    for browser in browsers
+        if command -sq $browser
+            set -gx BROWSER $browser
+            break
+        end
+    end
+end
+
 # Prevent Wine adding menu entries and desktop links.
 set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 

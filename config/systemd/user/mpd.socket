@@ -1,5 +1,5 @@
 [Socket]
-ListenStream=6600
+ListenStream=127.0.0.1:6600
 Backlog=5
 KeepAlive=true
 PassCredentials=true
