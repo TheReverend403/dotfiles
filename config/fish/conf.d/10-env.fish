@@ -14,10 +14,10 @@ set -x PARALLEL_HOME "$XDG_CONFIG_HOME/parallel"
 set -x GNUPGHOME "$XDG_CONFIG_HOME/gnupg"
 
 # Set BROWSER to the first available command.
-if test -z $BROWSER
+if not set -q $BROWSER
     set -l browsers firefox-bin firefox chromium-bin chromium
-    for browser in browsers
-        if command -sq $browser
+    for browser in $browsers
+        if command -q $browser
             set -gx BROWSER $browser
             break
         end
