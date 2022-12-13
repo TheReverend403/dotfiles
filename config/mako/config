@@ -1,0 +1,21 @@
+font=Sans 13
+width=400
+height=200
+border-size=2
+border-radius=0
+border-color=#8c54fe
+padding=10
+background-color=#0d0d0d
+text-color=#eeeeee
+max-icon-size=64
+actions=1
+max-shown=5
+
+default-timeout=5000
+ignore-timeout=1
+max-history=10
+sort=-time
+layer=top
+
+[urgency=critical]
+border-color=#f92672

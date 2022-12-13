@@ -1,0 +1,12 @@
+# vi: ft=swayconfig
+
+input "type:keyboard" {
+    xkb_layout "gb"
+    xkb_options "compose:ralt,caps:super"
+}
+
+input "type:pointer" {
+    accel_profile adaptive
+    pointer_accel 0.0
+}
+

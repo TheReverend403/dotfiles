@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_DBUS_REMOTE=1
+export GDK_BACKEND=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
+export QT_QPA_PLATFORMTHEME=gtk3
+export SDL_VIDEODRIVER=wayland
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export NO_AT_BRIDGE=1
+
+export GTK_THEME="$(awk -F "=" '/gtk-theme-name/ {print $2}' "${XDG_CONFIG_HOME}/gtk-4.0/settings.ini")"
+export GTK_ICON_THEME="$(awk -F "=" '/gtk-icon-theme-name/ {print $2}' "${XDG_CONFIG_HOME}/gtk-4.0/settings.ini")"
+export GTK_CURSOR_THEME="$(awk -F "=" '/gtk-cursor-theme-name/ {print $2}' "${XDG_CONFIG_HOME}/gtk-4.0/settings.ini")"
+export XCURSOR_THEME="${GTK_CURSOR_THEME}"

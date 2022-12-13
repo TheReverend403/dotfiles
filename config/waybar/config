@@ -1,0 +1,44 @@
+{
+    "height": 30,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["sway/mode", "mpd", "tray", "network#vpn", "clock#date", "clock#time"],
+    "sway/mode": {
+        "format": "{}"
+    },
+    "sway/window": {
+        "format": "<b>{title}</b>",
+        "max-length": 50,
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+    "mpd": {
+        "format": "<span color='#8c54fe'>{artist}</span> {title} <span color='#505354'>({elapsedTime:%M:%S}/{totalTime:%M:%S})</span>",
+        "format-paused": "<span color='#8c54fe'>{artist}</span> {title} <span color='#505354'>(paused)</span>",
+        "format-disconnected": "",
+        "format-stopped": "",
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "unknown-tag": "N/A",
+        "interval": 1,
+    },
+    "clock#time": {
+        "format": "{:%R}",
+        "interval": 1,
+    },
+    "clock#date": {
+        "format": "{:%a %d %b}",
+        "today-format": "<span color='#8c54fe'><b><u>{}</u></b></span>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
+    },
+    "network#vpn": {
+        "format": "VPN",
+        "interface": "wg0",
+        "tooltip-format": "{ipaddr}\n\n {bandwidthUpBytes}\n {bandwidthDownBytes}",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 1,
+    },
+}
+

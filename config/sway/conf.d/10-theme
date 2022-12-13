@@ -1,0 +1,59 @@
+# vi: ft=swayconfig
+
+set $background #0d0d0d
+set $foreground #eeeeee
+
+set $black #1b1d1e
+set $brblack #505354
+
+set $red #f92672
+set $brred #ff5995
+
+set $green #82b414
+set $brgreen #b6e354
+
+set $yellow #fd971f
+set $bryellow #feed6c
+
+set $blue #0063af
+set $brblue #238cdc
+
+set $magenta #8c54fe
+set $brmagenta #9e6ffe
+
+set $cyan #465457
+set $brcyan #899ca1
+
+set $grey #b5b5b5
+set $brgrey #f8f8f2
+
+### GTK theming
+set $gnome-schema org.gnome.desktop.interface
+exec {
+    gsettings set org.gnome.desktop.wm.preferences button-layout ''
+    gsettings set $gnome-schema gtk-theme $GTK_THEME
+    gsettings set $gnome-schema icon-theme $GTK_ICON_THEME
+    gsettings set $gnome-schema cursor-theme $GTK_CURSOR_THEME
+    gsettings set $gnome-schema font-name 'Sans 13'
+}
+
+seat * {
+    hide_cursor 5000
+}
+
+font pango:Sans 13
+
+hide_edge_borders smart
+smart_borders on
+default_border pixel 2
+default_floating_border pixel 2
+
+output * bg ../wall.png fill
+
+# class                 border      backgr.       text         indicator child_border
+client.focused          $magenta    $background   $foreground  $black    $magenta
+client.focused_inactive $black      $background   $foreground  $black    $magenta
+client.unfocused        $black      $background   $foreground  $black    $black
+client.urgent           $red        $background   $foreground  $black    $black
+client.placeholder      $black      $background   $foreground  $black    $black
+client.background       $background

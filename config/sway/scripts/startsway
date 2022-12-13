@@ -1,0 +1,5 @@
+#!/bin/bash
+set -eu
+
+. "${XDG_CONFIG_HOME}/sway/env"
+systemd-cat --identifier=sway sway $@

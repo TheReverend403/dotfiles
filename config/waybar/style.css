@@ -1,0 +1,102 @@
+@define-color background #0d0d0d;
+@define-color foreground #eeeeee;
+@define-color black #1b1d1e;
+@define-color brblack #505354;
+@define-color red #f92672;
+@define-color brred #ff5995;
+@define-color green #82b414;
+@define-color brgreen #b6e354;
+@define-color yellow #fd971f;
+@define-color bryellow #feed6c;
+@define-color blue #0063af;
+@define-color brblue #238cdc;
+@define-color magenta #8c54fe;
+@define-color brmagenta #9e6ffe;
+@define-color cyan #465457;
+@define-color brcyan #899ca1;
+@define-color grey #b5b5b5;
+@define-color brgrey #f8f8f2;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Roboto;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @foreground;
+}
+
+#workspaces button:hover {
+    background: @black;
+}
+
+#workspaces button.focused {
+    color: @magenta;
+    background: @black;
+}
+
+#workspaces button.urgent {
+    color: @yellow;
+}
+
+#clock,
+#network,
+#tray,
+#mode,
+#mpd {
+    padding: 0 10px 0 10px;
+    color: @foreground;
+    border-left: 2px solid @black;
+}
+
+#mode {
+    background-color: @brmagenta;
+    color: @background;
+}
+
+#window,
+#workspaces {
+    margin: 0 0px;
+}
+
+#window {
+    color: @grey;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#network {
+    color: @green;
+}
+
+#network.disconnected {
+    color: @brblack;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#mpd.stopped, #mpd.disconnected {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}

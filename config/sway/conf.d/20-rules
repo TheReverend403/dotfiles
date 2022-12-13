@@ -1,0 +1,34 @@
+# vi: ft=swayconfig
+
+for_window [shell="xwayland"] title_format "%title [XWayland]"
+
+for_window {
+    [title="Open Folder"] floating enable
+    [window_role="pop-up"] floating enable
+    [window_role="bubble"] floating enable
+    [window_role="dialog"] floating enable
+    [window_type="dialog"] floating enable
+}
+
+for_window {
+    [app_id="imv"] floating enable; inhibit_idle fullscreen
+    [app_id="mpv"] floating enable; inhibit_idle fullscreen
+    [app_id="org.remmina.Remmina"] floating enable; inhibit_idle fullscreen
+    [app_id="firefox"] inhibit_idle fullscreen
+    [app_id="firefox" title="Library"] floating enable
+    [app_id="thunar"] floating enable
+    [app_id="gcolor3"] floating enable
+    [app_id="ncmpcpp"] floating enable
+    [app_id="seahorse"] floating enable
+    [app_id="xdg-desktop-portal-gtk"] floating enable
+    [app_id="(?i).*flatseal$"] floating enable
+    [app_id="(?i).*easyeffects$"] floating enable
+    [app_id="(?i).*Calculator$"] floating enable
+    [title="(?i)fxfloorboard"] floating enable
+}
+
+assign {
+    [app_id="firefox"] 1
+    [app_id="org.telegram.desktop"] 2
+    [app_id="" title="(?i).*Slack$"] 8
+}

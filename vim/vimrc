@@ -79,6 +79,8 @@ set shiftround
 set clipboard=unnamedplus
 set pastetoggle=<F3>
 
+set mouse=
+
 
 " {{{ Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files

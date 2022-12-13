@@ -1,0 +1,10 @@
+# vi: ft=swayconfig
+
+## Based on:
+# https://github.com/alebastr/sway-systemd
+# https://github.com/Madic-/Sway-DE
+# https://github.com/xdbob/sway-services
+
+exec $XDG_CONFIG_HOME/sway/scripts/session.sh --with-cleanup
+
+include $XDG_CONFIG_HOME/sway/conf.d/*

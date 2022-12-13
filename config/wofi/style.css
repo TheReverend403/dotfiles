@@ -1,0 +1,28 @@
+window {
+    margin: 5px;
+    border: 2px solid #8c54fe;
+    background-color: #0d0d0d;
+    color: #eeeeee;
+}
+
+#input {
+    margin: 5px;
+    border: 2px solid #8c54fe;
+    background-color: #0d0d0d;
+}
+
+#inner-box {
+    margin: 5px;
+}
+
+#outer-box {
+    margin: 5px;
+}
+
+#scroll {
+    margin: 5px;
+}
+
+#entry:selected {
+    border: 2px solid #8c54fe;
+}

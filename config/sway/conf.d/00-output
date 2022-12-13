@@ -1,0 +1,3 @@
+# vi: ft=swayconfig
+
+output * adaptive_sync on
