@@ -3,6 +3,11 @@
 for_window [shell="xwayland"] title_format "%title [XWayland]"
 
 for_window {
+    [app_id=".*"] border pixel 2
+    [class=".*"] border pixel 2
+}
+
+for_window {
     [title="Open Folder"] floating enable
     [title="Choose Files"] floating enable
     [title="Save File"] floating enable
@@ -22,13 +27,14 @@ for_window {
     [app_id="gcolor3"] floating enable
     [app_id="ncmpcpp"] floating enable
     [app_id="seahorse"] floating enable
+    [app_id="pavucontrol"] floating enable
     [app_id="xdg-desktop-portal-gtk"] floating enable
     [app_id="(?i).*flatseal$"] floating enable
     [app_id="(?i).*easyeffects$"] floating enable
     [app_id="(?i).*Calculator$"] floating enable
     [app_id="org.prismlauncher.PrismLauncher"] floating enable
-    [app_id="" class="^Minecraft.*" instance="^Minecraft.*"] floating enable
-    [title="(?i)fxfloorboard"] floating enable
+    [class="^Minecraft\* [0-9.]+$" instance="^Minecraft\* [0-9.]+$"] floating enable
+    [class="Katana-MK2-FxFloorBoard"] floating enable
 }
 
 assign {

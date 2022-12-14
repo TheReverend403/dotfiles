@@ -27,7 +27,6 @@ geometry=75%:75%
 autofit-larger=50%x80%
 
 ## Other ##
-no-border
 no-resume-playback
 demuxer-thread=yes
 demuxer-readahead-secs=200

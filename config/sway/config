@@ -5,7 +5,7 @@
 # https://github.com/Madic-/Sway-DE
 # https://github.com/xdbob/sway-services
 
-exec $XDG_CONFIG_HOME/sway/scripts/session.sh --with-cleanup
+exec $XDG_CONFIG_HOME/sway/bin/session.sh --with-cleanup
 
 include $XDG_CONFIG_HOME/sway/conf.d/*
 
