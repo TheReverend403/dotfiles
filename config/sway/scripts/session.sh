@@ -42,6 +42,7 @@ export XDG_SESSION_DESKTOP=${XDG_SESSION_DESKTOP:-sway}
 export XDG_SESSION_TYPE=wayland
 VARIABLES="DESKTOP_SESSION XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE"
 VARIABLES="${VARIABLES} DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY"
+VARIABLES="${VARIABLES} GTK_THEME XCURSOR_THEME XCURSOR_SIZE"
 SESSION_TARGET="sway-session.target"
 WITH_CLEANUP=""
 
@@ -103,8 +104,16 @@ if hash dbus-update-activation-environment 2>/dev/null; then
     dbus-update-activation-environment --systemd ${VARIABLES:- --all}
 fi
 
-# reset failed state of all user units
-systemctl --user reset-failed
+# reset failed state of all units relevant to this session
+for unit in $(systemctl --user --no-legend --state=failed --plain list-units | cut -f1 -d' '); do
+    partof="$(systemctl --user show -p PartOf --value "$unit")"
+    for target in "$SESSION_TARGET" graphical-session.target; do
+        if [ "$partof" = "$target" ]; then
+            systemctl --user reset-failed "$unit"
+            break
+        fi
+    done
+done
 
 # shellcheck disable=SC2086
 systemctl --user import-environment $VARIABLES

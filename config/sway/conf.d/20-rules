@@ -24,6 +24,8 @@ for_window {
     [app_id="(?i).*flatseal$"] floating enable
     [app_id="(?i).*easyeffects$"] floating enable
     [app_id="(?i).*Calculator$"] floating enable
+    [app_id="org.prismlauncher.PrismLauncher"] floating enable
+    [app_id="" class="^Minecraft.*" instance="^Minecraft.*"] floating enable
     [title="(?i)fxfloorboard"] floating enable
 }
 

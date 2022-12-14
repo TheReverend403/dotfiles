@@ -5,7 +5,6 @@ PartOf=sway-session.target
 
 [Service]
 Type=simple
-Environment="XDG_CURRENT_DESKTOP=Unity"
 ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
 ExecStart=/usr/bin/waybar
 ExecReload=kill -SIGUSR2 $MAINPID
