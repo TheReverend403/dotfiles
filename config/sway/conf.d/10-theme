@@ -27,21 +27,28 @@ set $brcyan #899ca1
 set $grey #b5b5b5
 set $brgrey #f8f8f2
 
+set $cursor_theme "Yaru-Pink"
+set $cursor_size 14
+
+set $font "Sans 13"
+
 ### GTK theming
 set $gnome-schema org.gnome.desktop.interface
 exec {
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
     gsettings set $gnome-schema gtk-theme $GTK_THEME
     gsettings set $gnome-schema icon-theme $GTK_ICON_THEME
-    gsettings set $gnome-schema cursor-theme $GTK_CURSOR_THEME
-    gsettings set $gnome-schema font-name 'Sans 13'
+    gsettings set $gnome-schema cursor-theme $cursor_theme
+    gsettings set $gnome-schema cursor-theme-size $cursor_size
+    gsettings set $gnome-schema font-name $font
 }
 
 seat * {
+    xcursor_theme $cursor_theme $cursor_size
     hide_cursor 5000
 }
 
-font pango:Sans 13
+font pango:$font
 
 hide_edge_borders smart
 smart_borders on
