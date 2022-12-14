@@ -5,7 +5,6 @@ PartOf=sway-session.target
 
 [Service]
 Type=simple
-ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
 ExecStart=/usr/bin/swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 ExecStop=/bin/kill -2 $MAINPID
 Restart=on-failure

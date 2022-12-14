@@ -5,6 +5,7 @@ for_window [shell="xwayland"] title_format "%title [XWayland]"
 for_window {
     [title="Open Folder"] floating enable
     [title="Choose Files"] floating enable
+    [title="Save File"] floating enable
     [window_role="pop-up"] floating enable
     [window_role="bubble"] floating enable
     [window_role="dialog"] floating enable

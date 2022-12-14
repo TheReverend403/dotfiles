@@ -2,10 +2,10 @@
 Description=A lightweight Wayland statusbar
 Documentation=man:waybar(1)
 PartOf=sway-session.target
+After=sway.service
 
 [Service]
 Type=simple
-ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
 ExecStart=/usr/bin/waybar
 ExecReload=kill -SIGUSR2 $MAINPID
 ExecStop=/bin/kill -2 $MAINPID
