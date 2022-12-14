@@ -157,9 +157,10 @@ bindsym $mod+r mode "Resize"
 
 #
 # Session management
-set $mode_session Session: (r) reload, (E) logout, (R) reboot, (S) shutdown
+set $mode_session Session: (r) reload (l) lock, (E) logout, (R) reboot, (S) shutdown
 mode "$mode_session" {
     bindsym r exec --no-startup-id systemctl --user reload sway.service; mode "default"
+    bindsym l exec --no-startup-id $XDG_CONFIG_HOME/sway/bin/lock; mode "default"
     bindsym Shift+e exec --no-startup-id systemctl --user stop sway-session.target
     bindsym Shift+r exec --no-startup-id systemctl reboot
     bindsym Shift+s exec --no-startup-id systemctl poweroff
