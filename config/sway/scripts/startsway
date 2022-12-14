@@ -1,7 +1,5 @@
 #!/bin/sh
 set -eu
 
-#. "${XDG_CONFIG_HOME}/sway/env"
 systemctl --user import-environment PATH BROWSER XDG_CONFIG_HOME XDG_SESSION_ID
-#systemd-cat --identifier=sway sway $@
 systemctl --user start --wait sway
