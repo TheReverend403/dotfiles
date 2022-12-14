@@ -8,3 +8,5 @@
 exec $XDG_CONFIG_HOME/sway/scripts/session.sh --with-cleanup
 
 include $XDG_CONFIG_HOME/sway/conf.d/*
+
+exec systemd-notify --ready
