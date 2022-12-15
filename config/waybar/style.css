@@ -55,6 +55,7 @@ window#waybar {
 #network,
 #tray,
 #mode,
+#window,
 #mpd {
     padding: 0 10px 0 10px;
     color: @foreground;
@@ -64,11 +65,6 @@ window#waybar {
 #mode {
     background-color: @brmagenta;
     color: @background;
-}
-
-#window,
-#workspaces {
-    margin: 0 0px;
 }
 
 #window {

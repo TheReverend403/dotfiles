@@ -1,14 +1,14 @@
 {
     "height": 30,
-    "modules-left": ["sway/workspaces"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-center": [],
     "modules-right": ["sway/mode", "mpd", "tray", "network#vpn", "clock#date", "clock#time"],
     "sway/mode": {
         "format": "{}"
     },
     "sway/window": {
         "format": "<b>{title}</b>",
-        "max-length": 50,
+        "max-length": 100,
     },
     "tray": {
         "icon-size": 20,
