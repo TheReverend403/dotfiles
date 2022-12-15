@@ -39,7 +39,6 @@ exec {
     gsettings set $gnome-schema gtk-theme $GTK_THEME
     gsettings set $gnome-schema icon-theme $GTK_ICON_THEME
     gsettings set $gnome-schema cursor-theme $cursor_theme
-    gsettings set $gnome-schema cursor-theme-size $cursor_size
     gsettings set $gnome-schema font-name $font
 }
 
@@ -58,7 +57,7 @@ default_floating_border pixel 2
 output * bg ../wall.png fill
 
 # class                 border      backgr.       text         indicator child_border
-client.focused          $black      $background   $foreground  $black    $magenta
+client.focused          $magenta    $background   $foreground  $black    $magenta
 client.focused_inactive $black      $background   $foreground  $black    $black
 client.unfocused        $black      $background   $foreground  $black    $black
 client.urgent           $red        $background   $foreground  $black    $black
