@@ -32,6 +32,8 @@ bindsym Ctrl+Alt+Up exec mpc toggle
 bindsym Ctrl+Alt+Down exec mpc stop
 bindsym Ctrl+Alt+Left exec mpc prev
 bindsym Ctrl+Alt+Right exec mpc next
+bindsym Alt+Left exec mpc seek -00:00:05
+bindsym Alt+Right exec mpc seek +00:00:05
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
