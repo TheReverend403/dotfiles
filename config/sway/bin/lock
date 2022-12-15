@@ -5,7 +5,7 @@ SCREEN_OFF_TIMER=10
 BLUR_TYPE="0x6"
 SCREENSHOT_TEMP_PATH="${XDG_RUNTIME_DIR}/lockscreen.png"
 
-grimshot save output - | convert - -blur "${BLUR_TYPE}" "${SCREENSHOT_TEMP_PATH}"
+grim - | convert - -blur "${BLUR_TYPE}" "${SCREENSHOT_TEMP_PATH}"
 
 swayidle \
     timeout "${SCREEN_OFF_TIMER}" 'swaymsg "output * dpms off"' \
