@@ -24,6 +24,7 @@ for_window {
     [app_id="org.remmina.Remmina"] floating enable; inhibit_idle fullscreen
     [app_id="firefox"] inhibit_idle fullscreen
     [app_id="firefox" title="Library"] floating enable
+    [app_id="firefox" title="Extension: .*"] floating enable
     [app_id="thunar"] floating enable
     [app_id="gcolor3"] floating enable
     [app_id="ncmpcpp"] floating enable

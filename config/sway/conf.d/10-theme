@@ -58,8 +58,8 @@ default_floating_border pixel 2
 output * bg ../wall.png fill
 
 # class                 border      backgr.       text         indicator child_border
-client.focused          $magenta    $background   $foreground  $black    $magenta
-client.focused_inactive $black      $background   $foreground  $black    $magenta
+client.focused          $black      $background   $foreground  $black    $magenta
+client.focused_inactive $black      $background   $foreground  $black    $black
 client.unfocused        $black      $background   $foreground  $black    $black
 client.urgent           $red        $background   $foreground  $black    $black
 client.placeholder      $black      $background   $foreground  $black    $black
