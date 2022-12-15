@@ -1,5 +1,7 @@
 [Unit]
 Description=Audio effects for PipeWire applications
+After=pipewire.service
+BindsTo=pipewire.service
 
 [Service]
 ExecStart=%h/.local/bin/easyeffects --gapplication-service
