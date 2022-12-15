@@ -1,0 +1,16 @@
+[Unit]
+Description=Screen locker for Wayland
+Documentation=man:swaylock(1)
+PartOf=sway-session.target
+After=sway.service
+Requires=sway.service
+
+[Service]
+Type=simple
+ExecStart=%h/.config/sway/bin/lock
+Restart=on-failure
+RestartSec=1
+TimeoutStopSec=10
+
+[Install]
+WantedBy=sway-session.target

@@ -160,7 +160,7 @@ bindsym $mod+r mode "Resize"
 set $mode_session Session: (r) reload (l) lock, (E) logout, (R) reboot, (S) shutdown
 mode "$mode_session" {
     bindsym r exec --no-startup-id systemctl --user reload sway.service; mode "default"
-    bindsym l exec --no-startup-id $XDG_CONFIG_HOME/sway/bin/lock; mode "default"
+    bindsym l exec --no-startup-id systemctl --user start swaylock.service; mode "default"
     bindsym Shift+e exec --no-startup-id systemctl --user stop sway-session.target
     bindsym Shift+r exec --no-startup-id systemctl reboot
     bindsym Shift+s exec --no-startup-id systemctl poweroff
@@ -184,7 +184,7 @@ set $mode_notifications Notifications: (l) latest, (c) clear, (r) reload
 mode "$mode_notifications" {
     bindsym l exec makoctl restore, mode "default"
     bindsym c exec makoctl dismiss -a, mode "default"
-    bindsym r exec systemctl --user reload mako, mode "default"
+    bindsym r exec systemctl --user reload mako.service, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"

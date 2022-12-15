@@ -10,10 +10,7 @@ grim - | convert - -blur "${BLUR_TYPE}" "${SCREENSHOT_TEMP_PATH}"
 swayidle \
     timeout "${SCREEN_OFF_TIMER}" 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' &
-SWAY_IDLE_PID=$!
 
 swaylock \
     --no-unlock-indicator \
     --image "${SCREENSHOT_TEMP_PATH}"
-
-kill $SWAY_IDLE_PID
