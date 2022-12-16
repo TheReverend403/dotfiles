@@ -3,7 +3,6 @@
 function _log
     set -l level $argv[1]
     set -l message $argv[2..]
-    set -l level_color
 
     switch $level
         case INFO
