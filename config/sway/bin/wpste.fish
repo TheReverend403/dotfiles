@@ -1,4 +1,8 @@
 #!/usr/bin/fish
+#
+function _notify
+    command -q notify-send; and notify-send --app-name "wpste" $argv; or true
+end
 
 function _log
     set -l level $argv[1]
@@ -43,6 +47,9 @@ function log_error
     or return
 
     _log "ERROR" $argv
+    if set -q __notify_on_error
+        _notify -u critical "wpste error:" "$argv"
+    end
 
     if set -q _flag_e
         exit $_flag_e
@@ -205,6 +212,8 @@ function wpste_main
 
     set -q _flag_h; and _print_help
 
+    set -q _flag_n; and set -g __notify_on_error
+
     if set -q _flag_t
         set -l valid_targets "active" "screen" "output" "area" "window"
         if not contains "$_flag_t" $valid_targets
@@ -230,7 +239,7 @@ function wpste_main
                 set -p notification_title "Image and"
                 set -a notification_args --icon "$_flag_f"
             end
-            notify-send $notification_args "$notification_title" "$url"
+            _notify $notification_args "$notification_title" "$url"
         end
     end
 
