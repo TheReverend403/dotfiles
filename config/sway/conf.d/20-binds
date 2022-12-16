@@ -179,6 +179,13 @@ mode "$mode_screenshot" {
     bindsym w exec $wpste -t window, mode "default"
     bindsym c exec $wpste -t active, mode "default"
 
+    # Edit before upload.
+    bindsym Shift+a exec $wpste -e -t area, mode "default"
+    bindsym Shift+s exec $wpste -e -t screen, mode "default"
+    bindsym Shift+o exec $wpste -e -t output. mode "default"
+    bindsym Shift+w exec $wpste -e -t window, mode "default"
+    bindsym Shift+c exec $wpste -e -t active, mode "default"
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
