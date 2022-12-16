@@ -80,8 +80,14 @@ function _check_requirements
 end
 
 function _play_sound
-    set -l sound "camera-shutter"
-    mpv --no-video --no-terminal "/usr/share/sounds/freedesktop/stereo/$sound.oga" &
+    set -l sound_file "camera-shutter.oga"
+    set -l sound_file "/usr/share/sounds/freedesktop/stereo/$sound_file"
+
+    if test -f "$sound_file"
+        mpv --no-video --no-terminal "$sound_file" &
+    else
+        log_warn "_play_sound: $sound_file not found."
+    end
 end
 
 function _take_screenshot
@@ -189,7 +195,7 @@ function wpste_main
             log_error --exit 2 -- "--target must be one of $valid_targets."
         end
     else
-        set _flag_t "output"
+        set -l _flag_t "output"
     end
 
     if not set -q _flag_f
