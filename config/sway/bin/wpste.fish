@@ -61,8 +61,8 @@ function log_debug
 end
 
 function _print_help
-    log_info "A simple grimshot wrapper that also uploads to an instance of https://github.com/TheReverend403/pste."
-    log_info "Usage: wpste [-t|--target <active|screen|output|area|window>] [-c|--copy] [-n|--notify] [file]"
+    log_info "A simple grimshot wrapper for https://github.com/TheReverend403/pste with support for editing before upload."
+    log_info "Usage: wpste [-t|--target <active|screen|output|area|window>] [-c|--copy] [-n|--notify] [-e|--edit] [file]"
     exit 0
 end
 
