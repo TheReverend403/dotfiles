@@ -234,7 +234,11 @@ function wpste_main
     end
 
     if set -q _flag_e
-        swappy -f "$_flag_f" -o "$_flag_f"; or log_error --exit $status "Editing image failed."
+        if not _is_image "$_flag_f" > /dev/null
+            log_warn "Ignoring --edit because $_flag_f is not an image."
+        else
+            swappy -f "$_flag_f" -o "$_flag_f"; or log_error --exit $status "Editing image failed."
+        end
     end
 
     set -l url (_upload_file --file "$_flag_f" --key "$CONFIG_API_KEY")
