@@ -185,7 +185,7 @@ function _source_config
     end
 
     for line in (cat "$config_file" | string match -rv "^#")
-        string match -qr "^\w+=\w+" "$line"; and set -l item (string split -m 1 '=' $line); or continue
+        set -l item (string match -r "^\w+=\w+" "$line" | string split -m 1 "="); or continue
         log_debug "_source_config: CONFIG_$item[1]=$item[2]"
         set -g CONFIG_$item[1] $item[2]
     end
