@@ -26,6 +26,7 @@ bindsym $mod+i exec $term --title=weechat -e weechat
 bindsym $mod+m exec $term --option window.dimensions.columns=115 --option window.dimensions.lines=30 --class=ncmpcpp -e ncmpcpp
 bindsym $mod+Shift+e exec wofi-emoji
 bindsym $mod+s exec $wpste -t area
+bindsym $mod+Shift+s exec $wpste -e -t area
 
 bindsym Ctrl+Alt+Up exec mpc toggle
 bindsym Ctrl+Alt+Down exec mpc stop
@@ -175,14 +176,14 @@ set $mode_screenshot Capture: (a) area, (s) screen, (o) output, (w) select windo
 mode "$mode_screenshot" {
     bindsym a exec $wpste -t area, mode "default"
     bindsym s exec $wpste -t screen, mode "default"
-    bindsym o exec $wpste -t output. mode "default"
+    bindsym o exec $wpste -t output, mode "default"
     bindsym w exec $wpste -t window, mode "default"
     bindsym c exec $wpste -t active, mode "default"
 
     # Edit before upload.
     bindsym Shift+a exec $wpste -e -t area, mode "default"
     bindsym Shift+s exec $wpste -e -t screen, mode "default"
-    bindsym Shift+o exec $wpste -e -t output. mode "default"
+    bindsym Shift+o exec $wpste -e -t output, mode "default"
     bindsym Shift+w exec $wpste -e -t window, mode "default"
     bindsym Shift+c exec $wpste -e -t active, mode "default"
 
