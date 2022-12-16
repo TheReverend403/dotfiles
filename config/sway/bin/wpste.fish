@@ -19,13 +19,11 @@ function _log
             return
     end
 
-    begin
-        printf "%s" "["
-        isatty stderr; and set_color $level_color
-        printf "%s" "$level"
-        isatty stderr; and set_color normal
-        printf "] %s\n" "$message"
-    end
+    printf "%s" "["
+    isatty stderr; and set_color $level_color
+    printf "%s" "$level"
+    isatty stderr; and set_color normal
+    printf "] %s\n" "$message"
 end
 
 function log_info
