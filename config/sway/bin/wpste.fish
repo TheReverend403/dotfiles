@@ -173,8 +173,10 @@ function _source_config
     set -l config_file "$XDG_CONFIG_HOME/wpste/config"
     if not test -f "$config_file"
         set -l default_config \
-            "API_KEY=" \
-            "UPLOAD_URL=https://dev.pste.pw/api/upload"
+            "## API key for your pste instance. Required." \
+            "# API_KEY=" \
+            "## URL to your pste instance's upload endpoint. Optional." \
+            "# UPLOAD_URL=https://dev.pste.pw/api/upload"
 
         log_error "No config file found at $config_file. A default one will be created."
         mkdir -p "$(dirname "$config_file")"; or log_error --exit $status "Failed to create default config file."
@@ -187,6 +189,8 @@ function _source_config
         log_debug "_source_config: CONFIG_$item[1]=$item[2]"
         set -g CONFIG_$item[1] $item[2]
     end
+
+    set -q CONFIG_UPLOAD_URL; or set -g CONFIG_UPLOAD_URL "https://dev.pste.pw/api/upload"
 end
 
 function wpste_main
