@@ -118,6 +118,7 @@ function _upload_file
         log_error --exit 1 "$_flag_f does not exist."
     end
 
+    log_debug "Uploading $_flag_f"
     set -l response (curl -sSL -H "Authorization: Bearer $_flag_k" -F file="@$_flag_f" "https://dev.pste.pw/api/upload")
     set -l curl_status $status
 
@@ -138,14 +139,14 @@ function _copy_to_clipboard
     end
 
     if set -q _flag_t
-        wl-copy "$_flag_t"
+        wl-copy "$_flag_t"; or log_error --exit $status "Failed to copy $_flag_t to the clipboard."
     end
 
     if set -q _flag_f
         set -l mimetype (_is_image "$_flag_f")
         if test $status -eq 0
             log_debug "Copying $_flag_f to primary clipboard as $mimetype."
-            cat "$_flag_f" | wl-copy --primary --type "$mimetype"
+            cat "$_flag_f" | wl-copy --primary --type "$mimetype"; or log_error --exit $status "Failed to copy $_flag_f to the clipboard."
         else
             log_debug "$_flag_f is not an image. Not copying to clipboard."
         end
@@ -158,9 +159,12 @@ function _source_config
         log_error --exit 1 "No config file found at $config_file"
     end
 
-    for line in (grep -v '^#' "$config_file")
+    for line in (cat "$config_file" | string match -rv "^#")
         set -l item (string split -m 1 '=' $line)
-        set -gx WPSTE_CONFIG_$item[1] $item[2]
+        if test (count $item) -eq 2
+            log_debug "_source_config: WPSTE_CONFIG_$item[1]=$item[2]"
+            set -g WPSTE_CONFIG_$item[1] $item[2]
+        end
     end
 end
 
@@ -201,7 +205,6 @@ function wpste_main
         set _flag_f (_take_screenshot "$_flag_t")
     end
 
-    log_debug "File path: $_flag_f"
     set url (_upload_file --file "$_flag_f" --key "$WPSTE_CONFIG_API_KEY")
 
     if set -q _flag_c
