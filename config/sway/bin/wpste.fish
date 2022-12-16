@@ -1,5 +1,5 @@
 #!/usr/bin/fish
-#
+
 function _notify
     command -q notify-send; and notify-send --app-name "wpste" $argv; or true
 end
