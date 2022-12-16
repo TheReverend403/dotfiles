@@ -18,19 +18,21 @@ function _log
             return
     end
 
-    printf "%s" "["
-    isatty stderr; and set_color $level_color
-    printf "%s" "$level"
-    isatty stderr; and set_color normal
-    printf "] %s\n" "$message"
+    begin
+        printf "%s" "["
+        isatty stderr; and set_color $level_color
+        printf "%s" "$level"
+        isatty stderr; and set_color normal
+        printf "] %s\n" "$message"
+    end 1>&2
 end
 
 function log_info
-    _log "INFO" $argv 1>&2
+    _log "INFO" $argv
 end
 
 function log_warn
-    _log "WARN" $argv 1>&2
+    _log "WARN" $argv
 end
 
 function log_error
@@ -40,7 +42,7 @@ function log_error
     argparse --stop-nonopt $options -- $argv
     or return
 
-    _log "ERROR" $argv 1>&2
+    _log "ERROR" $argv
 
     if set -q _flag_e
         exit $_flag_e
