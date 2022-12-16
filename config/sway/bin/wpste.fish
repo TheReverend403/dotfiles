@@ -204,13 +204,13 @@ function wpste_main
     if set -q _flag_c
         _copy_to_clipboard --text "$url" --file "$_flag_f"
         if set -q _flag_n
-            set -l notification_text "URL copied to clipboard."
+            set -l notification_title "URL copied to clipboard."
             set -l notification_args --app-name "wpste"
             if _is_image "$_flag_f" > /dev/null
-                set -p notification_text "Image and"
+                set -p notification_title "Image and"
                 set -a notification_args --icon "$_flag_f"
             end
-            notify-send $notification_args "$notification_text" "$url"
+            notify-send $notification_args "$notification_title" "$url"
         end
     end
 
