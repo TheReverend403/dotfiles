@@ -232,7 +232,7 @@ function wpste_main
         set _flag_f (_take_screenshot "$_flag_t")
     end
 
-    set url (_upload_file --file "$_flag_f" --key "$CONFIG_API_KEY")
+    set -l url (_upload_file --file "$_flag_f" --key "$CONFIG_API_KEY")
 
     if set -q _flag_c
         _copy_to_clipboard --text "$url" --file "$_flag_f"
