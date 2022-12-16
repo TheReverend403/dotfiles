@@ -135,11 +135,11 @@ function _upload_file
     end
 
     log_debug "Uploading $_flag_f"
-    set -l response (curl -sSL -H "Authorization: Bearer $_flag_k" -F file="@$_flag_f" "$CONFIG_UPLOAD_URL")
+    set -l response (curl -sSL -H "Authorization: Bearer $_flag_k" -F file="@$_flag_f" "$CONFIG_UPLOAD_URL" 2>&1)
     set -l curl_status $status
 
-    test $curl_status -eq 0; or log_error --exit $curl_status "_upload_file: Request failed: $response"
-    echo "$response" | jq .url --raw-output
+    test $curl_status -eq 0; or log_error --exit $curl_status "Upload failed: $response"
+    echo "$response" | jq .url --raw-output; or log_error --exit $status "JSON parsing failed: $response"
 end
 
 function _copy_to_clipboard
