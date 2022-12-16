@@ -52,6 +52,7 @@ function log_debug
 end
 
 function _print_help
+    log_info "A simple grimshot wrapper that also uploads to https://dev.pste.pw."
     log_info "Usage: wpste [-t|--target <active|screen|output|area|window>] [-c|--copy] [-n|--notify] [file]"
     exit 0
 end
@@ -93,13 +94,19 @@ function _take_screenshot
     set -l target $argv[1]
     set -l save_path (mktemp --tmpdir --suffix=.png wpste_(date --iso-8601).XXXX)
 
-    grimshot save "$target" "$save_path"
-    if not test $status -eq 0
-        log_error --exit $status "Failed to capture screenshot due to a grimshot error"
-    else
-        log_debug "Screenshot saved to $save_path"
+    set -l grimshot_output (grimshot save "$target" "$save_path" 2>&1)
+    set -l grimshot_status $status
+    if not test $grimshot_status -eq 0
+        if string match -q "selection cancelled" "$grimshot_output"
+            # Capitalise the s, add a period.
+            log_info (string replace -r "^s" "S" "$grimshot_output."); exit 0
+        end
+        log_error --exit $grimshot_status "Grimshot error: $grimshot_output"
     end
+
     _play_sound
+    log_debug "Screenshot saved to $save_path"
+    echo "$grimshot_output"
 end
 
 function _upload_file
@@ -119,7 +126,7 @@ function _upload_file
     end
 
     log_debug "Uploading $_flag_f"
-    set -l response (curl -sSL -H "Authorization: Bearer $_flag_k" -F file="@$_flag_f" "https://dev.pste.pw/api/upload")
+    set -l response (curl -sSL -H "Authorization: Bearer $_flag_k" -F file="@$_flag_f" "$CONFIG_UPLOAD_URL")
     set -l curl_status $status
 
     test $curl_status -eq 0; or log_error --exit $curl_status "_upload_file: Request failed: $response"
@@ -156,15 +163,20 @@ end
 function _source_config
     set -l config_file "$XDG_CONFIG_HOME/wpste/config"
     if not test -f "$config_file"
-        log_error --exit 1 "No config file found at $config_file"
+        set -l default_config \
+            "API_KEY=" \
+            "UPLOAD_URL=https://dev.pste.pw/api/upload"
+
+        log_error "No config file found at $config_file. A default one will be created."
+        mkdir -p "$(dirname "$config_file")"; or log_error --exit $status "Failed to create default config file."
+        echo -e "$(string join '\n' $default_config)" > "$config_file"
+        exit 1
     end
 
     for line in (cat "$config_file" | string match -rv "^#")
-        set -l item (string split -m 1 '=' $line)
-        if test (count $item) -eq 2
-            log_debug "_source_config: WPSTE_CONFIG_$item[1]=$item[2]"
-            set -g WPSTE_CONFIG_$item[1] $item[2]
-        end
+        string match -qr "^\w+=\w+" "$line"; and set -l item (string split -m 1 '=' $line); or continue
+        log_debug "_source_config: CONFIG_$item[1]=$item[2]"
+        set -g CONFIG_$item[1] $item[2]
     end
 end
 
@@ -205,7 +217,7 @@ function wpste_main
         set _flag_f (_take_screenshot "$_flag_t")
     end
 
-    set url (_upload_file --file "$_flag_f" --key "$WPSTE_CONFIG_API_KEY")
+    set url (_upload_file --file "$_flag_f" --key "$CONFIG_API_KEY")
 
     if set -q _flag_c
         _copy_to_clipboard --text "$url" --file "$_flag_f"
