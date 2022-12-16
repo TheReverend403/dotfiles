@@ -73,7 +73,7 @@ function _is_image
 end
 
 function _check_requirements
-    set -l required_commands curl mpv notify-send grimshot wl-copy
+    set -l required_commands curl mpv notify-send grimshot wl-copy swappy
 
     if not set -q WAYLAND_DISPLAY
         log_error --exit 1 "WAYLAND_DISPLAY is not set. wpste expects a Wayland environment."
@@ -201,6 +201,7 @@ function wpste_main
         (fish_opt --short h --long help) \
         (fish_opt --short c --long copy) \
         (fish_opt --short n --long notify) \
+        (fish_opt --short e --long edit) \
         (fish_opt --short t --long target --required-val) \
 
     argparse --name=wpste --stop-nonopt $options -- $argv
@@ -230,6 +231,10 @@ function wpste_main
 
     if not set -q _flag_f
         set _flag_f (_take_screenshot "$_flag_t")
+    end
+
+    if set -q _flag_e
+        swappy -f "$_flag_f" -o "$_flag_f"; or log_error --exit $status "Editing image failed."
     end
 
     set -l url (_upload_file --file "$_flag_f" --key "$CONFIG_API_KEY")
