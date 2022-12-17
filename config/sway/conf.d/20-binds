@@ -57,6 +57,11 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# Cycle all windows
+# http://blog.sidhartharya.com/cycling-through-windows-in-swaywm/
+bindsym $mod+Tab exec swaymsg [con_id=$(swaymsg -t get_tree | "$XDG_CONFIG_HOME"/sway/bin/alttab.py t)] focus
+bindsym $mod+Shift+Tab exec swaymsg [con_id=$(swaymsg -t get_tree | "$XDG_CONFIG_HOME"/sway/bin/alttab.py f)] focus
+
 # Move the focused window with the same, but add Shift
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
