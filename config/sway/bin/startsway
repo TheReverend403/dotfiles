@@ -3,7 +3,7 @@ set -eu
 
 export GPG_TTY="$(tty)"
 
-new_env=$(systemctl --user show-environment | cut -d'=' -f 1 | sort | comm -13 - <(env | cut -d'=' -f 1 | sort))
+new_env=$(systemctl --user show-environment | cut -d'=' -f 1 | sort | comm -13 - <(env | cut -d'=' -f 1 | sort) | xargs)
 systemctl --user import-environment
 systemctl --user start --wait sway.service
 systemctl --user unset-environment $new_env
