@@ -9,7 +9,8 @@ set $right l
 set $term alacritty
 set $browser $BROWSER
 set $menu wofi --show run | xargs swaymsg exec --
-set $wpste $XDG_CONFIG_HOME/sway/bin/wpste.fish --copy --notify
+# https://github.com/TheReverend403/scripts/blob/main/wpste.fish
+set $wpste wpste --copy --notify
 
 # Start a terminal
 bindsym $mod+Return exec $term
