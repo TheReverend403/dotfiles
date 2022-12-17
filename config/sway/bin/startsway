@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
 
-# XDG_SESSION_ID seems to be needed for xdg-desktop-portal to work.
-# PATH is to make use of ~/.local/bin
-# BROWSER and XDG_CONFIG_HOME are referenced in sway's config.
-systemctl --user import-environment PATH BROWSER XDG_CONFIG_HOME XDG_SESSION_ID
+export GPG_TTY="$(tty)"
+
+new_env=$(systemctl --user show-environment | cut -d'=' -f 1 | sort | comm -13 - <(env | cut -d'=' -f 1 | sort))
+systemctl --user import-environment
 systemctl --user start --wait sway.service
+systemctl --user unset-environment $new_env

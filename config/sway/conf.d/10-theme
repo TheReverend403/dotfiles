@@ -34,7 +34,7 @@ set $font "Sans 13"
 
 ### GTK theming
 set $gnome-schema org.gnome.desktop.interface
-exec {
+exec_always {
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
     gsettings set $gnome-schema gtk-theme $GTK_THEME
     gsettings set $gnome-schema icon-theme $GTK_ICON_THEME

@@ -1,3 +1,5 @@
+set -x XDG_DATA_DIRS "$HOME/.local/share:$XDG_DATA_DIRS"
+
 # XDG partial support.
 set -x ASPELL_CONF "per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
 set -x SQLITE_HISTORY "$XDG_CACHE_HOME/sqlite_history"
