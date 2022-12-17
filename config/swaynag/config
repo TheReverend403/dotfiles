@@ -1,4 +1,4 @@
-font=Sans 13
+font=pango:Sans 13
 text=eeeeee
 background=0d0d0d
 border=8c54fe
@@ -13,6 +13,7 @@ button-dismiss-gap=10
 button-padding=5
 details-border-size=10
 details-background=1b1d1e
+message-padding=10
 
 [error]
 text=eeeeee
