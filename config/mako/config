@@ -16,5 +16,8 @@ max-history=10
 sort=+time
 layer=top
 
+[urgency=low]
+border-color=#505354
+
 [urgency=critical]
 border-color=#f92672
