@@ -1,7 +1,6 @@
 [Unit]
 Description=Audio effects for PipeWire applications
-PartOf=graphical-session.target
-After=graphical-session.target
+After=graphical-session.target pipewire.service
 
 [Service]
 ExecStart=%h/.local/bin/easyeffects --gapplication-service
@@ -9,6 +8,7 @@ ExecStop=%h/.local/bin/easyeffects --quit
 Nice=-15
 Restart=always
 RestartSec=1
+TimeoutStopSec=5
 
 [Install]
 WantedBy=graphical-session.target

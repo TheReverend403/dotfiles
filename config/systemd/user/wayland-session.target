@@ -8,9 +8,9 @@
 #  (at your option) any later version.
 
 [Unit]
-Description=Current sway user session
+Description=Current wayland user session
 Documentation=man:systemd.special(7)
 Requires=basic.target
-BindsTo=sway.service
-BindsTo=wayland-session.target
-Before=wayland-session.target
+RefuseManualStart=yes
+StopWhenUnneeded=yes
+BindsTo=graphical-session.target

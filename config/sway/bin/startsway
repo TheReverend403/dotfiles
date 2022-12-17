@@ -1,9 +1,33 @@
 #!/bin/bash
 set -eu
 
+# https://github.com/Ventto/sway-services/tree/ventto-dev
+
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_DESKTOP="${XDG_SESSION_DESKTOP:-sway}"
+export XDG_SESSION_TYPE=wayland
 export GPG_TTY="$(tty)"
 
-new_env=$(systemctl --user show-environment | cut -d'=' -f 1 | sort | comm -13 - <(env | cut -d'=' -f 1 | sort) | xargs)
-systemctl --user import-environment
-systemctl --user start --wait sway.service
+# reset failed state of all units relevant to this session.
+for unit in $(systemctl --user --no-legend --state=failed --plain list-units | cut -f1 -d' '); do
+    partof="$(systemctl --user show -p PartOf --value "$unit")"
+    for target in sway-session.target wayland-session.target graphical-session.target; do
+        if [ "$partof" = "$target" ]; then
+            systemctl --user reset-failed "$unit"
+            break
+        fi
+    done
+done
+
+sys_env=$(systemctl --user show-environment | cut -d'=' -f 1 | sort)
+user_env=$(env | cut -d'=' -f 1 | sort)
+new_env=$(echo "$sys_env" | comm -13 - <(echo "$user_env"))
+shared_env=$(echo "$sys_env" | comm -12 - <(echo "$user_env"))
+
+systemctl --user import-environment $new_env $shared_env
+
+# Then start the service
+systemctl --wait --user start sway.service
+
+# Cleanup environment
 systemctl --user unset-environment $new_env

@@ -2,8 +2,8 @@
 Description=Screen locker for Wayland
 Documentation=man:swaylock(1)
 PartOf=sway-session.target
-After=sway.service
-Requires=sway.service
+After=sway-session.target
+Requires=sway-session.target
 
 [Service]
 Type=simple

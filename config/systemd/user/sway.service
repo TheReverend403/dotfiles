@@ -2,6 +2,8 @@
 Description=sway - SirCmpwn's Wayland window manager
 Documentation=man:sway(5)
 BindsTo=sway-session.target
+Wants=sway-session-pre.target
+After=sway-session-pre.target
 Before=sway-session.target
 
 [Service]
@@ -9,7 +11,7 @@ Type=notify
 EnvironmentFile=-%h/.config/sway/env
 ExecStart=/usr/bin/sway
 ExecReload=/usr/bin/swaymsg reload
-ExecStop=/usr/bin/swaymsg exit
+ExecStopPost=/usr/bin/systemctl --user unset-environment SWAYSOCK DISPLAY I3SOCK WAYLAND_DISPLAY
 Restart=on-failure
 RestartSec=3
 TimeoutStopSec=10
