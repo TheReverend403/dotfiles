@@ -30,6 +30,7 @@ for_window {
     [app_id="ncmpcpp"] floating enable
     [app_id="seahorse"] floating enable
     [app_id="pavucontrol"] floating enable
+    [app_id="deluge"] floating enable
     [app_id="xdg-desktop-portal-gtk"] floating enable
     [app_id="(?i).*flatseal$"] floating enable
     [app_id="(?i).*easyeffects$"] floating enable
