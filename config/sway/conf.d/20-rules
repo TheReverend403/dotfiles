@@ -10,7 +10,7 @@ for_window {
 for_window {
     # Telegram save/open file dialogues.
     # No class, role or type but luckily they use a different app_id to the main app.
-    [app_id="telegram-desktop"] floating enable
+    [app_id="telegram-desktop" title="^(Open|Save|Choose) [a-zA-Z0-9]+$"] floating enable; resize set width 1280 height 864
 
     [window_role="pop-up"] floating enable
     [window_role="bubble"] floating enable
