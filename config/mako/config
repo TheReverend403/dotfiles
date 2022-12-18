@@ -21,13 +21,12 @@ border-color=#f92672
 border-color=#4A154B
 default-timeout=0
 
-[summary~="^(contain|media).lwatson.dev ➜ .+"]
-border-color=#8c54fe
+# Telegram
+[summary~="^.+ ➜ .+"]
+border-color=#0089CC
 
 [summary~="^contain.lwatson.dev ➜ .+" body~="^(Status Healthy|Started) .+"]
 border-color=#82b414
 
 [summary~="^contain.lwatson.dev ➜ .+" body~="^(Status Unhealthy|Stopped) .+"]
 border-color=#f92672
-
-
