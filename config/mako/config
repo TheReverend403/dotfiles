@@ -25,8 +25,8 @@ default-timeout=0
 [summary~="^.+ ➜ .+"]
 border-color=#0089CC
 
-[summary~="^contain.lwatson.dev ➜ .+" body~="^(Status Healthy|Started) .+"]
+[summary~="^contain\.lwatson\.dev ➜ .+" body~="^(Status Healthy|Started) .+"]
 border-color=#82b414
 
-[summary~="^contain.lwatson.dev ➜ .+" body~="^(Status Unhealthy|Stopped) .+"]
+[summary~="^contain\.lwatson\.dev ➜ .+" body~="^(Status Unhealthy|Stopped) .+"]
 border-color=#f92672
