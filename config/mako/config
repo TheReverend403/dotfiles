@@ -21,6 +21,9 @@ border-color=#f92672
 border-color=#4A154B
 default-timeout=0
 
+[app-name=Firefox]
+border-color=#ff9400
+
 # Telegram
 [summary~="^.+ ➜ .+"]
 border-color=#0089CC
@@ -30,3 +33,9 @@ border-color=#82b414
 
 [summary~="^contain\.lwatson\.dev ➜ .+" body~="^(Status Unhealthy|Stopped) .+"]
 border-color=#f92672
+
+[app-name=weechat]
+border-color=#0B11BE
+
+[app-name=wpste urgency=normal]
+border-color=#82b414
