@@ -16,3 +16,7 @@ border-color=#505354
 
 [urgency=critical]
 border-color=#f92672
+
+[app-name=Slack]
+border-color=#4A154B
+default-timeout=15000

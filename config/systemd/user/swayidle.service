@@ -6,7 +6,6 @@ Requires=sway-session.target
 After=sway-session.target
 
 [Service]
-Type=simple
 ExecStart=/usr/bin/swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 Restart=on-failure
 RestartSec=1

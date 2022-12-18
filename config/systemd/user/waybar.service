@@ -5,7 +5,6 @@ PartOf=sway-session.target
 After=sway-session.target
 
 [Service]
-Type=simple
 ExecStart=/usr/bin/waybar
 ExecReload=/bin/kill -SIGUSR2 $MAINPID
 ExecStop=/bin/kill -2 $MAINPID

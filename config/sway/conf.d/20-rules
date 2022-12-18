@@ -32,6 +32,7 @@ for_window {
     [app_id="pavucontrol"] floating enable
     [app_id="deluge"] floating enable
     [app_id="xdg-desktop-portal-gtk"] floating enable
+    [app_id="mgba-qt"] floating enable; inhibit_idle fullscreen
     [app_id="(?i).*flatseal$"] floating enable
     [app_id="(?i).*easyeffects$"] floating enable
     [app_id="(?i).*Calculator$"] floating enable
