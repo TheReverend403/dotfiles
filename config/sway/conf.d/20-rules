@@ -1,5 +1,10 @@
 # vi: ft=swayconfig
 
+set {
+    $popup_width 1280
+    $popup_height 864
+}
+
 for_window [shell="xwayland"] title_format "%title [XWayland]"
 
 for_window {
@@ -10,7 +15,8 @@ for_window {
 for_window {
     # Telegram save/open file dialogues.
     # No class, role or type but luckily they use a different app_id to the main app.
-    [app_id="telegram-desktop" title="^(Open|Save|Choose) [a-zA-Z0-9]+$"] floating enable; resize set width 1280 height 864
+    [app_id="telegram-desktop" title="^(?i)(Open|Save|Choose) [a-z0-9]+$"] floating enable; resize set width $popup_width height $popup_height
+    [app_id="Firefox" title="File Upload"] floating enable; resize set width $popup_width height $popup_height
 
     [window_role="pop-up"] floating enable
     [window_role="bubble"] floating enable
