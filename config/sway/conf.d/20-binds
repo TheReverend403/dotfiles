@@ -1,40 +1,44 @@
 # vi: ft=swayconfig
 
-set $mod Mod4
-set $left h
-set $down j
-set $up k
-set $right l
+set {
+    $mod Mod4
+    $left h
+    $down j
+    $up k
+    $right l
+}
 
-set $term alacritty
-set $browser $BROWSER
-set $menu wofi --show run | xargs swaymsg exec --
-# https://github.com/TheReverend403/scripts/blob/main/wpste.fish
-set $wpste wpste --copy --notify
+set {
+    $term alacritty
+    $browser $BROWSER
+    $menu wofi --show run | xargs swaymsg exec --
+    # https://github.com/TheReverend403/scripts/blob/main/wpste.fish
+    $wpste wpste --copy --notify
+}
 
-# Start a terminal
-bindsym $mod+Return exec $term
+bindsym {
+    $mod+Return exec $term
+    $mod+d exec $menu
+    $mod+b exec $browser
+    $mod+t exec telegram
+    $mod+f exec thunar
+    $mod+e exec thunderbird
+    $mod+i exec $term --title=weechat -e weechat
+    $mod+m exec $term --option window.dimensions.columns=115 --option window.dimensions.lines=30 --class=ncmpcpp -e ncmpcpp
+    $mod+Shift+e exec wofi-emoji
+    $mod+s exec $wpste -t area
+    $mod+Shift+s exec $wpste -e -t area
+}
 
-# Kill focused window
-bindsym $mod+Shift+q kill
-
-bindsym $mod+d exec $menu
-bindsym $mod+b exec $browser
-bindsym $mod+t exec telegram
-bindsym $mod+f exec thunar
-bindsym $mod+e exec thunderbird
-bindsym $mod+i exec $term --title=weechat -e weechat
-bindsym $mod+m exec $term --option window.dimensions.columns=115 --option window.dimensions.lines=30 --class=ncmpcpp -e ncmpcpp
-bindsym $mod+Shift+e exec wofi-emoji
-bindsym $mod+s exec $wpste -t area
-bindsym $mod+Shift+s exec $wpste -e -t area
-
-bindsym Ctrl+Alt+Up exec mpc toggle
-bindsym Ctrl+Alt+Down exec mpc stop
-bindsym Ctrl+Alt+Left exec mpc prev
-bindsym Ctrl+Alt+Right exec mpc next
-bindsym Alt+Left exec mpc seek -00:00:05
-bindsym Alt+Right exec mpc seek +00:00:05
+# MPD controls
+bindsym {
+    Ctrl+Alt+Up exec mpc toggle
+    Ctrl+Alt+Down exec mpc stop
+    Ctrl+Alt+Left exec mpc prev
+    Ctrl+Alt+Right exec mpc next
+    Alt+Left exec mpc seek -00:00:05
+    Alt+Right exec mpc seek +00:00:05
+}
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -44,167 +48,190 @@ bindsym Alt+Right exec mpc seek +00:00:05
 floating_modifier $mod normal
 
 #
-# Moving around:
+# Windows:
 #
-# Move your focus around
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
-# Or use $mod+[up|down|left|right]
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym {
+    # Move your focus around
+    $mod+$left focus left
+    $mod+$down focus down
+    $mod+$up focus up
+    $mod+$right focus right
 
-# Cycle all windows
-# https://gist.github.com/SidharthArya/f4d80c246793eb61be0ae928c9184406?permalink_comment_id=4405799#gistcomment-4405799
-bindsym $mod+Tab exec "$XDG_CONFIG_HOME"/sway/bin/alt-tab.py next
+    # Or use $mod+[up|down|left|right]
+    $mod+Left focus left
+    $mod+Down focus down
+    $mod+Up focus up
+    $mod+Right focus right
 
-# Move the focused window with the same, but add Shift
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
-# Ditto, with arrow keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+    # Cycle focus through all windows
+    # https://gist.github.com/SidharthArya/f4d80c246793eb61be0ae928c9184406?permalink_comment_id=4405799#gistcomment-4405799
+    $mod+Tab exec "$XDG_CONFIG_HOME"/sway/bin/alt-tab.py next
+
+    # Move the focused window with the same, but add Shift
+    $mod+Shift+$left move left
+    $mod+Shift+$down move down
+    $mod+Shift+$up move up
+    $mod+Shift+$right move right
+
+    # Ditto, with arrow keys
+    $mod+Shift+Left move left
+    $mod+Shift+Down move down
+    $mod+Shift+Up move up
+    $mod+Shift+Right move right
+
+    # Move focus to the parent container
+    $mod+a focus parent
+
+    # Swap focus between the tiling area and the floating area
+    $mod+space focus mode_toggle
+
+    # Kill focused window
+    $mod+Shift+q kill
+}
 
 #
 # Workspaces:
 #
-# Switch to workspace
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
+bindsym {
+    # Switch to workspace
+    $mod+1 workspace number 1
+    $mod+2 workspace number 2
+    $mod+3 workspace number 3
+    $mod+4 workspace number 4
+    $mod+5 workspace number 5
+    $mod+6 workspace number 6
+    $mod+7 workspace number 7
+    $mod+8 workspace number 8
+    $mod+9 workspace number 9
 
-# Move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-# Note: workspaces can have any name you want, not just numbers.
-# We just use 1-10 as the default.
+    # Move focused container to workspace
+    $mod+Shift+1 move container to workspace number 1
+    $mod+Shift+2 move container to workspace number 2
+    $mod+Shift+3 move container to workspace number 3
+    $mod+Shift+4 move container to workspace number 4
+    $mod+Shift+5 move container to workspace number 5
+    $mod+Shift+6 move container to workspace number 6
+    $mod+Shift+7 move container to workspace number 7
+    $mod+Shift+8 move container to workspace number 8
+    $mod+Shift+9 move container to workspace number 9
+}
 
 #
 # Layout stuff:
 #
-# You can "split" the current object of your focus with
-# $mod+b or $mod+v, for horizontal and vertical splits
-# respectively.
-bindsym $mod+Alt+b splith
-bindsym $mod+Alt+v splitv
+bindsym {
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    $mod+Alt+b splith
+    $mod+Alt+v splitv
 
-# Switch the current container between different layout styles
-bindsym $mod+Alt+s layout stacking
-bindsym $mod+Alt+w layout tabbed
-bindsym $mod+Alt+e layout toggle split
+    # Switch the current container between different layout styles
+    $mod+Alt+s layout stacking
+    $mod+Alt+w layout tabbed
+    $mod+Alt+e layout toggle split
 
-# Make the current focus fullscreen
-bindsym $mod+Shift+f fullscreen
+    # Make the current focus fullscreen
+    $mod+Shift+f fullscreen
 
-# Toggle the current focus between tiling and floating mode
-bindsym $mod+Shift+space floating toggle
+    # Toggle the current focus between tiling and floating mode
+    $mod+Shift+space floating toggle
+}
 
-# Swap focus between the tiling area and the floating area
-bindsym $mod+space focus mode_toggle
-
-# Move focus to the parent container
-bindsym $mod+a focus parent
 
 #
 # Scratchpad:
 #
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
+bindsym {
+    # Move the currently focused window to the scratchpad
+    $mod+Shift+minus move scratchpad
 
-# Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    $mod+minus scratchpad show
+}
 
 #
 # Resizing containers:
-mode "Resize" {
+#
+mode "Resize" bindsym { 
     # left will shrink the containers width
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    $left resize shrink width 10px
+    $down resize grow height 10px
+    $up resize shrink height 10px
+    $right resize grow width 10px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    Left resize shrink width 10px
+    Down resize grow height 10px
+    Up resize shrink height 10px
+    Right resize grow width 10px
 
     # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    Return mode "default"
+    Escape mode "default"
 }
-bindsym $mod+r mode "Resize"
 
 #
-# Session management
+# Session management:
+#
 set $mode_session Session: (r) reload (l) lock, (E) logout, (R) reboot, (S) shutdown
-mode "$mode_session" {
-    bindsym r exec --no-startup-id systemctl --user reload sway.service; mode "default"
-    bindsym l exec --no-startup-id systemctl --user start swaylock.service; mode "default"
-    bindsym Shift+e exec --no-startup-id systemctl --user stop sway-session.target
-    bindsym Shift+r exec --no-startup-id systemctl reboot
-    bindsym Shift+s exec --no-startup-id systemctl poweroff
+mode "$mode_session" bindsym {
+    r exec --no-startup-id systemctl --user reload sway.service; mode "default"
+    l exec --no-startup-id systemctl --user start swaylock.service; mode "default"
+    Shift+e exec --no-startup-id systemctl --user stop sway-session.target
+    Shift+r exec --no-startup-id systemctl reboot
+    Shift+s exec --no-startup-id systemctl poweroff
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    Return mode "default"
+    Escape mode "default"
 }
-bindsym $mod+q mode "$mode_session"
 
+# 
+# Screen capture + upload:
+# https://github.com/TheReverend403/scripts/blob/main/wpste.fish
+#
 set $mode_screenshot Capture: (a) area, (s) screen, (o) output, (w) select window, (c) active window 
-mode "$mode_screenshot" {
-    bindsym a exec $wpste -t area, mode "default"
-    bindsym s exec $wpste -t screen, mode "default"
-    bindsym o exec $wpste -t output, mode "default"
-    bindsym w exec $wpste -t window, mode "default"
-    bindsym c exec $wpste -t active, mode "default"
+mode "$mode_screenshot" bindsym {
+    a exec $wpste -t area, mode "default"
+    s exec $wpste -t screen, mode "default"
+    o exec $wpste -t output, mode "default"
+    w exec $wpste -t window, mode "default"
+    c exec $wpste -t active, mode "default"
 
     # Edit before upload.
-    bindsym Shift+a exec $wpste -e -t area, mode "default"
-    bindsym Shift+s exec $wpste -e -t screen, mode "default"
-    bindsym Shift+o exec $wpste -e -t output, mode "default"
-    bindsym Shift+w exec $wpste -e -t window, mode "default"
-    bindsym Shift+c exec $wpste -e -t active, mode "default"
+    Shift+a exec $wpste -e -t area, mode "default"
+    Shift+s exec $wpste -e -t screen, mode "default"
+    Shift+o exec $wpste -e -t output, mode "default"
+    Shift+w exec $wpste -e -t window, mode "default"
+    Shift+c exec $wpste -e -t active, mode "default"
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    Return mode "default"
+    Escape mode "default"
 }
-bindsym Print mode "$mode_screenshot"
 
+#
+# Manage notification history:
+#
 set $mode_notifications Notifications: (l) latest, (c) clear, (r) reload 
-mode "$mode_notifications" {
-    bindsym l exec makoctl restore, mode "default"
-    bindsym c exec makoctl dismiss -a, mode "default"
-    bindsym r exec systemctl --user reload mako.service, mode "default"
+mode "$mode_notifications" bindsym {
+    l exec makoctl restore, mode "default"
+    c exec makoctl dismiss -a, mode "default"
+    r exec systemctl --user reload mako.service, mode "default"
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    Return mode "default"
+    Escape mode "default"
 }
-bindsym $mod+n mode "$mode_notifications"
+
+bindsym {
+    $mod+r mode "Resize"
+    $mod+q mode "$mode_session"
+    Print mode "$mode_screenshot"
+    $mod+n mode "$mode_notifications"
+}
 

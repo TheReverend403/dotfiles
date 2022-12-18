@@ -1,4 +1,5 @@
 # vi: ft=swayconfig
 
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec $browser
 exec telegram

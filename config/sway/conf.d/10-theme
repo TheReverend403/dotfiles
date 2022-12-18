@@ -1,36 +1,41 @@
 # vi: ft=swayconfig
 
-set $background #0d0d0d
-set $foreground #eeeeee
+set {
+    $background #0d0d0d
+    $foreground #eeeeee
 
-set $black #1b1d1e
-set $brblack #505354
+    $black #1b1d1e
+    $brblack #505354
 
-set $red #f92672
-set $brred #ff5995
+    $red #f92672
+    $brred #ff5995
 
-set $green #82b414
-set $brgreen #b6e354
+    $green #82b414
+    $brgreen #b6e354
 
-set $yellow #fd971f
-set $bryellow #feed6c
+    $yellow #fd971f
+    $bryellow #feed6c
 
-set $blue #0063af
-set $brblue #238cdc
+    $blue #0063af
+    $brblue #238cdc
 
-set $magenta #8c54fe
-set $brmagenta #9e6ffe
+    $magenta #8c54fe
+    $brmagenta #9e6ffe
 
-set $cyan #465457
-set $brcyan #899ca1
+    $cyan #465457
+    $brcyan #899ca1
 
-set $grey #b5b5b5
-set $brgrey #f8f8f2
+    $grey #b5b5b5
+    $brgrey #f8f8f2
+}
 
-set $cursor_theme "Yaru-Pink"
-set $cursor_size 14
+set {
+    $cursor_theme "Yaru-Pink"
+    $cursor_size 14
+}
 
 set $font "Sans 13"
+font pango:$font
 
 ### GTK theming
 set $gnome-schema org.gnome.desktop.interface
@@ -46,8 +51,6 @@ seat * {
     xcursor_theme $cursor_theme $cursor_size
     hide_cursor 5000
 }
-
-font pango:$font
 
 hide_edge_borders smart
 smart_borders on
