@@ -6,11 +6,7 @@ BLUR_TYPE="0x6"
 SCREENSHOT_TEMP_PATH="${XDG_RUNTIME_DIR}/lockscreen.png"
 
 grim - | convert - -blur "${BLUR_TYPE}" "${SCREENSHOT_TEMP_PATH}"
-
-swayidle \
-    timeout "${SCREEN_OFF_TIMER}" 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' &
-
+pkill -SIGUSR1 swayidle || true
 swaylock \
     --no-unlock-indicator \
     --image "${SCREENSHOT_TEMP_PATH}"

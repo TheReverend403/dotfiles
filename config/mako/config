@@ -26,6 +26,9 @@ border-color=#4A154B
 [app-name=Firefox]
 border-color=#ff9400
 
+[app-name=Thunderbird]
+border-color=#00FEFF
+
 # Telegram
 [summary~="^.+ ➜ .+"]
 border-color=#0089CC
