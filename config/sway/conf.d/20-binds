@@ -32,12 +32,16 @@ bindsym {
 
 # MPD controls
 bindsym {
-    Ctrl+Alt+Up exec mpc toggle
-    Ctrl+Alt+Down exec mpc stop
-    Ctrl+Alt+Left exec mpc prev
-    Ctrl+Alt+Right exec mpc next
-    Alt+Left exec mpc seek -00:00:05
-    Alt+Right exec mpc seek +00:00:05
+    XF86AudioPlay exec mpc toggle
+    XF86AudioPause exec mpc toggle
+    XF86AudioStop exec mpc stop
+    XF86AudioPrev exec mpc prev
+    XF86AudioNext exec mpc next
+    Ctrl+XF86AudioPrev exec mpc seek -00:00:05
+    Ctrl+XF86AudioNext exec mpc seek +00:00:05
+    XF86AudioRaiseVolume exec pulsemixer --change-volume +5 --max-volume 100
+    XF86AudioLowerVolume exec pulsemixer --change-volume -5 --max-volume 100
+    XF86AudioMute exec pulsemixer --toggle-mute
 }
 
 # Drag floating windows by holding down $mod and left mouse button.
