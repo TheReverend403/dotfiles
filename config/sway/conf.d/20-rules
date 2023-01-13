@@ -15,7 +15,7 @@ for_window {
 for_window {
     # Telegram save/open file dialogues.
     # No class, role or type but luckily they use a different app_id to the main app.
-    [app_id="telegram-desktop" title="^(?i)(Open|Save|Choose) [a-z0-9]+$"] floating enable; resize set width $popup_width height $popup_height
+    [app_id="^(telegram-desktop|code)$" title="^(?i)(Open|Save|Choose) [a-z0-9]+$"] floating enable; resize set width $popup_width height $popup_height
     [app_id="Firefox" title="File Upload"] floating enable; resize set width $popup_width height $popup_height
 
     [window_role="pop-up"] floating enable
@@ -44,7 +44,7 @@ for_window {
     [app_id="(?i).*Calculator$"] floating enable
     [app_id="org.prismlauncher.PrismLauncher"] floating enable
     [class="^Minecraft\* [0-9.]+$" instance="^Minecraft\* [0-9.]+$"] floating enable; inhibit_idle fullscreen
-    [class="Katana-MK2-FxFloorBoard"] floating enable
+    [class="Katana-Mk2-FxFloorBoard"] floating enable
 }
 
 assign {

@@ -11,3 +11,4 @@ NO_AT_BRIDGE=1
 
 GTK_THEME="Yaru-Lavender-dark"
 GTK_ICON_THEME="Papirus-Dark"
+XCURSOR_PATH="~/.local/share/icons:/usr/share/icons"

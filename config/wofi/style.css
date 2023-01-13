@@ -25,4 +25,5 @@ window {
 
 #entry:selected {
     border: 2px solid #8c54fe;
+    background-color: rgba(140, 84, 254, 0.5);
 }

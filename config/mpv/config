@@ -13,7 +13,7 @@ dscale-antiring=0.7 # luma downscale deringing
 cscale-antiring=0.7 # chroma upscale deringing
 
 ## Audio ##
-ao=pulse
+ao=pipewire
 audio-channels=2
 audio-normalize-downmix=yes
 ad-lavc-downmix=no # https://github.com/mpv-player/mpv/issues/6300

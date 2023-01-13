@@ -2,13 +2,6 @@
 
 set {
     $mod Mod4
-    $left h
-    $down j
-    $up k
-    $right l
-}
-
-set {
     $term alacritty
     $browser $BROWSER
     $menu wofi --show run | xargs swaymsg exec --
@@ -30,7 +23,7 @@ bindsym {
     $mod+Shift+s exec $wpste -e -t area
 }
 
-# MPD controls
+# Audio controls
 bindsym {
     XF86AudioPlay exec mpc toggle
     XF86AudioPause exec mpc toggle
@@ -56,12 +49,6 @@ floating_modifier $mod normal
 #
 bindsym {
     # Move your focus around
-    $mod+$left focus left
-    $mod+$down focus down
-    $mod+$up focus up
-    $mod+$right focus right
-
-    # Or use $mod+[up|down|left|right]
     $mod+Left focus left
     $mod+Down focus down
     $mod+Up focus up
@@ -72,12 +59,6 @@ bindsym {
     $mod+Tab exec "$XDG_CONFIG_HOME"/sway/bin/alt-tab.py next
 
     # Move the focused window with the same, but add Shift
-    $mod+Shift+$left move left
-    $mod+Shift+$down move down
-    $mod+Shift+$up move up
-    $mod+Shift+$right move right
-
-    # Ditto, with arrow keys
     $mod+Shift+Left move left
     $mod+Shift+Down move down
     $mod+Shift+Up move up
@@ -165,12 +146,6 @@ mode "Resize" bindsym {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    $left resize shrink width 10px
-    $down resize grow height 10px
-    $up resize shrink height 10px
-    $right resize grow width 10px
-
-    # Ditto, with arrow keys
     Left resize shrink width 10px
     Down resize grow height 10px
     Up resize shrink height 10px
@@ -202,18 +177,18 @@ mode "$mode_session" bindsym {
 #
 set $mode_screenshot Capture: (a) area, (s) screen, (o) output, (w) select window, (c) active window 
 mode "$mode_screenshot" bindsym {
-    a exec $wpste -t area, mode "default"
-    s exec $wpste -t screen, mode "default"
-    o exec $wpste -t output, mode "default"
-    w exec $wpste -t window, mode "default"
-    c exec $wpste -t active, mode "default"
+    a exec $wpste -t area; mode "default"
+    s exec $wpste -t screen; mode "default"
+    o exec $wpste -t output; mode "default"
+    w exec $wpste -t window; mode "default"
+    c exec $wpste -t active; mode "default"
 
     # Edit before upload.
-    Shift+a exec $wpste -e -t area, mode "default"
-    Shift+s exec $wpste -e -t screen, mode "default"
-    Shift+o exec $wpste -e -t output, mode "default"
-    Shift+w exec $wpste -e -t window, mode "default"
-    Shift+c exec $wpste -e -t active, mode "default"
+    Shift+a exec $wpste -e -t area; mode "default"
+    Shift+s exec $wpste -e -t screen; mode "default"
+    Shift+o exec $wpste -e -t output; mode "default"
+    Shift+w exec $wpste -e -t window; mode "default"
+    Shift+c exec $wpste -e -t active; mode "default"
 
     Return mode "default"
     Escape mode "default"
@@ -224,9 +199,9 @@ mode "$mode_screenshot" bindsym {
 #
 set $mode_notifications Notifications: (l) latest, (c) clear, (r) reload 
 mode "$mode_notifications" bindsym {
-    l exec makoctl restore, mode "default"
-    c exec makoctl dismiss -a, mode "default"
-    r exec systemctl --user reload mako.service, mode "default"
+    l exec makoctl restore; mode "default"
+    c exec makoctl dismiss -a; mode "default"
+    r exec systemctl --user reload mako.service; mode "default"
 
     Return mode "default"
     Escape mode "default"
