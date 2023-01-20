@@ -2,7 +2,7 @@
     "height": 30,
     "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": [],
-    "modules-right": ["sway/mode", "mpd", "tray", "network#vpn", "clock#date", "clock#time"],
+    "modules-right": ["sway/mode", "mpd", "tray", "network#vpn", "battery", "clock#date", "clock#time"],
     "sway/mode": {
         "format": "{}"
     },
@@ -39,6 +39,16 @@
         "tooltip-format": "{ipaddr}\n\n {bandwidthUpBytes}\n {bandwidthDownBytes}",
         "tooltip-format-disconnected": "Disconnected",
         "interval": 1,
+    },
+    "battery": {
+        "states": {
+            "warning": 50,
+            "critical": 15,
+        },
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{capacity}% ({timeTo})",
+        "tooltip-format-plugged": "+{capacity}% ({timeTo})",
     },
 }
 

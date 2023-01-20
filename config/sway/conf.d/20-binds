@@ -37,6 +37,15 @@ bindsym {
     XF86AudioMute exec pulsemixer --toggle-mute
 }
 
+# Brightness controls
+bindsym {
+    XF86MonBrightnessDown exec brightnessctl set 5%-
+    XF86MonBrightnessUp exec brightnessctl set 5%+
+}
+
+# Launch menu
+bindsym XF86Search exec $menu
+
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
 # Despite the name, also works for non-floating windows.

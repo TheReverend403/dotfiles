@@ -56,7 +56,8 @@ window#waybar {
 #tray,
 #mode,
 #window,
-#mpd {
+#mpd,
+#battery {
     padding: 0 10px 0 10px;
     color: @foreground;
     border-left: 2px solid @black;
@@ -95,4 +96,37 @@ label:focus {
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+@keyframes blink {
+    to {
+        color: @background;
+    }
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    font-weight: bold;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.charging {
+    color: @brgreen;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
