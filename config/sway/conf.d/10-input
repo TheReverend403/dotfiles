@@ -15,4 +15,6 @@ input "type:touchpad" {
     dwt enabled
     tap enabled
     middle_emulation enabled
+    accel_profile adaptive
+    pointer_accel 0.5
 }
