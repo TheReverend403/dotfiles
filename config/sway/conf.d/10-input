@@ -11,3 +11,8 @@ input "type:pointer" {
     pointer_accel 0.0
 }
 
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+}
