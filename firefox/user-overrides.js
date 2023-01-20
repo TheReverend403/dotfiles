@@ -28,3 +28,7 @@ user_pref('extensions.pocket.enabled', false);
 user_pref("userChrome.theme.proton_color.dark_blue_accent", true);
 
 user_pref("media.ffmpeg.vaapi.enabled", true);
+
+// Disable the extension button that for some reason can't be removed via the UI.
+// Fuck you Mozilla.
+user_pref("extensions.unifiedExtensions.enabled", false);
