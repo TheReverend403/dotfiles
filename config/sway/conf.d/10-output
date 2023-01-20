@@ -1,3 +1,5 @@
 # vi: ft=swayconfig
 
-output * adaptive_sync on
+output "Goldstar Company Ltd LG ULTRAGEAR 109NTCZ90243" {
+    adaptive_sync on
+}
