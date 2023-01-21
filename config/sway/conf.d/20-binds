@@ -9,9 +9,14 @@ set {
     $wpste wpste --copy --notify
 }
 
+# Launch menu
+bindsym {
+    $mod+d exec $menu
+    XF86Search exec $menu
+}
+
 bindsym {
     $mod+Return exec $term
-    $mod+d exec $menu
     $mod+b exec $browser
     $mod+t exec telegram
     $mod+f exec thunar
@@ -23,7 +28,7 @@ bindsym {
     $mod+Shift+s exec $wpste -e -t area
 }
 
-# Audio controls
+# Music controls
 bindsym {
     XF86AudioPlay exec mpc toggle
     XF86AudioPause exec mpc toggle
@@ -32,6 +37,10 @@ bindsym {
     XF86AudioNext exec mpc next
     Ctrl+XF86AudioPrev exec mpc seek -00:00:05
     Ctrl+XF86AudioNext exec mpc seek +00:00:05
+}
+
+# Volume controls
+bindsym {
     XF86AudioRaiseVolume exec pulsemixer --change-volume +5 --max-volume 100
     XF86AudioLowerVolume exec pulsemixer --change-volume -5 --max-volume 100
     XF86AudioMute exec pulsemixer --toggle-mute
@@ -43,8 +52,6 @@ bindsym {
     XF86MonBrightnessUp exec brightnessctl set 5%+
 }
 
-# Launch menu
-bindsym XF86Search exec $menu
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
