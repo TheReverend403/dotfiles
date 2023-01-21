@@ -27,24 +27,18 @@ for_window {
 for_window {
     [app_id="imv"] floating enable; inhibit_idle fullscreen
     [app_id="mpv"] floating enable; inhibit_idle fullscreen
-    [app_id="org.remmina.Remmina"] floating enable; inhibit_idle fullscreen
     [app_id="firefox"] inhibit_idle fullscreen
     [app_id="firefox" title="Library"] floating enable
     [app_id="firefox" title="Extension: .*"] floating enable
-    [app_id="thunar"] floating enable
-    [app_id="gcolor3"] floating enable
-    [app_id="ncmpcpp"] floating enable
-    [app_id="seahorse"] floating enable
-    [app_id="pavucontrol"] floating enable
+    [app_id="(?i)thunar"] floating enable; resize set width $popup_width height $popup_height
+    [app_id="file-roller"] floating enable
+    [app_id="ncmpcpp"] floating enable; resize set width $popup_width height $popup_height
     [app_id="deluge"] floating enable
     [app_id="xdg-desktop-portal-gtk"] floating enable
     [app_id="mgba-qt"] floating enable; inhibit_idle fullscreen
-    [app_id="(?i).*flatseal$"] floating enable
-    [app_id="(?i).*easyeffects$"] floating enable
     [app_id="(?i).*Calculator$"] floating enable
     [app_id="org.prismlauncher.PrismLauncher"] floating enable
     [class="^Minecraft\* [0-9.]+$" instance="^Minecraft\* [0-9.]+$"] floating enable; inhibit_idle fullscreen
-    [class="Katana-Mk2-FxFloorBoard"] floating enable
 }
 
 assign {
