@@ -4,7 +4,7 @@ set {
     $mod Mod4
     $term alacritty
     $browser $BROWSER
-    $menu wofi --show run | xargs swaymsg exec --
+    $menu fuzzel | xargs swaymsg exec --
     # https://github.com/TheReverend403/scripts/blob/main/wpste.fish
     $wpste wpste --copy --notify
 }
@@ -23,7 +23,7 @@ bindsym {
     $mod+e exec thunderbird
     $mod+i exec $term --title=weechat -e weechat
     $mod+m exec $term --class=ncmpcpp -e ncmpcpp
-    $mod+Shift+e exec wofi-emoji
+    $mod+Shift+e exec bemoji -t
     $mod+s exec $wpste -t area
     $mod+Shift+s exec $wpste -e -t area
 }
