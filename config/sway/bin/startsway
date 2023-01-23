@@ -6,7 +6,9 @@ set -eu
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP="${XDG_SESSION_DESKTOP:-sway}"
 export XDG_SESSION_TYPE=wayland
-export GPG_TTY="$(tty)"
+
+GPG_TTY="$(tty)"
+export GPG_TTY
 
 # reset failed state of all units relevant to this session.
 for unit in $(systemctl --user --no-legend --state=failed --plain list-units | cut -f1 -d' '); do
@@ -24,10 +26,12 @@ user_env=$(env | cut -d'=' -f 1 | sort)
 new_env=$(echo "$sys_env" | comm -13 - <(echo "$user_env"))
 shared_env=$(echo "$sys_env" | comm -12 - <(echo "$user_env"))
 
+# shellcheck disable=SC2086
 systemctl --user import-environment $new_env $shared_env
 
 # Then start the service
 systemctl --wait --user start sway.service
 
-# Cleanup environment
+# Clean up environment
+# shellcheck disable=SC2086
 systemctl --user unset-environment $new_env

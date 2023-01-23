@@ -1,7 +1,6 @@
 #!/bin/sh
 set -eu
 
-SCREEN_OFF_TIMER=5
 BLUR_TYPE="0x6"
 SCREENSHOT_TEMP_PATH="${XDG_RUNTIME_DIR}/lockscreen.png"
 
