@@ -34,17 +34,17 @@ set {
     $cursor_size 14
 }
 
-set $font "Sans 13"
+set $font Sans 13
 font pango:$font
 
 ### GTK theming
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
-    gsettings set $gnome-schema gtk-theme $GTK_THEME
-    gsettings set $gnome-schema icon-theme $GTK_ICON_THEME
-    gsettings set $gnome-schema cursor-theme $cursor_theme
-    gsettings set $gnome-schema font-name $font
+    gsettings set $gnome-schema gtk-theme "$GTK_THEME"
+    gsettings set $gnome-schema icon-theme "$GTK_ICON_THEME"
+    gsettings set $gnome-schema cursor-theme "$cursor_theme"
+    gsettings set $gnome-schema font-name "$font"
 }
 
 seat * {
