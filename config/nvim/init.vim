@@ -3,9 +3,9 @@ if &shell =~# 'fish$'
 endif
 
 " {{{ Plugins
-let data_dir = stdpath('data') . '/site'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+let DATA_DIR = stdpath('data') . '/site'
+if empty(glob(DATA_DIR . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.DATA_DIR.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -61,7 +61,7 @@ set pastetoggle=<F3>
 set mouse=
 
 set backup
-exe 'set backupdir='.stdpath('state').'/backup/'
+let &backupdir=DATA_DIR.'/backup/'
 set undofile
 " }}}
 
