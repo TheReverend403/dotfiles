@@ -16,6 +16,16 @@ return require('packer').startup(function(use)
     use 'haya14busa/is.vim'
     use 'sheerun/vim-polyglot'
     use {
+        'navarasu/onedark.nvim',
+        config = function()
+            local onedark = require('onedark')
+            onedark.setup({
+                code_style = { comments = 'none' }
+            })
+            onedark.load()
+        end
+    }
+    use {
         'nvim-lualine/lualine.nvim',
         requires = {
             'navarasu/onedark.nvim',
@@ -23,7 +33,6 @@ return require('packer').startup(function(use)
         },
         options = { theme = 'onedark' },
         config = function()
-            require('onedark').load()
             require('lualine').setup()
         end
     }
