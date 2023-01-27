@@ -21,7 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/is.vim'
 
 call plug#end()
 " }}}
@@ -48,7 +48,6 @@ set splitbelow
 set splitright
 
 set hlsearch
-let g:incsearch#auto_nohlsearch = 1
 
 set expandtab
 set softtabstop=4
@@ -72,13 +71,3 @@ nnoremap <C-Up> <C-w>k
 nnoremap <C-Right> <C-w>l
 
 command! -range=% IX call share#ix(<line1>, <line2>)
-
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-map n <Plug>(incsearch-nohl-n)
-map N <Plug>(incsearch-nohl-N)
-map * <Plug>(incsearch-nohl-*)
-map # <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
