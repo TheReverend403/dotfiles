@@ -11,6 +11,5 @@
 Description=Current sway user session
 Documentation=man:systemd.special(7)
 Requires=basic.target
-BindsTo=sway.service
-BindsTo=wayland-session.target
 Before=wayland-session.target
+BindsTo=sway.service wayland-session.target
