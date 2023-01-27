@@ -22,7 +22,7 @@ bindsym {
     $mod+f exec thunar
     $mod+e exec thunderbird
     $mod+i exec $term --title=weechat -e weechat
-    $mod+m exec $term --class=ncmpcpp -e ncmpcpp
+    $mod+m exec $term --class=ncmpcpp --option window.dimensions.columns=115 --option window.dimensions.lines=30 -e ncmpcpp
     $mod+Shift+e exec bemoji -t
     $mod+s exec $wpste -t area
     $mod+Shift+s exec $wpste -e -t area
