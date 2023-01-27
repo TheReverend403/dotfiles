@@ -26,6 +26,12 @@ if not set -q $BROWSER
     end
 end
 
+# Prefer neovim.
+if command -q nvim
+    set -x EDITOR nvim
+    set -x PAGER nvimpager
+end
+
 # Prevent Wine adding menu entries and desktop links.
 set -x WINEDLLOVERRIDES 'winemenubuilder.exe=d'
 
