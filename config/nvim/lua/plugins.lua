@@ -13,6 +13,7 @@ require('dep') {
             require('mini.comment').setup()
             require('mini.surround').setup()
             require('mini.pairs').setup()
+            require('mini.completion').setup()
         end,
     },
     {
