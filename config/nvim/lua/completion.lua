@@ -119,7 +119,11 @@ local servers = {
 
 local mason_packages = {}
 for _, server in pairs(servers) do
-    table.insert(mason_packages, server[1])
+    -- Make sure Mason supports a server before trying to install it.
+    local ok, _ = pcall(require, 'lspconfig.server_configurations.' .. server[1])
+    if ok then
+        table.insert(mason_packages, server[1])
+    end
 end
 
 require('mason').setup()
