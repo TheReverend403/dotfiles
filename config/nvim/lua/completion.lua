@@ -164,7 +164,7 @@ for _, server in pairs(servers) do
     end
 end
 
-vim.o.completeopt = 'menu,menuone,noselect'
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.diagnostic.config({
     severity_sort = true,
     float = {

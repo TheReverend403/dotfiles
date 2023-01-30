@@ -1,3 +1,6 @@
+-- Support Gentoo app-vim/* syntax plugins.
+vim.opt.rtp:append('/usr/share/vim/vimfiles')
+
 require('dep') {
     'gpanders/editorconfig.nvim',
     'haya14busa/is.vim',
