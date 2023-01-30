@@ -52,7 +52,7 @@ cmp.setup({
         end, { 'i', 's' }),
     },
     sources = {
-        { name = 'path' },
+        { name = 'path', keyword_length = 3 },
         { name = 'nvim_lsp', keyword_length = 3 },
         { name = 'buffer', keyword_length = 3 },
         { name = 'snippy', keyword_length = 2 },
@@ -87,9 +87,9 @@ cmp.setup.cmdline({ '/', '?' }, {
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-        { name = 'path' }
+        { name = 'path', keyword_length = 3 }
     }, {
-        { name = 'cmdline' }
+        { name = 'cmdline', keyword_length = 3 }
     })
 })
 
