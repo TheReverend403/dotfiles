@@ -9,8 +9,6 @@ o.report = 0
 o.showmode = false
 o.modeline = false
 
-o.hlsearch = true
-
 o.expandtab = true
 o.softtabstop = 4
 o.shiftwidth = 4
