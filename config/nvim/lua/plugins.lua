@@ -13,7 +13,6 @@ require('dep') {
             require('mini.comment').setup()
             require('mini.surround').setup()
             require('mini.pairs').setup()
-            require('mini.completion').setup()
         end,
     },
     {
@@ -36,5 +35,21 @@ require('dep') {
         requires = {
             'nvim-tree/nvim-web-devicons'
         },
-    }
+    },
+    {
+        'hrsh7th/nvim-cmp',
+        function()
+            require('completion')
+        end,
+        requires = {
+            'neovim/nvim-lspconfig',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-buffer',
+            'dcampos/cmp-snippy',
+            'dcampos/nvim-snippy',
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+        }
+    },
 }
