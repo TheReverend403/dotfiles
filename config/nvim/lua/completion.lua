@@ -1,5 +1,6 @@
 local cmp = require('cmp')
 local snippy = require('snippy')
+local lspkind = require('lspkind')
 
 local has_words_before = function()
     unpack = unpack or table.unpack
@@ -56,19 +57,18 @@ cmp.setup({
         { name = 'snippy', keyword_length = 2 },
     },
     formatting = {
-        fields = { 'menu', 'abbr', 'kind' },
-        format = function(entry, item)
-            local menu_icon = {
-                nvim_lsp = 'λ',
-                snippy = '⋗',
-                buffer = '',
-                path = '🖫',
-                cmdline = '',
-            }
-
-            item.menu = menu_icon[entry.source.name]
-            return item
-        end,
+        format = lspkind.cmp_format({
+            mode = 'symbol_text',
+            maxwidth = 50,
+            ellipsis_char = '...',
+            menu = ({
+                buffer = "",
+                nvim_lsp = "λ",
+                snippy = "",
+                path = "",
+                cmdline = "",
+            })
+        })
     },
     window = {
         documentation = cmp.config.window.bordered()

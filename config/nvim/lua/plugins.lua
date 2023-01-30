@@ -52,6 +52,7 @@ require('dep') {
             'honza/vim-snippets',
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
+            'onsails/lspkind.nvim',
         }
     },
 }
