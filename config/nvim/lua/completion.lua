@@ -95,7 +95,13 @@ cmp.setup.cmdline(':', {
 
 require('mason').setup()
 require('mason-lspconfig').setup({
-    ensure_installed = { 'bashls', 'jsonls', 'yamlls' },
+    ensure_installed = {
+        'bashls',
+        'jsonls',
+        'yamlls',
+        'sumneko_lua',
+        'dockerls'
+    },
     automatic_installation = true
 })
 
@@ -111,6 +117,8 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 lspconfig.bashls.setup({})
 lspconfig.jsonls.setup({})
 lspconfig.yamlls.setup({})
+lspconfig.dockerls.setup({})
+lspconfig.sumneko_lua.setup({})
 
 vim.o.completeopt = 'menu,menuone,noselect'
 vim.diagnostic.config({
