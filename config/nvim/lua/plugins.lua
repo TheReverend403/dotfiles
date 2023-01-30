@@ -49,6 +49,7 @@ require('dep') {
             'hrsh7th/cmp-cmdline',
             'dcampos/cmp-snippy',
             'dcampos/nvim-snippy',
+            'honza/vim-snippets',
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
         }
