@@ -55,4 +55,10 @@ require('dep') {
             'onsails/lspkind.nvim',
         }
     },
+    {
+        'norcalli/nvim-colorizer.lua',
+        function ()
+            require('colorizer').setup()
+        end
+    }
 }
