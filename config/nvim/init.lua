@@ -1,5 +1,6 @@
 require('bootstrap')
 require('plugins')
+require('keymaps')
 
 local fn = vim.fn
 local o = vim.o
