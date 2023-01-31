@@ -134,7 +134,7 @@ require('mason-lspconfig').setup({
 
 local lsp = require('lspconfig')
 local lsp_defaults = lsp.util.default_config
-local capabilities = vim.tbl_deep_extend(
+lsp_defaults.capabilities = vim.tbl_deep_extend(
     'force',
     lsp_defaults.capabilities,
     require('cmp_nvim_lsp').default_capabilities()
@@ -152,7 +152,7 @@ for _, server in pairs(servers) do
     if(vim.fn.executable(server_executable) == 1) then
         local opts = {
             on_attach = on_attach,
-            capabilities = capabilities,
+            capabilities = lsp_defaults.capabilities,
             flags = {
                 debounce_text_changes = 150
             }

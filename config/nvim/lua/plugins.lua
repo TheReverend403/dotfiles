@@ -60,8 +60,25 @@ require('dep') {
     },
     {
         'norcalli/nvim-colorizer.lua',
-        function ()
+        function()
             require('colorizer').setup()
         end
-    }
+    },
+    {
+        'akinsho/toggleterm.nvim',
+        function()
+            require('toggleterm').setup({
+                open_mapping = '<A-`>',
+                persist_size = false,
+                -- Set size to 1/3 of the available space.
+                size = function(term)
+                    if term.direction == 'horizontal' then
+                        return vim.o.lines / 3
+                    elseif term.direction == 'vertical' then
+                        return vim.o.columns / 3
+                    end
+                end,
+            })
+        end
+    },
 }
