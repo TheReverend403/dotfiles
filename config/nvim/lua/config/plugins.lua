@@ -40,9 +40,19 @@ require('dep') {
         },
     },
     {
-        'hrsh7th/nvim-cmp',
+        'neovim/nvim-lspconfig',
         function()
             require('config.lsp')
+        end,
+        requires = {
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+        }
+    },
+    {
+        'hrsh7th/nvim-cmp',
+        function()
+            require('config.completion')
         end,
         requires = {
             'neovim/nvim-lspconfig',
@@ -53,8 +63,6 @@ require('dep') {
             'dcampos/cmp-snippy',
             'dcampos/nvim-snippy',
             'honza/vim-snippets',
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
             'onsails/lspkind.nvim',
         }
     },
