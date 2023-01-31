@@ -42,7 +42,7 @@ require('dep') {
     {
         'hrsh7th/nvim-cmp',
         function()
-            require('completion')
+            require('config.lsp')
         end,
         requires = {
             'neovim/nvim-lspconfig',
