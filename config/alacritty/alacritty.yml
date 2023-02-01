@@ -32,10 +32,10 @@ colors:
   # Bright colors
   bright:
     black:   '0x454545'
-    red:     '0xfc899a'
-    green:   '0xb6ea44'
-    yellow:  '0xfedc8a'
-    blue:    '0x309df1'
-    magenta: '0xd0b9ff'
-    cyan:    '0x36e8e4'
+    red:     '0xff7184'
+    green:   '0xbce368'
+    yellow:  '0xfeee78'
+    blue:    '0x67a9dc'
+    magenta: '0xb28cfe'
+    cyan:    '0x8fe3de'
     white:   '0xffffff'

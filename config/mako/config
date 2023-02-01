@@ -15,7 +15,7 @@ sort=+time
 default-timeout=0
 
 [urgency=low]
-border-color=#4f4f4f
+border-color=#454545
 
 [urgency=critical]
 border-color=#f92645
