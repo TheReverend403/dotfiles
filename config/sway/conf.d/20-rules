@@ -25,6 +25,7 @@ for_window {
     [app_id="firefox"] inhibit_idle fullscreen
     [app_id="firefox" title="Library"] floating enable
     [app_id="firefox" title="Extension: .*"] floating enable
+    [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable
     [app_id="(?i)thunar"] floating enable
     [app_id="file-roller"] floating enable
     [app_id="ncmpcpp"] floating enable
