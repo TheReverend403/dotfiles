@@ -7,9 +7,9 @@ Overrides
     --autocomplete-popup-highlight-background: #8c54fe !important;
     --focus-outline-color: #8c54fe !important;
     --tab-line-color: var(--focus-outline-color) !important;
-    --lwt-popup-brighttext-url-color: #b5b5b5 !important;
-    --lwt-brighttext-url-color: #b5b5b5 !important;
-    --url-match-color: #fd971f;
+    --lwt-popup-brighttext-url-color: #858585 !important;
+    --lwt-brighttext-url-color: #858585 !important;
+    --url-match-color: #fdbe25;
 }
 
 #urlbar:is([focused]) > #urlbar-background, #urlbar-container .urlbar-input-box {

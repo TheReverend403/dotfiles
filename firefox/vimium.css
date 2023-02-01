@@ -1,7 +1,7 @@
 #vimiumHintMarkerContainer div.internalVimiumHintMarker,
 #vimiumHintMarkerContainer div.vimiumHintMarker {
-    padding: 3px 4px;
-    background: #1f1f20;
+    padding: 4px 4px;
+    background: #1f1f1f;
     border: 1px solid #8c54fe;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -13,15 +13,15 @@
 }
 
 #vimiumHintMarkerContainer div>.matchingCharacter {
-    color: #505354;
+    color: #454545;
 }
 
 #vimiumHintMarkerContainer div>.matchingCharacter~span {
-    color: #fd971f;
+    color: #fdbe25;
 }
 
 #vomnibar {
-    background: #1b1d1e;
+    background: #1f1f1f;
     border: none;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
@@ -79,24 +79,24 @@
 }
 
 #vomnibar li .vomnibarUrl {
-    color: #b5b5b5;
+    color: #858585;
 }
 
 #vomnibar li .vomnibarMatch {
-    color: #fd971f;
+    color: #fdbe25;
     font-weight: normal;
 }
 
 #vomnibar li .vomnibarTitle .vomnibarMatch {
-    color: #fd971f;
+    color: #fdbe25;
 }
 
 #vomnibar li.vomnibarSelected {
-    background-color: #505354;
+    background-color: #454545;
 }
 
 div.vimiumHUD {
-    background: #1b1d1e;
+    background: #1f1f1f;
     border: none;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }

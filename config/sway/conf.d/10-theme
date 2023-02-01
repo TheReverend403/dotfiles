@@ -4,29 +4,29 @@ set {
     $background #0d0d0d
     $foreground #eeeeee
 
-    $black #1b1d1e
-    $brblack #505354
+    $black #1f1f1f
+    $brblack #454545
 
-    $red #f92672
-    $brred #ff5995
+    $red #f92645
+    $brred #ff7184
 
     $green #82b414
-    $brgreen #b6e354
+    $brgreen #bce368
 
-    $yellow #fd971f
-    $bryellow #feed6c
+    $yellow #fdbe25
+    $bryellow #feee78
 
-    $blue #0063af
-    $brblue #238cdc
+    $blue #0c68af
+    $brblue #67a9dc
 
     $magenta #8c54fe
-    $brmagenta #9e6ffe
+    $brmagenta #b28cfe
 
-    $cyan #465457
-    $brcyan #899ca1
+    $cyan #13a5a2
+    $brcyan #8fe3de
 
-    $grey #b5b5b5
-    $brgrey #f8f8f2
+    $grey #858585
+    $brgrey #ffffff
 }
 
 set {

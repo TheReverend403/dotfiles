@@ -15,10 +15,10 @@ sort=+time
 default-timeout=0
 
 [urgency=low]
-border-color=#505354
+border-color=#4f4f4f
 
 [urgency=critical]
-border-color=#f92672
+border-color=#f92645
 
 [app-name=Slack]
 border-color=#4A154B
@@ -37,7 +37,7 @@ border-color=#0089CC
 border-color=#82b414
 
 [summary~="^contain\.lwatson\.dev ➜ .+" body~="^(Status Unhealthy|Stopped) .+"]
-border-color=#f92672
+border-color=#f92645
 
 [app-name=weechat]
 border-color=#0B11BE
