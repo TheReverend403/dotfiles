@@ -33,10 +33,22 @@ border-color=#00FEFF
 [summary~="^.+ ➜ .+"]
 border-color=#0089CC
 
-[summary~="^contain\.lwatson\.dev ➜ .+" body~="^(Status Healthy|Started) .+"]
+[summary~="^contain\.lwatson\.dev ➜ .+" body~="^Started .+"]
 border-color=#82b414
 
-[summary~="^contain\.lwatson\.dev ➜ .+" body~="^(Status Unhealthy|Stopped) .+"]
+[summary~="^contain\.lwatson\.dev ➜ .+" body~="^Stopped .+"]
+border-color=#ff7184
+
+[summary~="^contain\.lwatson\.dev ➜ .+" body~="^Status Healthy .+"]
+border-color=#bce368
+
+[summary~="^contain\.lwatson\.dev ➜ .+" body~="^Status Unhealthy .+"]
+border-color=#f92645
+
+[summary~="^UptimeRobot ➜ .+" body~="^Monitor is UP: .+"]
+border-color=#82b414
+
+[summary~="^UptimeRobot ➜ .+" body~="^Monitor is DOWN: .+"]
 border-color=#f92645
 
 [app-name=weechat]

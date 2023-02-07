@@ -7,7 +7,7 @@ After=sway-session.target
 
 [Service]
 ExecStart=/usr/bin/swayidle -w \
-    timeout 300 'swaymsg "output * power off"' \
+    timeout 600 'swaymsg "output * power off"' \
         resume 'swaymsg "output * power on"'
 ExecStop=/bin/kill -2 $MAINPID
 Restart=on-failure
