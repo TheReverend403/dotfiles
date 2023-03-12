@@ -52,7 +52,6 @@ window#waybar {
 }
 
 #clock,
-#network,
 #tray,
 #mode,
 #window,
@@ -74,14 +73,6 @@ window#waybar {
 
 label:focus {
     background-color: #000000;
-}
-
-#network {
-    color: @green;
-}
-
-#network.disconnected {
-    color: @brblack;
 }
 
 #tray > .passive {

@@ -11,7 +11,7 @@ for_window {
     # Telegram save/open file dialogues.
     # No class, role or type but luckily they use a different app_id to the main app.
     [app_id="^(telegram-desktop|code)$" title="^(?i)(Open|Save|Choose) [a-z0-9]+$"] floating enable
-    [app_id="Firefox" title="File Upload"] floating enable
+    [app_id="Firefox" title="^File Upload$"] floating enable
 
     [window_role="pop-up"] floating enable
     [window_role="bubble"] floating enable
@@ -23,8 +23,8 @@ for_window {
     [app_id="imv"] floating enable; inhibit_idle fullscreen
     [app_id="mpv"] floating enable; inhibit_idle fullscreen
     [app_id="firefox"] inhibit_idle fullscreen
-    [app_id="firefox" title="Library"] floating enable
-    [app_id="firefox" title="Extension: .*"] floating enable
+    [app_id="firefox" title="^Library$"] floating enable
+    [app_id="firefox" title="^Extension: .*"] floating enable
     [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable
     [app_id="(?i)thunar"] floating enable
     [app_id="file-roller"] floating enable

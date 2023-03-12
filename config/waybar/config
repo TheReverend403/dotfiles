@@ -2,7 +2,7 @@
     "height": 30,
     "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": [],
-    "modules-right": ["sway/mode", "mpd", "tray", "network#vpn", "battery", "clock#date", "clock#time"],
+    "modules-right": ["sway/mode", "mpd", "tray", "battery", "clock#date", "clock#time"],
     "sway/mode": {
         "format": "{}"
     },
@@ -32,13 +32,6 @@
         "format": "{:%a %d %b}",
         "today-format": "<span color='#8c54fe'><b><u>{}</u></b></span>",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
-    },
-    "network#vpn": {
-        "format": "VPN",
-        "interface": "wg0",
-        "tooltip-format": "{ipaddr}\n\n {bandwidthUpBytes}\n {bandwidthDownBytes}",
-        "tooltip-format-disconnected": "Disconnected",
-        "interval": 1,
     },
     "battery": {
         "states": {

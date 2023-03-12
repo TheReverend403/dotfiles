@@ -6,6 +6,7 @@ After=sway-session.target
 Requires=sway-session.target
 
 [Service]
+Type=oneshot
 ExecStart=%h/.config/sway/bin/lock
 Restart=on-failure
 RestartSec=1
