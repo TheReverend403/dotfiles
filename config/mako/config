@@ -33,16 +33,16 @@ border-color=#00FEFF
 [summary~="^.+ ➜ .+"]
 border-color=#0089CC
 
-[summary~="^contain\.lwatson\.dev .+ ➜ .+" body~="^Started .+"]
+[summary~="^c\.lwatson\.dev .+ ➜ .+" body~="^Started .+"]
 border-color=#82b414
 
-[summary~="^contain\.lwatson\.dev .+ ➜ .+" body~="^Stopped .+"]
+[summary~="^c\.lwatson\.dev .+ ➜ .+" body~="^Stopped .+"]
 border-color=#ff7184
 
-[summary~="^contain\.lwatson\.dev .+ ➜ .+" body~="^Status Healthy .+"]
+[summary~="^c\.lwatson\.dev .+ ➜ .+" body~="^Status Healthy .+"]
 border-color=#bce368
 
-[summary~="^contain\.lwatson\.dev .* ➜ .+" body~="^Status Unhealthy .+"]
+[summary~="^c\.lwatson\.dev .* ➜ .+" body~="^Status Unhealthy .+"]
 border-color=#f92645
 
 [summary~="^monitor\.lwatson\.dev .+ ➜ .+" body~=".+(healthcheck passing|✅ Up)+"]
