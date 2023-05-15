@@ -1,1 +1,0 @@
-/home/rev/documents/code/sway-systemd/src/assign-cgroups.py
