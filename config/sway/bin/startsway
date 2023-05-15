@@ -34,4 +34,4 @@ systemctl --wait --user start sway.service
 
 # Clean up environment
 # shellcheck disable=SC2086
-systemctl --user unset-environment $new_env
+systemctl --user unset-environment $new_env $shared_env

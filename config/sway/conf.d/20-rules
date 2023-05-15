@@ -33,8 +33,8 @@ for_window {
     [app_id="xdg-desktop-portal-gtk"] floating enable
     [app_id="mgba-qt"] floating enable; inhibit_idle fullscreen
     [app_id="(?i).*Calculator$"] floating enable
-    [app_id="org.prismlauncher.PrismLauncher"] floating enable
-    [class="^Minecraft\* [0-9.]+$" instance="^Minecraft\* [0-9.]+$"] floating enable; inhibit_idle fullscreen
+    #[app_id="org.prismlauncher.PrismLauncher"] floating enable
+    [class="^Minecraft\* [0-9.]+$" instance="^Minecraft\* [0-9.]+$"] inhibit_idle fullscreen
 }
 
 assign {

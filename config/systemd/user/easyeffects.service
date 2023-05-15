@@ -8,7 +8,7 @@ ExecStart=%h/.local/bin/easyeffects --gapplication-service
 ExecStop=%h/.local/bin/easyeffects --quit
 Nice=-15
 Restart=always
-RestartSec=1
+RestartSec=3
 TimeoutStopSec=5
 
 [Install]
