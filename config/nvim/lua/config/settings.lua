@@ -12,7 +12,6 @@ o.shiftwidth = 4
 o.shiftround = true
 
 o.clipboard = 'unnamedplus'
-o.pastetoggle = '<F3>'
 
 o.mouse = false
 
