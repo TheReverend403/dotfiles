@@ -2,7 +2,6 @@
 vim.opt.rtp:append('/usr/share/vim/vimfiles')
 
 require('dep') {
-    'gpanders/editorconfig.nvim',
     'haya14busa/is.vim',
     'sheerun/vim-polyglot',
     {
@@ -16,6 +15,7 @@ require('dep') {
             require('mini.comment').setup()
             require('mini.surround').setup()
             require('mini.pairs').setup()
+            require('mini.trailspace').setup()
         end,
     },
     {
@@ -69,7 +69,10 @@ require('dep') {
     {
         'norcalli/nvim-colorizer.lua',
         function()
-            require('colorizer').setup()
+            require('colorizer').setup(
+                { '*' },
+                { names = false }
+            )
         end
     },
     {
