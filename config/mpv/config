@@ -32,7 +32,7 @@ demuxer-thread=yes
 demuxer-readahead-secs=200
 
 ytdl=yes
-ytdl-format="bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best"
+ytdl-format="bestvideo[height<=?1440][vcodec!=vp9]+bestaudio/best"
 
 osd-font=sans-serif
 

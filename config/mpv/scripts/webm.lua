@@ -1222,11 +1222,11 @@ do
       cfilter = cfilter .. "[vidtmp]split[topal][vidf];"
       cfilter = cfilter .. "[topal]palettegen[pal];"
       cfilter = cfilter .. "[vidf]fifo[vidf];"
-      if options.gif_dither == 6 then
-        cfilter = cfilter .. "[vidf][pal]paletteuse[vo]"
-      else
-        cfilter = cfilter .. "[vidf][pal]paletteuse=dither=bayer:bayer_scale=" .. tostring(options.gif_dither) .. ":diff_mode=rectangle[vo]"
+      cfilter = cfilter .. "[vidf][pal]paletteuse=diff_mode=rectangle"
+      if options.gif_dither ~= 6 then
+        cfilter = cfilter .. ":dither=bayer:bayer_scale=" .. tostring(options.gif_dither)
       end
+      cfilter = cfilter .. "[vo]"
       append(new_command, {
         "--lavfi-complex=" .. tostring(cfilter)
       })
@@ -1623,6 +1623,7 @@ get_playback_options = function()
   append_property(ret, "sub-ass-force-style")
   append_property(ret, "sub-ass-vsfilter-aspect-compat")
   append_property(ret, "sub-auto")
+  append_property(ret, "sub-pos")
   append_property(ret, "sub-delay")
   append_property(ret, "video-rotate")
   append_property(ret, "ytdl-format")
