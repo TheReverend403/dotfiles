@@ -1,2 +1,3 @@
 [Default]
 show_panel=true
+save_dir=$HOME/scratch
