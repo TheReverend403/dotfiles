@@ -32,6 +32,7 @@
         "format": "{:%a %d %b}",
         "today-format": "<span color='#8c54fe'><b><u>{}</u></b></span>",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
+        "on-click": "flatpak run org.gnome.Calendar",
     },
     "battery": {
         "states": {
