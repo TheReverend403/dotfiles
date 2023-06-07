@@ -158,7 +158,7 @@ bindsym {
 #
 # Resizing containers:
 #
-mode "Resize" bindsym { 
+mode "Resize" bindsym {
     # left will shrink the containers width
     # right will grow the containers width
     # up will shrink the containers height
@@ -176,23 +176,24 @@ mode "Resize" bindsym {
 #
 # Session management:
 #
-set $mode_session Session: (r) reload (l) lock, (E) logout, (R) reboot, (S) shutdown
+set $mode_session Session: (r) reload (l) lock, (E) logout, (R) reboot, (K) kexec, (S) shutdown
 mode "$mode_session" bindsym {
     r exec --no-startup-id systemctl --user reload sway.service; mode "default"
     l exec --no-startup-id systemctl --user start swaylock.service; mode "default"
     Shift+e exec --no-startup-id systemctl --user stop sway-session.target
     Shift+r exec --no-startup-id systemctl reboot
+    Shift+k exec --no-startup-id sudo systemctl kexec
     Shift+s exec --no-startup-id systemctl poweroff
 
     Return mode "default"
     Escape mode "default"
 }
 
-# 
+#
 # Screen capture + upload:
 # https://github.com/TheReverend403/scripts/blob/main/wpste.fish
 #
-set $mode_screenshot Capture: (a) area, (s) screen, (o) output, (w) select window, (c) active window 
+set $mode_screenshot Capture: (a) area, (s) screen, (o) output, (w) select window, (c) active window
 mode "$mode_screenshot" bindsym {
     a exec $wpste -t area; mode "default"
     s exec $wpste -t screen; mode "default"
@@ -214,7 +215,7 @@ mode "$mode_screenshot" bindsym {
 #
 # Manage notification history:
 #
-set $mode_notifications Notifications: (l) latest, (c) clear, (r) reload 
+set $mode_notifications Notifications: (l) latest, (c) clear, (r) reload
 mode "$mode_notifications" bindsym {
     l exec makoctl restore; mode "default"
     c exec makoctl dismiss -a; mode "default"

@@ -2,7 +2,7 @@
 set -eu
 
 BLUR_TYPE="0x6"
-SCREENSHOT_TEMP_PATH="${XDG_RUNTIME_DIR}/lockscreen.png"
+SCREENSHOT_TEMP_PATH="${XDG_RUNTIME_DIR}/lockscreen.jpg"
 
 grim - | convert - -blur "${BLUR_TYPE}" "${SCREENSHOT_TEMP_PATH}"
 pkill -SIGUSR1 swayidle || true
