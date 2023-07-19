@@ -7,5 +7,3 @@ function _G.set_terminal_keymaps()
     vim.keymap.set('t', '<C-w><Up>', [[<Cmd>wincmd k<CR>]], opts)
     vim.keymap.set('t', '<C-w><Right>', [[<Cmd>wincmd l<CR>]], opts)
 end
-
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')

@@ -81,6 +81,9 @@ require('dep') {
             require('toggleterm').setup({
                 open_mapping = '<A-`>',
                 persist_size = false,
+                on_open = function (t)
+                    set_terminal_keymaps()
+                end,
                 -- Set size to 1/3 of the available space.
                 size = function(term)
                     if term.direction == 'horizontal' then
