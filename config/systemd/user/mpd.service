@@ -6,6 +6,9 @@ After=network.target sound.target
 Type=notify
 ExecStart=/usr/bin/mpd --no-daemon
 Nice=-10
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=10
 
 [Install]
 WantedBy=default.target
