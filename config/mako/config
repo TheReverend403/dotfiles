@@ -14,6 +14,9 @@ sort=+time
 [mode=away]
 default-timeout=0
 
+[mode=dnd]
+invisible=1
+
 [urgency=low]
 border-color=#454545
 

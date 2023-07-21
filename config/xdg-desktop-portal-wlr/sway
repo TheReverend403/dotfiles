@@ -1,0 +1,5 @@
+[screencast]
+exec_before=makoctl mode -s dnd
+exec_after=makoctl mode -s default
+chooser_type=simple
+chooser_cmd=slurp -f %o -or
