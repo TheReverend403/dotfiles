@@ -4,6 +4,7 @@ Documentation=https://github.com/alebastr/sway-systemd/blob/main/src/assign-cgro
 PartOf=sway-session.target
 After=sway-session.target
 Requires=sway-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
 ExecStart=%h/.config/sway/bin/assign-cgroups.py

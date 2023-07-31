@@ -4,6 +4,7 @@ Documentation=https://github.com/nwg-piotr/autotiling/blob/master/README.md
 PartOf=sway-session.target
 After=sway-session.target
 Requires=sway-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
 ExecStart=%h/.config/sway/bin/autotiling --limit 2

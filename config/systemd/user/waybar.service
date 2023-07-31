@@ -3,6 +3,7 @@ Description=A lightweight Wayland statusbar
 Documentation=man:waybar(1)
 PartOf=sway-session.target
 After=sway-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
 ExecStart=/usr/bin/waybar

@@ -4,6 +4,7 @@ Documentation=man:swayidle(1)
 PartOf=sway-session.target
 Requires=sway-session.target
 After=sway-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
 ExecStart=/usr/bin/swayidle -w \

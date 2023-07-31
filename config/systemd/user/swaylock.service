@@ -4,6 +4,7 @@ Documentation=man:swaylock(1)
 PartOf=sway-session.target
 After=sway-session.target
 Requires=sway-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
 Type=oneshot
