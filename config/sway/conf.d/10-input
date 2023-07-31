@@ -10,7 +10,7 @@ input "type:keyboard" {
 
 input "type:pointer" {
     accel_profile adaptive
-    pointer_accel 0.2
+    pointer_accel 0.3
 }
 
 input "type:touchpad" {
@@ -20,3 +20,4 @@ input "type:touchpad" {
     accel_profile adaptive
     pointer_accel 0.5
 }
+
