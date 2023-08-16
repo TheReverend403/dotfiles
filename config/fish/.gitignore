@@ -2,4 +2,3 @@ fishd.*
 conf.d/99-local.fish
 fish_variables
 completions/
-*/fisher.fish
