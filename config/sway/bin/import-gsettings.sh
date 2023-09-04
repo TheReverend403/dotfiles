@@ -26,5 +26,11 @@ swaymsg "font pango:$font_name"
 # https://github.com/swaywm/sway/pull/7064.patch
 swaymsg "seat * xcursor_theme $cursor_theme $cursor_size"
 
+# Also set the env vars for processes started by systemd eg. mako
+export GTK_THEME="$gtk_theme"
+export XCURSOR_THEME="$cursor_theme"
+export XCURSOR_SIZE="$cursor_size"
+dbus-update-activation-environment --systemd XCURSOR_THEME XCURSOR_SIZE GTK_THEME
+
 # Make flatpak GTK apps match the host.
 command -v flatpak >/dev/null 2>&1 && flatpak override --user --env=GTK_THEME="$gtk_theme"

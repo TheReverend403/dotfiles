@@ -1,13 +1,5 @@
 # vi: ft=swayconfig
 
-exec hash dbus-update-activation-environment 2>/dev/null \
-        && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK I3SOCK
-
-exec systemctl --user import-environment SWAYSOCK \
-					 DISPLAY \
-					 I3SOCK \
-					 WAYLAND_DISPLAY \
-					 XCURSOR_SIZE \
-					 XCURSOR_THEME \
-        && systemd-notify --ready \
-        && systemctl --user start sway-session.target
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK I3SOCK \
+    && systemd-notify --ready \
+    && systemctl --user start sway-session.target
