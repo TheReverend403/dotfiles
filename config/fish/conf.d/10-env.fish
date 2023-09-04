@@ -51,7 +51,7 @@ set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
 fish_add_path "$CARGO_HOME/bin"
 
 # Node
-set -x NODE_REPL_HISTORY "$XDG_CACHE_HOME/node_repl_history"
+set -x NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 set -x NPM_PACKAGES "$XDG_DATA_HOME/npm"
 set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
 fish_add_path "$NPM_PACKAGES/bin"
