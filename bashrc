@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set +o history
 fish_path=$(command -v fish)
 
 if [[ $- != *i* ]]; then

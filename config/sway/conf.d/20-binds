@@ -23,7 +23,7 @@ bindsym {
     $mod+e exec thunderbird
     $mod+i exec $term --title=weechat -e weechat
     $mod+m exec $term --class=ncmpcpp --option window.dimensions.columns=115 --option window.dimensions.lines=30 -e ncmpcpp
-    $mod+Shift+e exec bemoji -t
+    $mod+Shift+e exec bemoji -t -P 5
     $mod+s exec $wpste -t area
     $mod+Shift+s exec $wpste -e -t area
     # Workaround for swayidle bug that occasionally doesn't run resume actions.
