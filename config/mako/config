@@ -71,3 +71,7 @@ border-color=#0B11BE
 
 [app-name=wpste urgency=normal]
 border-color=#82b414
+
+[app-name=borgmatic urgency=critical]
+border-color=#f92645
+default-timeout=0
