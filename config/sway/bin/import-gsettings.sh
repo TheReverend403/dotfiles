@@ -21,3 +21,4 @@ gsettings set "$gnome_schema" font-name "$font_name"
 
 # Set xcursor to match for xwayland.
 swaymsg "seat * xcursor_theme $cursor_theme $cursor_size"
+swaymsg "font pango:$font_name"
