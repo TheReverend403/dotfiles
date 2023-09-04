@@ -18,7 +18,10 @@ gsettings set "$gnome_schema" icon-theme "$icon_theme"
 gsettings set "$gnome_schema" cursor-theme "$cursor_theme"
 gsettings set "$gnome_schema" cursor-size "$cursor_size"
 gsettings set "$gnome_schema" font-name "$font_name"
+swaymsg "font pango:$font_name"
 
 # Set xcursor to match for xwayland.
+# Currently broken as per https://github.com/swaywm/sway/issues/6931
+# Works when applying the linked pull request.
+# https://github.com/swaywm/sway/pull/7064.patch
 swaymsg "seat * xcursor_theme $cursor_theme $cursor_size"
-swaymsg "font pango:$font_name"
