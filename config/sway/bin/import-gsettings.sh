@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu
+set -eux
 
 # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland#setting-values-in-gsettings
 
@@ -25,3 +25,6 @@ swaymsg "font pango:$font_name"
 # Works when applying the linked pull request.
 # https://github.com/swaywm/sway/pull/7064.patch
 swaymsg "seat * xcursor_theme $cursor_theme $cursor_size"
+
+# Make flatpak GTK apps match the host.
+command -v flatpak >/dev/null 2>&1 && flatpak override --user --env=GTK_THEME="$gtk_theme"
