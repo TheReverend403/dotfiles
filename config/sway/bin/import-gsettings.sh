@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eux
+set -eu
 
 # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland#setting-values-in-gsettings
 
