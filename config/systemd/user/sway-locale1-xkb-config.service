@@ -1,0 +1,15 @@
+[Unit]
+Description=Sync Sway input configuration with org.freedesktop.locale1
+Documentation=https://github.com/alebastr/sway-systemd/README.md
+PartOf=sway-session.target
+After=sway-session.target
+Requires=sway-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+ExecStart=%h/.config/sway/bin/locale1-xkb-config
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=sway-session.target
