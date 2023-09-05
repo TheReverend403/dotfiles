@@ -29,6 +29,9 @@ shared_env=$(echo "$sys_env" | comm -12 - <(echo "$user_env"))
 # shellcheck disable=SC2086
 systemctl --user import-environment $new_env $shared_env
 
+# Ensure theme environment vars are set before Sway starts so they work properly with the other services.
+"$XDG_CONFIG_HOME"/sway/bin/import-gsettings.sh
+
 # Then start the service
 systemctl --wait --user start sway.service
 

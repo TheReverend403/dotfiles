@@ -30,15 +30,24 @@ bindsym {
     $mod+Escape exec swaymsg "output '*' power on"
 }
 
-# Music controls
+# Media controls
 bindsym {
-    XF86AudioPlay exec mpc toggle
-    XF86AudioPause exec mpc toggle
-    XF86AudioStop exec mpc stop
-    XF86AudioPrev exec mpc prev
-    XF86AudioNext exec mpc next
-    Ctrl+XF86AudioPrev exec mpc seek -00:00:05
-    Ctrl+XF86AudioNext exec mpc seek +00:00:05
+    XF86AudioPlay exec playerctl --player=mpd play-pause
+    XF86AudioPause exec playerctl --player=mpd play-pause
+    XF86AudioStop exec playerctl --player=mpd stop
+    XF86AudioPrev exec playerctl --player=mpd previous
+    XF86AudioNext exec playerctl --player=mpd next
+    ## Fallback to mpc here as mpd-mpris seek isn't working.
+    Ctrl+XF86AudioPrev exec playerctl --player=mpd position 5- || mpc seek -00:00:05
+    Ctrl+XF86AudioNext exec playerctl --player=mpd position 5+ || mpc seek +00:00:05
+
+    $mod+XF86AudioPlay exec playerctl --ignore-player=mpd play-pause
+    $mod+XF86AudioPause exec playerctl --ignore-player=mpd play-pause
+    $mod+XF86AudioStop exec playerctl --ignore-player=mpd stop
+    $mod+XF86AudioPrev exec playerctl --ignore-player=mpd previous
+    $mod+XF86AudioNext exec playerctl --ignore-player=mpd next
+    $mod+Ctrl+XF86AudioPrev exec playerctl --ignore-player=mpd position 5-
+    $mod+Ctrl+XF86AudioNext exec playerctl --ignore-player=mpd position 5+
 }
 
 # Volume controls
