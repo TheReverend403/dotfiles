@@ -16,3 +16,6 @@ o.clipboard = 'unnamedplus'
 o.mouse = false
 
 o.backupdir = string.format('%s/backup', fn.stdpath('data'))
+
+o.list = true
+o.listchars = "tab:|\\ ,extends:>,precedes:<,nbsp:·,trail:·"
