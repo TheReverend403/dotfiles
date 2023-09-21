@@ -4,8 +4,8 @@ After=graphical-session.target pipewire.service
 PartOf=graphical-session.target
 
 [Service]
-ExecStart=%h/.local/bin/easyeffects --gapplication-service
-ExecStop=%h/.local/bin/easyeffects --quit
+ExecStart=/usr/bin/flatpak run com.github.wwmm.easyeffects --gapplication-service
+ExecStop=/usr/bin/flatpak run com.github.wwmm.easyeffects --quit
 Nice=-15
 Restart=always
 RestartSec=3
