@@ -7,6 +7,7 @@ return {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
+    "petertriho/cmp-git",
     "honza/vim-snippets",
     "onsails/lspkind.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -86,6 +87,14 @@ return {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
+    })
+
+    cmp.setup.filetype({ "gitcommit", "gitrebase" }, {
+      sources = cmp.config.sources({
+        { name = "git" },
+      }, {
+        { name = "buffer" },
+      }),
     })
 
     cmp.setup.cmdline({ "/", "?" }, {
