@@ -5,7 +5,7 @@ return {
     term_colors = false,
     code_style = { comments = "none" },
     diagnostics = {
-      darker = false, -- darker colors for diagnostic
+      darker = false,
     },
   },
   config = function(_, opts)
