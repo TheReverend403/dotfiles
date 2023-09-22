@@ -5,30 +5,30 @@ autocmd({ 'BufRead', 'BufNewFile' }, {
   command = 'set filetype=swayconfig',
 })
 
-autocmd("Filetype", {
-  pattern = { "gitcommit", "markdown", "text" },
+autocmd('Filetype', {
+  pattern = { 'gitcommit', 'markdown', 'text' },
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
-  end
+  end,
 })
 
-autocmd("TextYankPost", {
+autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank({
-      higroup = "IncSearch",
-      timeout = "500"
+      higroup = 'IncSearch',
+      timeout = '500',
     })
-  end
+  end,
 })
 
-autocmd("BufWritePre", {
-  pattern = "",
-  command = ":silent lua vim.lsp.buf.format()"
+autocmd('BufWritePre', {
+  pattern = '',
+  command = ':silent lua vim.lsp.buf.format()',
 })
 
 -- Remove whitespace on save
-autocmd("BufWritePre", {
-  pattern = "",
-  command = ":%s/\\s\\+$//e"
+autocmd('BufWritePre', {
+  pattern = '',
+  command = ':%s/\\s\\+$//e',
 })
