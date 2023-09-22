@@ -48,6 +48,37 @@ require("lazy").setup({
   state = vim.fn.stdpath("state") .. "/lazy/state.json",
 })
 
+local disabled_built_ins = {
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "matchit",
+  "tar",
+  "tarPlugin",
+  "rrhelper",
+  "spellfile_plugin",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
+  "tutor",
+  "rplugin",
+  "synmenu",
+  "optwin",
+  "compiler",
+  "bugreport",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  vim.g["loaded_" .. plugin] = 1
+end
+
 local modules = { "config.autocmds", "config.settings", "config.keymaps" }
 for _, mod in ipairs(modules) do
   local ok, err = pcall(require, mod)
