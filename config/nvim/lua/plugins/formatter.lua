@@ -18,7 +18,7 @@ return {
       sh = { "shfmt", "shellcheck" },
       bash = { "shfmt", "shellcheck" },
       fish = { "fish_indent" },
-      ["*"] = { "trim_whitespace", "trim_newlines" },
+      ["*"] = { "trim_whitespace" },
     },
   },
   config = function(_, opts)
