@@ -1,60 +1,28 @@
 return {
-  {
-    'mhartington/formatter.nvim',
-    config = function()
-      local vim = vim
-      local formatter = require('formatter')
-      local prettier_config = function()
-        return {
-          exe = 'prettier',
-          args = { '--stdin-filepath', vim.fn.shellescape(vim.api.nvim_buf_get_name(0)), '--single-quote' },
-          stdin = true,
-        }
-      end
-
-      local formatter_config = {
-        lua = {
-          function()
-            return {
-              exe = 'stylua',
-              args = { '-' },
-              stdin = true,
-            }
-          end,
-        },
-        ['*'] = {
-          require('formatter.filetypes.any').lsp_format,
-          require('formatter.filetypes.any').remove_trailing_whitespace,
-        },
-      }
-
-      local common_ft = {
-        'css',
-        'scss',
-        'html',
-        'java',
-        'javascript',
-        'javascriptreact',
-        'typescript',
-        'typescriptreact',
-        'markdown',
-        'markdown.mdx',
-        'json',
-        'yaml',
-        'xml',
-        'svg',
-        'svelte',
-      }
-
-      for _, ft in ipairs(common_ft) do
-        formatter_config[ft] = { prettier_config }
-      end
-
-      formatter.setup({
-        logging = true,
-        filetype = formatter_config,
-        log_level = 2,
-      })
-    end,
+  "stevearc/conform.nvim",
+  opts = {
+    format_on_save = {
+      timeout_ms = 500,
+      lsp_fallback = true,
+    },
+    formatters_by_ft = {
+      lua = { "stylua" },
+      python = { "isort", "black" },
+      javascript = { { "prettierd", "prettier" } },
+      css = { { "prettierd", "prettier" } },
+      less = { { "prettierd", "prettier" } },
+      scss = { { "prettierd", "prettier" } },
+      html = { { "prettierd", "prettier" } },
+      yaml = { { "prettierd", "prettier" } },
+      markdown = { "mdformat" },
+      sh = { "shfmt", "shellcheck" },
+      bash = { "shfmt", "shellcheck" },
+      fish = { "fish_indent" },
+      ["*"] = { "trim_whitespace", "trim_newlines" },
+    },
   },
+  config = function(_, opts)
+    require("conform.formatters.shfmt").args = { "-i", "4", "-filename", "$FILENAME" }
+    require("conform").setup(opts)
+  end,
 }
