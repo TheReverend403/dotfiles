@@ -61,12 +61,13 @@ return {
           end
         end, { "i", "s" }),
       }),
-      sources = {
+      sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "snippy" },
+      }, {
         { name = "buffer" },
         { name = "path" },
-      },
+      }),
       formatting = {
         format = lspkind.cmp_format({
           mode = "symbol_text",
@@ -82,6 +83,7 @@ return {
         }),
       },
       window = {
+        completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
     })
