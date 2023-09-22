@@ -18,6 +18,7 @@ return {
           },
         },
         dockerls = {},
+        docker_compose_language_service = {},
         cssls = {},
         ansiblels = {},
         html = {},
