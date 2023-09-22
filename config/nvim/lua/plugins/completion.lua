@@ -10,6 +10,7 @@ return {
       'hrsh7th/cmp-cmdline',
       'honza/vim-snippets',
       'onsails/lspkind.nvim',
+      'nvim-tree/nvim-web-devicons',
     },
     config = function()
       local cmp = require('cmp')
