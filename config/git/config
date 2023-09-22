@@ -22,3 +22,5 @@
 	helper = /usr/bin/git-credential-libsecret
 [push]
 	autoSetupRemote = true
+[core]
+	editor = vim
