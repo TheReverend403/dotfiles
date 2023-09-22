@@ -26,3 +26,9 @@ autocmd("BufWritePre", {
   pattern = "",
   command = ":silent lua vim.lsp.buf.format()"
 })
+
+-- Remove whitespace on save
+autocmd("BufWritePre", {
+  pattern = "",
+  command = ":%s/\\s\\+$//e"
+})
