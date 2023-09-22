@@ -89,6 +89,5 @@ return {
       }
     end,
     priority = 1001,
-
   },
 }
