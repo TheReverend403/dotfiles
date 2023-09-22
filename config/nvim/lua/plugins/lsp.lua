@@ -13,12 +13,6 @@ return {
         yamlls = {},
         lua_ls = {
           Lua = {
-            diagnostics = {
-              globals = {
-                'vim',
-                'on_attach',
-              },
-            },
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
           },
