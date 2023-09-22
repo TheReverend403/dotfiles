@@ -11,30 +11,27 @@ end
 return {
   {
     "akinsho/toggleterm.nvim",
-    config = function()
-      require("toggleterm").setup({
-        open_mapping = "<A-`>",
-        persist_size = false,
-        on_open = function(_)
-          set_terminal_keymaps()
-        end,
-        -- Set size to 1/3 of the available space.
-        size = function(term)
-          if term.direction == "horizontal" then
-            return vim.o.lines / 3
-          elseif term.direction == "vertical" then
-            return vim.o.columns / 3
-          end
-        end,
-      })
-    end,
+    opts = {
+      open_mapping = "<A-`>",
+      persist_size = false,
+      on_open = function(_)
+        set_terminal_keymaps()
+      end,
+      -- Set size to 1/3 of the available space.
+      size = function(term)
+        if term.direction == "horizontal" then
+          return vim.o.lines / 3
+        elseif term.direction == "vertical" then
+          return vim.o.columns / 3
+        end
+      end,
+    },
   },
   {
     "willothy/flatten.nvim",
-    -- https://github.com/willothy/flatten.nvim#toggleterm
-    opts = function()
+    priority = 1001,
+    opts = function() -- https://github.com/willothy/flatten.nvim#toggleterm
       local saved_terminal
-
       return {
         window = {
           open = "alternate",
@@ -88,6 +85,5 @@ return {
         },
       }
     end,
-    priority = 1001,
   },
 }
