@@ -30,7 +30,7 @@ o.undofile = true
 o.backup = false
 
 o.list = true
-o.listchars = 'tab:|\\ ,extends:>,precedes:<,nbsp:·,trail:·'
+o.listchars = 'tab:| ,extends:>,precedes:<,nbsp:·,trail:·'
 
 o.lazyredraw = true
 o.redrawtime = 1500
