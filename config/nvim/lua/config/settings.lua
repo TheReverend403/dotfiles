@@ -18,8 +18,6 @@ o.redrawtime = 1500
 o.timeoutlen = 300
 o.updatetime = 250
 
-o.mouse = ""
-
 local disabled_built_ins = {
   "2html_plugin",
   "getscript",
