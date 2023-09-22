@@ -9,7 +9,7 @@ return {
       icons_enabled = false,
       section_separators = "",
       component_separators = { left = "|", right = "|" },
-      disabled_filetypes = { "Lazy", "NvimTree" },
+      disabled_filetypes = { "Lazy", "NvimTree", "toggleterm" },
     },
   },
 }
