@@ -23,4 +23,4 @@
 [push]
 	autoSetupRemote = true
 [core]
-	editor = vim
+	editor = nvim
