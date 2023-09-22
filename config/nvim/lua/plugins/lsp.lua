@@ -22,6 +22,8 @@ return {
         ansiblels = {},
         html = {},
         marksman = {},
+        ruff_lsp = {},
+        tsserver = {},
       }
 
       require('neodev').setup()
