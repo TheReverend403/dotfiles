@@ -20,15 +20,8 @@ local spec = { {
 } }
 
 require("lazy").setup({
-  root = vim.fn.stdpath("data") .. "/lazy",
   spec = spec,
-  lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json",
-  defaults = {
-    lazy = false,
-    version = nil,
-  },
   install = {
-    missing = true,
     colorscheme = { "onedark" },
   },
   checker = {
@@ -37,47 +30,39 @@ require("lazy").setup({
     frequency = 86400,
   },
   change_detection = {
-    enabled = true,
     notify = false,
   },
   performance = {
-    cache = {
-      enabled = true,
+    rtp = {
+      disabled_plugins = {
+        "matchparen",
+        "netrw",
+        "netrwPlugin",
+        "netrwSettings",
+        "netrwFileHandlers",
+        "tohtml",
+        "2html_plugin",
+        "getscript",
+        "getscriptPlugin",
+        "gzip",
+        "logipat",
+        "tar",
+        "tarPlugin",
+        "rrhelper",
+        "vimball",
+        "vimballPlugin",
+        "zip",
+        "zipPlugin",
+        "tutor",
+        "rplugin",
+        "synmenu",
+        "optwin",
+        "compiler",
+        "bugreport",
+      },
     },
   },
-  state = vim.fn.stdpath("state") .. "/lazy/state.json",
 })
-
-local disabled_built_ins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "matchit",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-  "tutor",
-  "rplugin",
-  "synmenu",
-  "optwin",
-  "compiler",
-  "bugreport",
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-  vim.g["loaded_" .. plugin] = 1
-end
 
 local modules = { "config.autocmds", "config.settings", "config.keymaps" }
 for _, mod in ipairs(modules) do

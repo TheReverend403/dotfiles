@@ -12,6 +12,7 @@ return {
     "onsails/lspkind.nvim",
     "nvim-tree/nvim-web-devicons",
   },
+  event = { "InsertEnter", "CmdlineEnter" },
   config = function()
     local cmp = require("cmp")
     local snippy = require("snippy")
