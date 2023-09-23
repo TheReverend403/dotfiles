@@ -63,11 +63,11 @@ return {
         end, { "i", "s" }),
       }),
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "snippy" },
+        { name = "nvim_lsp", keyword_length = 3 },
+        { name = "snippy", keyword_length = 3 },
       }, {
-        { name = "buffer" },
-        { name = "path" },
+        { name = "buffer", keyword_length = 3 },
+        { name = "path", keyword_length = 3 },
       }),
       formatting = {
         format = lspkind.cmp_format({
@@ -91,25 +91,25 @@ return {
 
     cmp.setup.filetype({ "gitcommit", "gitrebase" }, {
       sources = cmp.config.sources({
-        { name = "git" },
+        { name = "git", keyword_length = 3 },
       }, {
-        { name = "buffer" },
+        { name = "buffer", keyword_length = 3 },
       }),
     })
 
     cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = "buffer" },
+        { name = "buffer", keyword_length = 3 },
       },
     })
 
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
-        { name = "path" },
+        { name = "path", keyword_length = 3 },
       }, {
-        { name = "cmdline" },
+        { name = "cmdline", keyword_length = 3 },
       }),
     })
   end,
