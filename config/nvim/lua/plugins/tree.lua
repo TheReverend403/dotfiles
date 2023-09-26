@@ -29,6 +29,10 @@ return {
   config = function(_, opts)
     require("nvim-tree").setup(opts)
 
+    vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { silent = true, noremap = true })
+    vim.keymap.set("n", "<leader>nr", ":NvimTreeRefresh<CR>", { silent = true, noremap = true })
+    vim.keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>", { silent = true, noremap = true })
+
     -- Autoclose when last buffer
     vim.api.nvim_create_autocmd("BufEnter", {
       group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
