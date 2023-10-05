@@ -63,7 +63,7 @@ require("lazy").setup({
   },
 })
 
-local modules = { "config.autocmds", "config.settings", "config.keymaps" }
+local modules = { "config.settings", "config.autocmds", "config.keymaps" }
 for _, mod in ipairs(modules) do
   local ok, err = pcall(require, mod)
   if not ok then
