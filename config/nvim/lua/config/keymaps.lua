@@ -1,4 +1,4 @@
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>", "<Nop>", { silent = true })
 
 vim.keymap.set("n", "<leader>s", ":w<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>ss", ":wa<CR>", { noremap = true })
