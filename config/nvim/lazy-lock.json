@@ -8,6 +8,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp-snippy": { "branch": "master", "commit": "c4dc31232c510cd32d4708701e6f06746d46df90" },
   "conform.nvim": { "branch": "master", "commit": "e75819642c36810a55a7235b6b5e16a5ce896ed3" },
+  "cutlass.nvim": { "branch": "main", "commit": "708864fb2263226aabceaf5b2c2eee9841132668" },
   "flatten.nvim": { "branch": "main", "commit": "6386dce660798e662084ad7acee14522c37df708" },
   "gentoo-syntax": { "branch": "master", "commit": "865f01aa04434838f0ed1915734e2200759d925b" },
   "gitsigns.nvim": { "branch": "main", "commit": "ff01d34daaed72f271a8ffa088a7e839a60c640f" },
