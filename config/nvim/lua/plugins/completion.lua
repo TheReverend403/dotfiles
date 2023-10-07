@@ -18,16 +18,6 @@ return {
     local snippy = require("snippy")
     local lspkind = require("lspkind")
 
-    vim.diagnostic.config({
-      severity_sort = true,
-      float = {
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-      },
-    })
-
     cmp.setup({
       snippet = {
         expand = function(args)
