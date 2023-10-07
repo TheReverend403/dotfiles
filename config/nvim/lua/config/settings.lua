@@ -15,8 +15,10 @@ o.listchars = "tab:| ,extends:>,precedes:<,nbsp:·,trail:·"
 
 o.lazyredraw = true
 o.redrawtime = 1500
-o.timeoutlen = 300
 o.updatetime = 250
+
+o.timeout = true
+o.timeoutlen = 300
 
 o.undodir = vim.fn.stdpath("data") .. "/undo"
 o.undofile = true
