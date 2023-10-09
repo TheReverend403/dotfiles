@@ -4,6 +4,10 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     {
+      "stevearc/dressing.nvim",
+      opts = {},
+    },
+    {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
       cond = function()
