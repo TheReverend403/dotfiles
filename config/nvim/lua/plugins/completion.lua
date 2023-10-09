@@ -57,7 +57,19 @@ return {
         { name = "nvim_lsp", keyword_length = 3 },
         { name = "snippy", keyword_length = 3 },
       }, {
-        { name = "buffer", keyword_length = 3 },
+        name = "buffer",
+        keyword_length = 3,
+        option = {
+          -- Avoid accidentally running on big files
+          get_bufnrs = function()
+            local buf = vim.api.nvim_get_current_buf()
+            local byte_size = vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf))
+            if byte_size > 1024 * 1024 then -- 1 Megabyte max
+              return {}
+            end
+            return { buf }
+          end,
+        },
         { name = "path", keyword_length = 3 },
       }),
       formatting = {
