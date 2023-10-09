@@ -40,7 +40,10 @@ return {
       }))
     end, "Search in current buffer")
 
-    map("n", "<leader>sf", builtin.find_files, "Files")
+    map("n", "<leader>sf", function()
+      return builtin.find_files({ hidden = true })
+    end, "Files")
+
     map("n", "<leader>sr", builtin.oldfiles, "Recently opened")
     map("n", "<leader>sh", builtin.help_tags, "Help")
     map("n", "<leader>sw", builtin.grep_string, "Current word")
