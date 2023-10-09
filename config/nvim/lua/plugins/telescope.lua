@@ -5,7 +5,13 @@ return {
     "nvim-lua/plenary.nvim",
     {
       "stevearc/dressing.nvim",
-      opts = {},
+      opts = {
+        input = {
+          win_options = {
+            winblend = 0,
+          },
+        },
+      },
     },
     {
       "nvim-telescope/telescope-fzf-native.nvim",
