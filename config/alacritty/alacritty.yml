@@ -11,31 +11,31 @@ font:
 
 colors:
   cursor:
-    cursor: '0xeeeeee'
+    cursor: "#eeeeee"
 
   # Default colors
   primary:
-    background: '0x0d0d0d'
-    foreground: '0xeeeeee'
+    background: "#0d0d0d"
+    foreground: "#eeeeee"
 
   # Normal colors
   normal:
-    black:   '0x1f1f1f'
-    red:     '0xf92645'
-    green:   '0x82b414'
-    yellow:  '0xfdbe25'
-    blue:    '0x0c68af'
-    magenta: '0x8c54fe'
-    cyan:    '0x13a5a2'
-    white:   '0x858585'
+    black: "#1f1f1f"
+    red: "#f92645"
+    green: "#82b414"
+    yellow: "#fdbe25"
+    blue: "#0c68af"
+    magenta: "#8c54fe"
+    cyan: "#13a5a2"
+    white: "#858585"
 
   # Bright colors
   bright:
-    black:   '0x454545'
-    red:     '0xff7184'
-    green:   '0xbce368'
-    yellow:  '0xfeee78'
-    blue:    '0x67a9dc'
-    magenta: '0xb28cfe'
-    cyan:    '0x8fe3de'
-    white:   '0xffffff'
+    black: "#454545"
+    red: "#ff7184"
+    green: "#bce368"
+    yellow: "#feee78"
+    blue: "#67a9dc"
+    magenta: "#b28cfe"
+    cyan: "#8fe3de"
+    white: "#ffffff"
