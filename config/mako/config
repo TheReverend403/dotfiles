@@ -54,16 +54,25 @@ border-color=#bce368
 [summary~="^c\.lwatson\.dev .* ➜ .+" body~="^Status Unhealthy .+"]
 border-color=#f92645
 
+# Uptime Kuma
 [summary~="^monitor\.lwatson\.dev .+ ➜ .+" body~=".+(healthcheck passing|✅ Up)+"]
 border-color=#bce368
 
 [summary~="^monitor\.lwatson\.dev .+ ➜ .+" body~=".+(healthcheck failed|🔴 Down).+"]
 border-color=#f92645
 
-[summary~="^HealthchecksBot .+ ➜ .+" body~="^🟢.+"]
+# Healthchecks
+[summary~="^.+ ➜ .+" body~="^🟢 The check.+"]
 border-color=#bce368
 
-[summary~="^HealthchecksBot .+ ➜ .+" body~="^🔴.+"]
+[summary~="^.+ ➜ .+" body~="^🔴 The check.+"]
+border-color=#f92645
+
+# Icinga
+[summary~="^.+ ➜ .+" body~="^✅.+:.+is.+on.+"]
+border-color=#bce368
+
+[summary~="^.+ ➜ .+" body~="^❌.+:.+is.+on.+"]
 border-color=#f92645
 
 [app-name=weechat]
