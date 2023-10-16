@@ -63,5 +63,5 @@ fish_add_path "$XDG_CONFIG_HOME/composer/vendor/bin"
 fish_add_path "$XDG_DATA_HOME/JetBrains/scripts"
 
 # Use --move here so ~/.local/bin is always used first and /usr/* is always last.
-fish_add_path --move --append "/usr/local/sbin" "/usr/local/bin"
+fish_add_path --move --append /usr/local/sbin /usr/local/bin
 fish_add_path --move "$HOME/.local/bin"

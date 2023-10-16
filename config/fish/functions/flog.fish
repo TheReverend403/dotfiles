@@ -8,5 +8,3 @@ function flog
     set_color normal
     printf "\n"
 end
-
-

@@ -1,6 +1,6 @@
 alias rsync 'rsync --progress -h'
 alias grep 'grep --color=auto'
-alias more 'less'
+alias more less
 alias df 'df -h'
 alias du 'du -c -h'
 alias mkdir 'mkdir -p -v'
