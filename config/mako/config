@@ -64,17 +64,17 @@ border-color=#bce368
 border-color=#f92645
 
 # Healthchecks
-[summary~="^.+ ➜ .+" body~="^🟢 The check.+"]
+[summary~="^.+ ➜ .+" body~="^🟢 The check .+"]
 border-color=#bce368
 
-[summary~="^.+ ➜ .+" body~="^🔴 The check.+"]
+[summary~="^.+ ➜ .+" body~="^🔴 The check .+"]
 border-color=#f92645
 
 # Icinga
-[summary~="^.+ ➜ .+" body~="^✅.+:.+is.+on.+"]
+[summary~="^.+ ➜ .+" body~="^✅ .+: .+ is .+ on .+"]
 border-color=#bce368
 
-[summary~="^.+ ➜ .+" body~="^❌.+:.+is.+on.+"]
+[summary~="^.+ ➜ .+" body~="^❌ .+: .+ is .+ on .+"]
 border-color=#f92645
 
 [app-name=weechat]
