@@ -43,16 +43,17 @@ border-color=#00FEFF
 border-color=#0089CC
 
 # Docker
-[summary~="^.+ ➜ .+" body~="^Started .+\\(.*\\) \\{.+\\}"]
+# https://github.com/luc-ass/docker-telegram-notifier/blob/main/templates.js
+[summary~="^.+ ➜ .+" body~="^▶️ .+ started(.+/)?.+:.+"]
 border-color=#82b414
 
-[summary~="^.+ ➜ .+" body~="^Stopped .+\\(.*\\) \\{.+\\}"]
+[summary~="^.+ ➜ .+" body~="^🔴 .+ stopped!(.+/)?.+:.+"]
 border-color=#ff7184
 
-[summary~="^.+ ➜ .+" body~="^Status Healthy for .+\\(.*\\) \\{.+\\}"]
+[summary~="^.+ ➜ .+" body~="^✅ .+ healthy(.+/)?.+:.+"]
 border-color=#bce368
 
-[summary~="^.* ➜ .+" body~="^Status Unhealthy for .+\\(.*\\) \\{.+\\}"]
+[summary~="^.* ➜ .+" body~="^⚠ .+ unhealthy!(.+/)?.+:.+"]
 border-color=#f92645
 
 # Uptime Kuma
