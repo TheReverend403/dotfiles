@@ -42,40 +42,60 @@ border-color=#00FEFF
 [summary~="^.+ ➜ .+"]
 border-color=#0089CC
 
-# Docker
+## Docker
 # https://github.com/luc-ass/docker-telegram-notifier/blob/main/templates.js
-[summary~="^.+ ➜ .+" body~="^▶️ .+ started(.+/)?.+:.+"]
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^▶️ .+ started(.+/)?.+:.+"]
 border-color=#82b414
 
-[summary~="^.+ ➜ .+" body~="^🔴 .+ stopped!(.+/)?.+:.+"]
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^🔴 .+ stopped!(.+/)?.+:.+"]
 border-color=#ff7184
 
-[summary~="^.+ ➜ .+" body~="^✅ .+ healthy(.+/)?.+:.+"]
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^✅ .+ healthy(.+/)?.+:.+"]
 border-color=#bce368
 
-[summary~="^.* ➜ .+" body~="^⚠ .+ unhealthy!(.+/)?.+:.+"]
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^⚠ .+ unhealthy!(.+/)?.+:.+"]
 border-color=#f92645
+default-timeout=0
+##
 
-# Uptime Kuma
-[summary~="^.+ ➜ .+" body~=".+(healthcheck passing|✅ Up)+"]
+## Uptime Kuma
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~=".+(healthcheck passing|✅ Up)+"]
 border-color=#bce368
 
-[summary~="^.+ ➜ .+" body~=".+(healthcheck failed|🔴 Down).+"]
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~=".+(healthcheck failed|🔴 Down).+"]
 border-color=#f92645
+default-timeout=0
+##
 
-# Healthchecks
-[summary~="^.+ ➜ .+" body~="^🟢 The check .+"]
+## Healthchecks
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^🟢 The check .+"]
 border-color=#bce368
 
-[summary~="^.+ ➜ .+" body~="^🔴 The check .+"]
+[summary~="^^(Private )?Monitoring | .+ ➜ .+" body~="^🔴 The check .+"]
 border-color=#f92645
+default-timeout=0
+##
 
-# Icinga
-[summary~="^.+ ➜ .+" body~="^✅ .+: .+ is .+ on .+"]
+## Icinga
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^✅ .+: .+ is .+ on .+"]
 border-color=#bce368
 
-[summary~="^.+ ➜ .+" body~="^❌ .+: .+ is .+ on .+"]
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^❌ .+: .+ is .+ on .+"]
 border-color=#f92645
+default-timeout=0
+##
+
+## S.M.A.R.T
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~=".+The following warning/error was logged by the smartd daemon:.+"]
+border-color=#f92645
+default-timeout=0
+##
+
+## ZFS. Only matches if errors are > 0.
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~=".+scrub repaired \\w+ in [0-9:]+ with [1-9]\d* errors.+"]
+border-color=#f92645
+default-timeout=0
+##
 
 [app-name=weechat]
 border-color=#0B11BE
