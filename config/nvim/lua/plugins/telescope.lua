@@ -47,7 +47,7 @@ return {
     end, "Search in current buffer")
 
     map("n", "<leader>sf", function()
-      return builtin.find_files({ hidden = true })
+      return builtin.find_files()
     end, "Files")
 
     map("n", "<leader>sr", builtin.oldfiles, "Recently opened")
