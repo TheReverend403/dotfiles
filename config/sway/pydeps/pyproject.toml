@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "sway-python-deps"
+version = "0.1.0"
+description = ""
+authors = ["Lee Watson <me@lwatson.dev>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+i3ipc = "^2.2.1"
+tenacity = "^8.2.3"
+dbus-next = "^0.2.3"
+psutil = "^5.9.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
