@@ -47,7 +47,7 @@ border-color=#0089CC
 [summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^▶️ .+ started(.+/)?.+:.+"]
 border-color=#82b414
 
-[summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^(🔴|⏹️) .+ stopped!(.+/)?.+:.+"]
+[summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^(🔴|⏹️) .+ stopped( with exit code)?(.+/)?.+:?.+"]
 border-color=#ff7184
 
 [summary~="^(Private )?Monitoring | .+ ➜ .+" body~="^✅ .+ healthy(.+/)?.+:.+"]
