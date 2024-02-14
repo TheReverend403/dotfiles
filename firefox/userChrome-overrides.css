@@ -9,6 +9,7 @@ Overrides
   --lwt-toolbarbutton-icon-fill-attention: #8c54fe !important;
   --url-match-color: #fdbe25 !important;
   --link-color: #858585 !important;
+  --urlbarView-highlight-background: #8c54fe !important;
 }
 
 #urlbar:is([focused]) > #urlbar-background,
