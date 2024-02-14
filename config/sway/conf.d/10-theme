@@ -36,7 +36,7 @@ exec_always {
 }
 
 seat * {
-    hide_cursor 5000
+    hide_cursor 10000
 }
 
 hide_edge_borders smart
