@@ -37,3 +37,5 @@ user_pref("extensions.unifiedExtensions.enabled", false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1835182
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1835158
 user_pref("browser.vpn_promo.enabled", false);
+
+user_pref("browser.tabs.cardPreview.enabled", false);
