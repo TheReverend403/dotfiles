@@ -39,6 +39,7 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT true
 set -x IPYTHONDIR "$XDG_CONFIG_HOME/jupyter"
 set -x JUPYTER_CONFIG_DIR "$IPYTHONDIR"
 set -x POETRY_HOME "$XDG_DATA_HOME/poetry"
+set -x RUFF_CACHE_DIR "$XDG_CACHE_HOME/ruff"
 fish_add_path "$POETRY_HOME/bin"
 
 # Go
