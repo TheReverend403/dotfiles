@@ -185,12 +185,13 @@ mode "Resize" bindsym {
 #
 # Session management:
 #
-set $mode_session Session: (r) reload (l) lock, (E) logout, (R) reboot, (K) kexec, (S) shutdown
+set $mode_session Session: (r) reload (l) lock, (E) logout, (R) reboot, (K) kexec, (S) shutdown, (W) reboot to Windows
 mode "$mode_session" bindsym {
     r exec --no-startup-id systemctl --user reload sway.service; mode "default"
     l exec --no-startup-id systemctl --user start swaylock.service; mode "default"
     Shift+e exec --no-startup-id systemctl --user stop sway-session.target
     Shift+r exec --no-startup-id systemctl reboot
+    Shift+w exec --no-startup-id systemctl reboot --boot-loader-entry=auto-windows
     Shift+k exec --no-startup-id sudo systemctl kexec
     Shift+s exec --no-startup-id systemctl poweroff
 
