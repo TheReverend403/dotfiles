@@ -38,10 +38,6 @@ window#waybar {
   color: @foreground;
 }
 
-#workspaces button:last-child {
-  padding-right: 3px;
-}
-
 #workspaces button:hover {
   background: @black;
 }
@@ -49,6 +45,11 @@ window#waybar {
 #workspaces button.focused {
   color: @magenta;
   background: @black;
+}
+
+#workspaces button:last-child {
+  padding-right: 3px;
+  border-right: 2px solid @black;
 }
 
 #workspaces button.urgent {
@@ -73,6 +74,7 @@ window#waybar {
 
 #window {
   color: @grey;
+  border-left: 0px;
 }
 
 label:focus {
@@ -125,7 +127,4 @@ label:focus {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-.text-button {
 }
