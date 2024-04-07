@@ -2,7 +2,7 @@
 
 # Apply system-wide XKB configuration stored in systemd-localed.
 # https://github.com/alebastr/sway-systemd
-exec_always "$XDG_CONFIG_HOME"/sway/bin/locale1-xkb-config --oneshot
+exec_always "$XDG_CONFIG_HOME"/sway/pydeps/.venv/bin/python "$XDG_CONFIG_HOME"/sway/bin/locale1-xkb-config --oneshot
 
 input "type:keyboard" {
     xkb_numlock enabled

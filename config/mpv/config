@@ -1,16 +1,8 @@
 ## Video ##
-profile=gpu-hq
-hwdec=auto
-vo=gpu
+vo=gpu-next
 scale=ewa_lanczossharp
-cscale=ewa_lanczossharp
 video-sync=display-resample
 interpolation
-tscale=oversample
-
-scale-antiring=0.7 # luma upscale deringing
-dscale-antiring=0.7 # luma downscale deringing
-cscale-antiring=0.7 # chroma upscale deringing
 
 ## Audio ##
 ao=pipewire

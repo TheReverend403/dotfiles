@@ -18,37 +18,41 @@
 @define-color brgrey #ffffff;
 
 * {
-    border: none;
-    border-radius: 0;
-    font-family: Sans;
-    font-size: 16px;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: Sans;
+  font-size: 16px;
+  min-height: 0;
 }
 
 window#waybar {
-    background-color: @background;
-    color: @foreground;
-    transition-property: background-color;
-    transition-duration: .3s;
+  background-color: @background;
+  color: @foreground;
+  transition-property: background-color;
+  transition-duration: 0.3s;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: @foreground;
+  padding: 5px;
+  background-color: transparent;
+  color: @foreground;
+}
+
+#workspaces button:last-child {
+  padding-right: 3px;
 }
 
 #workspaces button:hover {
-    background: @black;
+  background: @black;
 }
 
 #workspaces button.focused {
-    color: @magenta;
-    background: @black;
+  color: @magenta;
+  background: @black;
 }
 
 #workspaces button.urgent {
-    color: @yellow;
+  color: @yellow;
 }
 
 #clock,
@@ -57,67 +61,71 @@ window#waybar {
 #window,
 #mpd,
 #battery {
-    padding: 0 10px 0 10px;
-    color: @foreground;
-    border-left: 2px solid @black;
+  padding: 0 10px 0 10px;
+  color: @foreground;
+  border-left: 2px solid @black;
 }
 
 #mode {
-    background-color: @brmagenta;
-    color: @background;
+  background-color: @brmagenta;
+  color: @background;
 }
 
 #window {
-    color: @grey;
+  color: @grey;
 }
 
 label:focus {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
+  -gtk-icon-effect: highlight;
 }
 
-#mpd.stopped, #mpd.disconnected {
-    margin: 0;
-    padding: 0;
-    border: 0;
+#mpd.stopped,
+#mpd.disconnected {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 @keyframes blink {
-    to {
-        color: @background;
-    }
+  to {
+    color: @background;
+  }
 }
 
 #battery {
-    color: @green;
+  color: @green;
 }
 
 #battery.warning {
-    color: @yellow;
+  color: @yellow;
 }
 
 #battery.critical:not(.charging) {
-    color: @red;
-    font-weight: bold;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: @red;
+  font-weight: bold;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #battery.charging {
-    color: @brgreen;
-    animation-name: blink;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: @brgreen;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.text-button {
 }

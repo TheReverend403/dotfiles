@@ -35,6 +35,7 @@ for_window {
     [app_id="(?i).*Calculator$"] floating enable
     #[app_id="org.prismlauncher.PrismLauncher"] floating enable
     [class="^Minecraft\* [0-9.]+$" instance="^Minecraft\* [0-9.]+$"] inhibit_idle fullscreen
+    [app_id="org.gnome.FileRoller"] floating enable
 }
 
 assign {
