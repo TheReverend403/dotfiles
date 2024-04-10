@@ -47,11 +47,6 @@ window#waybar {
   background: @black;
 }
 
-#workspaces button:last-child {
-  padding-right: 3px;
-  border-right: 2px solid @black;
-}
-
 #workspaces button.urgent {
   color: @yellow;
 }
@@ -74,7 +69,6 @@ window#waybar {
 
 #window {
   color: @grey;
-  border-left: 0px;
 }
 
 label:focus {
