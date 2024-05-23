@@ -1,63 +1,63 @@
 {
-    "height": 30,
-    "modules-left": [
-        "sway/workspaces",
-        "sway/window"
+  "height": 30,
+  "modules-left": [
+    "sway/workspaces",
+    "sway/window"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "sway/mode",
+    "mpd",
+    "tray",
+    "battery",
+    "clock#date",
+    "clock#time"
+  ],
+  "sway/mode": {
+    "format": "{}"
+  },
+  "sway/window": {
+    "format": "<b>{title}</b>",
+    "max-length": 100
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+  "mpd": {
+    "format": "<span color='#8c54fe'>{artist}</span> {title} <span color='#454545'>({elapsedTime:%M:%S}/{totalTime:%M:%S})</span>",
+    "format-paused": "<span color='#8c54fe'>{artist}</span> {title} <span color='#454545'>(  )</span>",
+    "format-disconnected": "",
+    "format-stopped": "",
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "unknown-tag": "N/A",
+    "interval": 1
+  },
+  "clock#time": {
+    "format": "{:%R}",
+    "interval": 1
+  },
+  "clock#date": {
+    "format": "{:%a %d %b}",
+    "today-format": "<span color='#8c54fe'><b><u>{}</u></b></span>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
+    "on-click": "flatpak run org.gnome.Calendar"
+  },
+  "battery": {
+    "states": {
+      "warning": 50,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
-    "modules-center": [],
-    "modules-right": [
-        "sway/mode",
-        "mpd",
-        "tray",
-        "battery",
-        "clock#date",
-        "clock#time"
-    ],
-    "sway/mode": {
-        "format": "{}"
-    },
-    "sway/window": {
-        "format": "<b>{title}</b>",
-        "max-length": 100
-    },
-    "tray": {
-        "icon-size": 20,
-        "spacing": 10
-    },
-    "mpd": {
-        "format": "<span color='#8c54fe'>{artist}</span> {title} <span color='#454545'>({elapsedTime:%M:%S}/{totalTime:%M:%S})</span>",
-        "format-paused": "<span color='#8c54fe'>{artist}</span> {title} <span color='#454545'>(  )</span>",
-        "format-disconnected": "",
-        "format-stopped": "",
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)",
-        "unknown-tag": "N/A",
-        "interval": 1
-    },
-    "clock#time": {
-        "format": "{:%R}",
-        "interval": 1
-    },
-    "clock#date": {
-        "format": "{:%a %d %b}",
-        "today-format": "<span color='#8c54fe'><b><u>{}</u></b></span>",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
-        "on-click": "flatpak run org.gnome.Calendar"
-    },
-    "battery": {
-        "states": {
-            "warning": 50,
-            "critical": 15
-        },
-        "format": "{icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "tooltip-format": "{capacity}% ({timeTo})",
-        "tooltip-format-plugged": "+{capacity}% ({timeTo})"
-    }
+    "tooltip-format": "{capacity}% ({timeTo})",
+    "tooltip-format-plugged": "+{capacity}% ({timeTo})"
+  }
 }
