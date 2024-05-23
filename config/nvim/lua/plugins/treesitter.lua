@@ -1,51 +1,23 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  version = false,
-  opts = {
-    ensure_installed = {
-      "lua",
-      "python",
-      "javascript",
-      "bash",
-      "dockerfile",
-      "fish",
-      "gitignore",
-      "html",
-      "json",
-      "css",
-      "scss",
-      "toml",
-      "yaml",
-      "xml",
-      "make",
-      "php",
-    },
-    auto_install = false,
-    highlight = {
-      enable = true,
-      use_languagetree = true,
-    },
-    indent = {
-      enable = true,
-    },
-    autotag = {
-      enable = true,
-    },
-    context_commentstring = {
-      enable = true,
-      enable_autocmd = false,
-    },
-    refactor = {
-      highlight_definitions = {
-        enable = true,
-      },
-      highlight_current_scope = {
-        enable = false,
-      },
-    },
-  },
-  config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
+  opts = function(_, opts)
+    if type(opts.ensure_installed) == "table" then
+      vim.list_extend(opts.ensure_installed, {
+        "bash",
+        "html",
+        "javascript",
+        "lua",
+        "query",
+        "regex",
+        "tsx",
+        "vim",
+        "fish",
+        "gitignore",
+        "css",
+        "scss",
+        "xml",
+        "make",
+      })
+    end
   end,
 }

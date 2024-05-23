@@ -1,5 +1,5 @@
 ## Video ##
-vo=gpu-next
+hwdec=auto
 scale=ewa_lanczossharp
 video-sync=display-resample
 interpolation
