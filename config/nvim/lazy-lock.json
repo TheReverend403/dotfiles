@@ -32,6 +32,7 @@
   "neoconf.nvim": { "branch": "main", "commit": "9092129e9a42ae26375001bd2e6118f8d57c7f2a" },
   "neodev.nvim": { "branch": "main", "commit": "ce9a2e8eaba5649b553529c5498acb43a6c317cd" },
   "noice.nvim": { "branch": "main", "commit": "883cd5b638aef23d087c334940112d39ebff0aaa" },
+  "none-ls.nvim": { "branch": "main", "commit": "aa4442a8493934e3354e507a556ea5f670f68491" },
   "nui.nvim": { "branch": "main", "commit": "b1b3dcd6ed8f355c78bad3d395ff645be5f8b6ae" },
   "nvim-ansible": { "branch": "main", "commit": "cb5d0cc79c1864b72d5ae40a926a1176b18f1b65" },
   "nvim-cmp": { "branch": "main", "commit": "5260e5e8ecadaf13e6b82cf867a909f54e15fd07" },
