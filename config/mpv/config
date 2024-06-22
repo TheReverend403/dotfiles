@@ -8,7 +8,6 @@ interpolation
 ao=pipewire
 audio-channels=2
 audio-normalize-downmix=yes
-ad-lavc-downmix=no # https://github.com/mpv-player/mpv/issues/6300
 af=acompressor
 
 ## UI ##
@@ -24,7 +23,7 @@ demuxer-thread=yes
 demuxer-readahead-secs=200
 
 ytdl=yes
-ytdl-format="bestvideo[height<=?1440][vcodec!=vp9]+bestaudio/best"
+ytdl-format="bestvideo[height<=?1440]+bestaudio/best"
 
 osd-font=sans-serif
 
