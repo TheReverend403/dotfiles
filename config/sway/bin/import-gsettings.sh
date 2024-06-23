@@ -21,10 +21,7 @@ gsettings set "$gnome_schema" font-name "$font_name"
 swaymsg -q "font pango:$font_name" || true
 
 # Set xcursor to match for xwayland.
-# Currently broken as per https://github.com/swaywm/sway/issues/6931
-# Works when applying the linked pull request.
-# https://github.com/swaywm/sway/pull/7064.patch
-swaymsg -q "seat * xcursor_theme $cursor_theme $cursor_size" || true
+swaymsg -q "seat * xcursor_theme $cursor_theme $cursor_size"
 
 # Also set the env vars for processes started by systemd eg. mako
 export GTK_THEME="$gtk_theme"
