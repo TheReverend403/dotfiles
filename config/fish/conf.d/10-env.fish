@@ -1,6 +1,7 @@
 set -x XDG_DATA_DIRS "$HOME/.local/share:$XDG_DATA_DIRS"
 
 # XDG partial support.
+# https://wiki.archlinux.org/title/XDG_Base_Directory#Support
 set -x ASPELL_CONF "per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
 set -x SQLITE_HISTORY "$XDG_CACHE_HOME/sqlite_history"
 set -x PSQLRC "$XDG_CONFIG_HOME/pg/psqlrc"
@@ -14,6 +15,21 @@ set -x MYSQL_HISTFILE "$XDG_DATA_HOME/mysql_history"
 set -x LESSHISTFILE -
 set -x PARALLEL_HOME "$XDG_CONFIG_HOME/parallel"
 set -x GNUPGHOME "$XDG_CONFIG_HOME/gnupg"
+set -x ANSIBLE_HOME "$XDG_CONFIG_HOME/ansible"
+set -x ANSIBLE_CONFIG "$XDG_CONFIG_HOME/ansible/ansible.cfg"
+set -x ANSIBLE_GALAXY_CACHE_DIR "$XDG_CACHE_HOME/ansible/galaxy_cache"
+set -x DOCKER_CONFIG "$XDG_CONFIG_HOME/docker"
+set -x FFMPEG_DATADIR "$XDG_CONFIG_HOME/ffmpeg"
+set -x GOPATH "$XDG_DATA_HOME/go"
+set -x GOMODCACHE "$XDG_CACHE_HOME/go/mod"
+set -x TERMINFO "$XDG_DATA_HOME/terminfo"
+set -x TERMINFO_DIRS "$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
+set -x PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
+set -x PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
+set -x PYTHONUSERBASE "$XDG_DATA_HOME/python"
+set -x PYTHON_EGG_CACHE "$XDG_CACHE_HOME/python-eggs"
+set -x RUFF_CACHE_DIR "$XDG_CACHE_HOME/ruff"
+set -x WORKON_HOME "$XDG_DATA_HOME/virtualenvs"
 
 # Set BROWSER to the first available command.
 if not set -q $BROWSER
