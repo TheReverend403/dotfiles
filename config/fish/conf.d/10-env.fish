@@ -20,16 +20,8 @@ set -x ANSIBLE_CONFIG "$XDG_CONFIG_HOME/ansible/ansible.cfg"
 set -x ANSIBLE_GALAXY_CACHE_DIR "$XDG_CACHE_HOME/ansible/galaxy_cache"
 set -x DOCKER_CONFIG "$XDG_CONFIG_HOME/docker"
 set -x FFMPEG_DATADIR "$XDG_CONFIG_HOME/ffmpeg"
-set -x GOPATH "$XDG_DATA_HOME/go"
-set -x GOMODCACHE "$XDG_CACHE_HOME/go/mod"
 set -x TERMINFO "$XDG_DATA_HOME/terminfo"
 set -x TERMINFO_DIRS "$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
-set -x PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
-set -x PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
-set -x PYTHONUSERBASE "$XDG_DATA_HOME/python"
-set -x PYTHON_EGG_CACHE "$XDG_CACHE_HOME/python-eggs"
-set -x RUFF_CACHE_DIR "$XDG_CACHE_HOME/ruff"
-set -x WORKON_HOME "$XDG_DATA_HOME/virtualenvs"
 
 # Set BROWSER to the first available command.
 if not set -q $BROWSER
@@ -56,10 +48,16 @@ set -x IPYTHONDIR "$XDG_CONFIG_HOME/jupyter"
 set -x JUPYTER_CONFIG_DIR "$IPYTHONDIR"
 set -x POETRY_HOME "$XDG_DATA_HOME/poetry"
 set -x RUFF_CACHE_DIR "$XDG_CACHE_HOME/ruff"
+set -x PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
+set -x PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
+set -x PYTHONUSERBASE "$XDG_DATA_HOME/python"
+set -x PYTHON_EGG_CACHE "$XDG_CACHE_HOME/python-eggs"
+set -x WORKON_HOME "$XDG_DATA_HOME/virtualenvs"
 fish_add_path "$POETRY_HOME/bin"
 
 # Go
 set -x GOPATH "$XDG_DATA_HOME/go"
+set -x GOMODCACHE "$XDG_CACHE_HOME/go/mod"
 fish_add_path "$GOPATH/bin"
 
 # Rust
@@ -71,6 +69,7 @@ fish_add_path "$CARGO_HOME/bin"
 set -x NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 set -x NPM_PACKAGES "$XDG_DATA_HOME/npm"
 set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
+set -x NVM_DIR "$XDG_DATA_HOME/nvm"
 fish_add_path "$NPM_PACKAGES/bin"
 
 # PHP
