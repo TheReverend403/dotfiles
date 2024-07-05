@@ -29,7 +29,7 @@ border-color=#454545
 [urgency=critical]
 border-color=#f92645
 
-[app-name=Slack]
+[desktop-entry=com.slack.Slack]
 border-color=#4A154B
 
 [app-name=Firefox]
