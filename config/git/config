@@ -19,8 +19,8 @@
 [fetch]
     prune = true
 [credential]
-	helper = /usr/bin/git-credential-libsecret
+    helper = /usr/bin/git-credential-libsecret
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
 [core]
-	editor = nvim
+    editor = nvim
