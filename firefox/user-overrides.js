@@ -35,5 +35,6 @@ user_pref("media.ffmpeg.vaapi.enabled", true);
 user_pref("browser.vpn_promo.enabled", false);
 
 user_pref("browser.tabs.cardPreview.enabled", false);
+user_pref("browser.tabs.hoverPreview.enabled", false);
 
 user_pref("browser.urlbar.suggest.trending", false);

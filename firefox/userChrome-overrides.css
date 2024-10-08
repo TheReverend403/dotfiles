@@ -3,23 +3,24 @@ Overrides
 */
 
 :root {
-  --autocomplete-popup-highlight-background: #8c54fe !important;
-  --focus-outline-color: #8c54fe !important;
-  --tab-line-color: var(--focus-outline-color) !important;
-  --lwt-toolbarbutton-icon-fill-attention: #8c54fe !important;
-  --url-match-color: #fdbe25 !important;
-  --link-color: #858585 !important;
-  --urlbarView-highlight-background: #8c54fe !important;
+    --autocomplete-popup-highlight-background: #8c54fe !important;
+    --focus-outline-color: #8c54fe !important;
+    --tab-line-color: var(--focus-outline-color) !important;
+    --lwt-toolbarbutton-icon-fill-attention: #8c54fe !important;
+    --url-match-color: #fdbe25 !important;
+    --link-color: #858585 !important;
+    --urlbarView-highlight-background: #8c54fe !important;
+    --chrome-content-separator-color: var(--toolbar-bg-color) !important;
 }
 
-#urlbar:is([focused]) > #urlbar-background,
+#urlbar:is([focused])>#urlbar-background,
 #urlbar-container .urlbar-input-box {
-  border-color: var(--focus-outline-color) !important;
+    border-color: var(--focus-outline-color) !important;
 }
 
 .urlbarView-row:not([selected]) .urlbarView-title strong,
 .urlbarView-row:not([selected]) .urlbarView-url strong {
-  color: var(--url-match-color) !important;
+    color: var(--url-match-color) !important;
 }
 
 #context-sendimage,
@@ -27,5 +28,5 @@ Overrides
 #context-sendaudio,
 #context-sep-setbackground,
 #context-setDesktopBackground {
-  display: none !important;
+    display: none !important;
 }
