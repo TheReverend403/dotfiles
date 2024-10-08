@@ -20,9 +20,6 @@ invisible=1
 [mode=screenshare]
 invisible=1
 
-[mode=screenshare app-name=Slack]
-invisible=0
-
 [urgency=low]
 border-color=#454545
 
