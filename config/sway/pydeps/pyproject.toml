@@ -6,7 +6,7 @@ authors = ["Lee Watson <me@lwatson.dev>"]
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.13"
 i3ipc = "^2.2.1"
 tenacity = "^8.2.3"
 dbus-next = "^0.2.3"

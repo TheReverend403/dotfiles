@@ -2,7 +2,7 @@
 fish_path=$(command -v fish)
 
 if [[ $- != *i* ]]; then
-	return
+    return
 fi
 
 # Drop into fish only if the parent process is not fish. Allows dropping directly into bash from fish without having to use --norc
