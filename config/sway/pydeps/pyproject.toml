@@ -1,17 +1,10 @@
-[tool.poetry]
+[project]
 name = "sway-python-deps"
 version = "0.1.0"
-description = ""
-authors = ["Lee Watson <me@lwatson.dev>"]
-package-mode = false
-
-[tool.poetry.dependencies]
-python = "^3.13"
-i3ipc = "^2.2.1"
-tenacity = "^8.2.3"
-dbus-next = "^0.2.3"
-psutil = "^5.9.7"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.13"
+dependencies = [
+    "dbus-next>=0.2.3",
+    "i3ipc>=2.2.1",
+    "psutil>=7.0.0",
+    "tenacity>=9.0.0",
+]
