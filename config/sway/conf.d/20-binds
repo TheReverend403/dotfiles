@@ -24,8 +24,8 @@ bindsym {
     $mod+i exec $term --title=weechat -e weechat
     $mod+m exec $term --class=ncmpcpp --option window.dimensions.columns=115 --option window.dimensions.lines=30 -e ncmpcpp
     $mod+Shift+e exec bemoji -t -P 5
-    $mod+s exec $wpste -t area
-    $mod+Shift+s exec $wpste -e -t area
+    Print exec $wpste -t area
+    Shift+Print exec $wpste -e -t area
     # Workaround for swayidle bug that occasionally doesn't run resume actions.
     $mod+Escape exec swaymsg "output '*' power on"
 }
@@ -37,8 +37,8 @@ bindsym {
     XF86AudioStop exec mpc stop
     XF86AudioPrev exec mpc prev
     XF86AudioNext exec mpc next
-    Ctrl+XF86AudioPrev exec mpc seek -00:00:05
-    Ctrl+XF86AudioNext exec mpc seek +00:00:05
+    Shift+XF86AudioPrev exec mpc seek -00:00:05
+    Shift+XF86AudioNext exec mpc seek +00:00:05
 }
 
 # Volume controls
@@ -229,7 +229,7 @@ mode "$mode_notifications" bindsym {
 bindsym {
     $mod+r mode "Resize"
     $mod+q mode "$mode_session"
-    Print mode "$mode_screenshot"
+    $mod+Print mode "$mode_screenshot"
     $mod+n mode "$mode_notifications"
 }
 
