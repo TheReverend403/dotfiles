@@ -1,4 +1,5 @@
 fishd.*
 conf.d/99-local.fish
+conf.d/uv.env.fish
 fish_variables
 completions/
