@@ -7,7 +7,8 @@ Requires=sway-session.target
 ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
-ExecStart=%h/.config/sway/pydeps/.venv/bin/python %h/.config/sway/bin/locale1-xkb-config
+WorkingDirectory=%E/sway
+ExecStart=/usr/bin/env uv run bin/locale1-xkb-config
 Restart=on-failure
 RestartSec=5
 

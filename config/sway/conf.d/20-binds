@@ -74,7 +74,7 @@ bindsym {
 
     # Cycle focus through all windows
     # https://gist.github.com/SidharthArya/f4d80c246793eb61be0ae928c9184406?permalink_comment_id=4405799#gistcomment-4405799
-    $mod+Tab exec "$XDG_CONFIG_HOME"/sway/pydeps/.venv/bin/python "$XDG_CONFIG_HOME"/sway/bin/alt-tab.py next
+    $mod+Tab exec uv --directory "$XDG_CONFIG_HOME"/sway run "$XDG_CONFIG_HOME"/sway/bin/alt-tab.py next
 
     # Move the focused window with the same, but add Shift
     $mod+Shift+Left move left
