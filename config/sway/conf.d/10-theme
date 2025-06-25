@@ -35,10 +35,6 @@ exec_always {
     "$XDG_CONFIG_HOME"/sway/bin/import-gsettings.sh
 }
 
-seat * {
-    hide_cursor 10000
-}
-
 hide_edge_borders smart
 smart_borders on
 default_border pixel 2
