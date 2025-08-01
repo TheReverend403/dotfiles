@@ -48,7 +48,6 @@ set -x RUFF_CACHE_DIR "$XDG_CACHE_HOME/ruff"
 set -x PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
 set -x PYTHON_EGG_CACHE "$XDG_CACHE_HOME/python-eggs"
 set -x WORKON_HOME "$XDG_DATA_HOME/virtualenvs"
-set -x UV_LINK_MODE symlink
 fish_add_path "$POETRY_HOME/bin"
 
 # Go
